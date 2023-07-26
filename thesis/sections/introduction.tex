@@ -1,0 +1,93 @@
+%% LaTeX2e class for student theses
+%% sections/introduction/content.tex
+%%
+%% Karlsruhe University of Applied Sciences
+%% Faculty of  Computer Science and Business Information Systems
+%%
+%% --------------------------------------------------------
+%% | Derived from sdqthesis by Erik Burger burger@kit.edu |
+%% --------------------------------------------------------
+
+\chapter{Introduction}
+\label{ch:Introduction}
+
+% E-Mobility and Reservations...
+
+\section{Target}
+\label{ch:Introduction:sec:Target}
+
+The fact that subsidies and other inducements provided by the manufacturers and the state itself lead to an further increasing amount of electric vehicles \cite{afshar_literature_2020} on the streets, the extension and management of the existing charging infrastructure will become an essential part of the overall satisfaction of the \acrfull{evu} community.
+Especially management or administration processes ensuring a fair and well-regulated use of the single charging possibilities is a necessary feature most implementations are missing nowadays. 
+The prime example addressing this problem, is the feature gap describing a reservation of a charging point in a specified time in the future. 
+
+Therefore reservation process for electric vehicle management inside a reduced scenario, like a company car fleet, will be used as proof of concept to demonstrate the advantages in comparison to the first-come-first-serve principle. The following sections will describe the context of the required system with their given requirements and restrictions for the tasks. First of all, a definition for electric mobility will be given, which declares the given context and its parts.
+
+\section{SAP SE}
+\label{ch:Introduction:sec:SAP SE}
+SAP SE, commonly referred to as SAP, is a multinational software corporation based in Walldorf, Germany. It is one of the world's leading enterprise software companies and is renowned for its innovative solutions that help businesses manage their operations effectively. It was founded in 1972 by Dietmar Hopp, Hasso Plattner, Claus Wellenreuther, Hans-Werner Hector, and Klaus Tschira. The company's primary goal was to develop standard application software for real-time business data processing and improve the way businesses managed their operations. Beside SAP S/4HANA and SAP ERP (Enterprise Resource PLanning), SAP offers a wirde range of enterprise software products and service and catering to various business needs and industries.
+With its vast global presence of offices in more than 180 countries, SAP provides solutions to customer organizations of all sizes. From small and medium-sized enterprises to multinational corporations. Beside manufacturing industries the finance and healthcare sector, as well as, retail, utilities, and public sector organizations are covered by SAP products. SAP's commitment to innovation has led to continuous improvements and advancements in its software offerings. It has embraced emerging technologies such as artificial intelligence, machine learning, Internet of Things (IoT), and blockchain to enhance its products' capabilities and address the evolving needs of businesses.
+
+\section{Electric Mobility}
+\label{ch:Introduction:sec:Electric Mobility}
+
+E-mobility, short for "electromobility," refers to the use of electric vehicles (EVs) and other electric-powered transportation options as an alternative to conventional vehicles that run on internal combustion engines (ICE). E-mobility aims to reduce greenhouse gas emissions, decrease dependence on fossil fuels, and mitigate the environmental impact of transportation. It is a key component of the global effort to combat climate change and achieve sustainable transportation solutions.
+
+\subsection{Electric Vehicles}
+\label{ch:Introduction:sec:Electric Mobility:Electric Vehicles}
+Electric vehicles are the cornerstone of e-mobility. They are automobiles that are powered by one or more electric motors, which draw energy from onboard batteries. EVs come in various forms, including battery electric vehicles (BEVs), plug-in hybrid electric vehicles (PHEVs), and hybrid electric vehicles (HEVs). BEVs run solely on electric power, while PHEVs combine an electric motor with an internal combustion engine, and HEVs use both power sources but cannot be plugged in for charging.
+
+\subsection{Charging Infrastructure}
+\label{ch:Introduction:sec:Electric Mobility:ssec:Charging Infrastructure}
+
+% To guarantee the \acrfull{evu} an optimal reach and a possibility for recharging \acrfull{ev}, a wide range of different charging possibilities are provided. Beside conventional charging technologies like \acrfull{fcs}. 
+
+One of the critical components of e-mobility is the charging infrastructure. To support the widespread adoption of electric vehicles, a robust network of charging stations is essential. These stations can vary from residential charging points to public charging stations installed in parking lots, streets, and commercial areas. Different charging levels exist, ranging from slow Level 1 chargers (typically used at home) to rapid DC fast chargers found in public locations for quick charging.
+
+\subsection{Renewable Energy}
+\label{ch:Introduction:sec:Electric Mobility:ssec:Renewable Energy}
+
+Renewable Energy Integration: To maximize the environmental benefits of e-mobility, it is crucial to integrate renewable energy sources like solar, wind, or hydropower into the charging infrastructure. Using clean energy to charge EVs helps reduce carbon emissions and creates a more sustainable transportation ecosystem.
+
+\subsection{Battery Technology}
+\label{ch:Introduction:sec:Electric Mobility:ssec:Battery Technology}
+
+Batteries play a central role in e-mobility as they store the energy required to power electric vehicles. Advancements in battery technology are essential to increase the range of EVs, reduce charging times, and make them more cost-effective. Lithium-ion batteries are the most common type used in electric vehicles today, but research is ongoing to develop new battery chemistries with improved performance and longevity.
+
+
+
+\subsection{Actors}
+\label{ch:Introduction:sec:Electric Mobility:ssec:Actors}
+
+The actors in the context of electric mobility are the \acrfull{evu}, which are driving the \acrfull{ev}. Beside the \acrshort{evu} an essential part in this scenario is the charging station provider. As interface between the electric grid and the \acrshort{evu} and their vehicles, they provide the power to recharge the vehicles.
+Additionally there exist a 
+
+\subsection{Communication protocol}
+\label{ch:Introduction:sec:Electric Mobility:ssec:Communication protocol}
+
+To provide a general interface for information exchange between the \acrfull{cs} and the \acrfull{ev} and their users the \acrfull{oca} developed the so called \acrfull{ocpp} as standard communication protocol. It supports a standard set of functions, which could be used by the \acrfull{csms} to manage \acrshort{csms}.
+
+\subsubsection{Open Charge Point protocol}
+\label{ch:Introduction:sec:Electric Mobility:ssec:Communication protocol:sssec:Open Charge Point Protocol}
+
+The \acrfull{ocpp} is an open standard, which provides the possibility for communication between the \acrshort{ev}s, the \acrshort{cs}s and the \acrfull{csms}. Using this standard, the developers have the possibility to build applications without considering the manufacturer of the \acrshort{cs} or the \acrshort{ev}. Since 2009 various versions have been released and improved beside documentation and the provided functionality additional features, too.  \cite{raboaca_overview_2022}
+
+\subsubsection{Open Charge Point Interface protocol}
+\label{ch:Introduction:sec:Electric Mobility:ssec:Communication protocol:sssec:Open Charge Interface Protocol}
+
+In addition to the \acrfull{ocpp}, the \acrfull{ocpi} enables the setup of automated EV roaming between Charge Point Operators and e-Mobility Service Providers. It supports beside authorization, charge point information exchange, charge detail record exchange, remote charge point commands and the exchange of smart-charging related information between parties.
+
+\section{Open e-Mobility}
+\label{ch:Introduction:sec:Open e-Mobility}
+
+\subsection{Architecture}
+\label{ch:Introduction:sec:Open e-Mobility:ssec:Architecture}
+
+\section{Existing Reservation Procedures}
+\label{ch:Introduction:sec:Existing Reservation Procedures}
+
+\subsection{OCPP 1.6 Standard Reservation}
+\label{ch:Introduction:sec:Existing Reservation Procedures:ssec:OCPP 1.6 Standard Reservation}
+
+\subsection{Custom Reservation Procedure}
+\label{ch:Introduction:sec:Existing Reservation Procedures:ssec:Custom Reservation Procedure}
+

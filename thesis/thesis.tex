@@ -1,0 +1,210 @@
+%% LaTeX2e class for student theses
+%% thesis.tex
+%%
+%% Karlsruhe University of Applied Sciences
+%% Faculty of  Computer Science and Business Information Systems
+%%
+%%
+%% Version 0.2, 2017-11-15
+%%
+%% --------------------------------------------------------
+%% | Derived from sdqthesis by Erik Burger burger@kit.edu |
+%% --------------------------------------------------------
+
+%% Available languages: english,ngerman
+%% Available modes: draft,final (see README)
+\documentclass[english,final]{thesis}
+
+% Use space between paragraphs
+%\KOMAoption{parskip}{half+}
+
+%% ---------------------------------
+%% | Information about the thesis  |
+%% ---------------------------------
+
+%% Name of the author
+\author{Julian Bücher}
+
+%% Title (and possibly subtitle) of the thesis
+\title{Reservation process for charging infrastructure management in the context of e-mobility}
+
+%% Type of the thesis
+\thesistype{Master Thesis}
+
+%% Change the institute or subject area here, ``VSYS'' is default
+% \myinstitute{Institute for \dots}
+
+%% You can put a logo in the ``logos'' directory and include it here
+% \grouplogo{myfile}
+
+%% The reviewers are the professors that grade your thesis , ``Zirpins'' is default
+\reviewerone{Prof. Dr.-Ing. Zoltán Nochta}
+%% reviewer two (can be omitted)
+\reviewertwo{Prof. Dr. rer. nat. Heiko Körner}
+
+%% The advisor is usually extern (can be omitted)
+% \advisorone{Dipl.-Inform. C}
+% The second advisor (can be omitted)
+% \advisortwo{Dipl.-Inform. D}
+
+
+%% Please enter the start end end time of your thesis
+\editingtime{17. March 2023}{16. September 2023}
+
+\settitle
+
+%% --------------------------------
+%% | Settings for word separation |
+%% --------------------------------
+
+%% Describe separation hints here.
+%% For more details, see
+%% http://en.wikibooks.org/wiki/LaTeX/Text_Formatting#Hyphenation
+\hyphenation{
+% me-ta-mo-del
+}
+
+%% --------------------------------
+%% | Bibliography                 |
+%% --------------------------------
+
+%% Use biber instead of BibTeX, see README
+\usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
+\addbibresource{thesis.bib}
+
+%% --------------------------------
+%% | Listings                     |
+%% --------------------------------
+
+%% Basic config
+\lstset{
+  frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\footnotesize\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+  showlines=true
+}
+
+%% Add your non-supported language here
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+%% --------------------------------
+%% | Glossaries                   |
+%% --------------------------------
+
+%% Use glossaries (optional)
+\makeglossaries
+%% Load glossary definitions from file
+\loadglsentries{glossentries.tex}
+
+%% ====================================
+%% ====================================
+%% ||                                ||
+%% || Beginning of the main document ||
+%% ||                                ||
+%% ====================================
+%% ====================================
+\begin{document}
+
+%% Set PDF metadata
+\setpdf
+
+%% Set the title
+\maketitle
+
+%% The Preamble begins here
+\frontmatter
+
+\include{sections/declaration}
+
+\setcounter{page}{1}
+\pagenumbering{roman}
+
+%% ----------------
+%% |   Abstract   |
+%% ----------------
+
+%% For theses written in English, an abstract both in English
+%% and German is mandatory.
+%%
+%% For theses written in German, a German abstract is sufficient.
+%%
+%% The text is included from the following files:
+%% - sections/abstract
+
+\includeabstract
+
+%% ------------------------
+%% |   Table of Contents  |
+%% ------------------------
+\tableofcontents
+
+\listoffigures
+\listoftables
+
+%% ------------------------
+%% | Glossary/Acronyms    |
+%% ------------------------
+
+% print glossary (optional)
+\printglossary[title=Glossar]
+
+% print acronyms (optional)
+\printglossary[type=\acronymtype]
+
+%% -----------------
+%% |   Main part   |
+%% -----------------
+
+\mainmatter
+% Introduction
+\include{thesis/sections/introduction}
+
+% Main part
+\include{thesis/sections/main/1_chapter/literature_review}
+\include{thesis/sections/main/2_chapter/req_eng_and_pr_design}
+\include{thesis/sections/main/3_chapter/implementation}
+\include{thesis/sections/main/4_chapter/analysis}
+
+% Conclusion 
+\include{thesis/sections/conclusion}
+
+
+%% --------------------
+%% |   Bibliography   |
+%% --------------------
+
+%% Add entry to the table of contents for the bibliography
+\printbibliography[heading=bibintoc]
+
+
+%% ----------------
+%% |   Appendix   |
+%% ----------------
+\appendix
+\include{thesis/sections/conclusion/appendix}
+
+\end{document}

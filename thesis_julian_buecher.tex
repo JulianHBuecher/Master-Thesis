@@ -37,7 +37,6 @@
 %% You can put a logo in the ``logos'' directory and include it here
 % \grouplogo{myfile}
 
-%% The reviewers are the professors that grade your thesis , ``Zirpins'' is default
 \reviewerone{Prof. Dr.-Ing. Zoltán Nochta}
 %% reviewer two (can be omitted)
 \reviewertwo{Prof. Dr. rer. nat. Heiko Körner}
@@ -93,22 +92,6 @@
   breakatwhitespace=true,
   tabsize=3,
   showlines=true
-}
-
-%% Add your non-supported language here
-\lstdefinelanguage{JavaScript}{
-  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
-  keywordstyle=\color{blue}\bfseries,
-  ndkeywords={class, export, boolean, throw, implements, import, this},
-  ndkeywordstyle=\color{darkgray}\bfseries,
-  identifierstyle=\color{black},
-  sensitive=false,
-  comment=[l]{//},
-  morecomment=[s]{/*}{*/},
-  commentstyle=\color{purple}\ttfamily,
-  stringstyle=\color{red}\ttfamily,
-  morestring=[b]',
-  morestring=[b]"
 }
 
 %% --------------------------------
@@ -170,8 +153,7 @@
 %% ------------------------
 
 % print glossary (optional)
-\printglossary[title=Glossar]
-
+\printglossary
 % print acronyms (optional)
 \printglossary[type=\acronymtype]
 
@@ -181,16 +163,19 @@
 
 \mainmatter
 % Introduction
-\include{thesis/sections/introduction}
+\include{sections/introduction/introduction}
 
 % Main part
-\include{thesis/sections/main/1_chapter/literature_review}
-\include{thesis/sections/main/2_chapter/req_eng_and_pr_design}
-\include{thesis/sections/main/3_chapter/implementation}
-\include{thesis/sections/main/4_chapter/analysis}
+\include{sections/main/1_fundamentals/fundamentals}
+\include{sections/main/2_requirements/requirements_engineering}
+\include{sections/main/3_approach/approach}
+\include{sections/main/4_related_work/literature_review}
+\include{sections/main/5_process_design/process_design}
+\include{sections/main/6_implementation/implementation}
+\include{sections/main/7_validation/validation}
 
 % Conclusion 
-\include{thesis/sections/conclusion}
+\include{sections/conclusion}
 
 
 %% --------------------
@@ -205,6 +190,6 @@
 %% |   Appendix   |
 %% ----------------
 \appendix
-\include{thesis/sections/conclusion/appendix}
+\include{sections/conclusion/appendix}
 
 \end{document}

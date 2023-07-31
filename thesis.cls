@@ -169,7 +169,7 @@
 \newcommand{\includeabstract}{
 \iflanguage{english}{
 % include English and German abstracts
-\include{sections/abstracts//abstract_en}
+\include{sections/abstracts/abstract_en}
 \begin{otherlanguage}{ngerman}
 \include{sections/abstracts/abstract_de}
 \end{otherlanguage}
@@ -227,8 +227,8 @@
 \noappendicestocpagenum
 
 % todo-notes
-\RequirePackage[obeyDraft]{todonotes}
-\presetkeys{todonotes}{inline}{}
+% \RequirePackage[obeyDraft]{todonotes}
+% \presetkeys{todonotes}{inline}{}
 
 % PDF specific packages
 \RequirePackage[hyphens]{url}
@@ -253,7 +253,8 @@
 
 %% Glossary
 \RequirePackage[%
+    toc,
     nonumberlist,
     acronym
     ]{glossaries}
-\renewcommand*{\glspostdescription}{}
+ \renewcommand*{\glspostdescription}{}

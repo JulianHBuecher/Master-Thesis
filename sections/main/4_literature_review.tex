@@ -1,0 +1,138 @@
+%% LaTeX2e class for student theses
+%% sections/main/4_literature_review.tex
+%%
+%% Karlsruhe University of Applied Sciences
+%% Faculty of  Computer Science and Business Information Systems
+%%
+%% --------------------------------------------------------
+%% | Derived from sdqthesis by Erik Burger burger@kit.edu |
+%% --------------------------------------------------------
+
+
+\chapter{Literature Review}
+\label{ch:Literature Review}
+
+As the primary part of the theoretical phase described in section \ref{ch:Approach:sec:Theoretical Part}, this chapter provides an overview of research related to the problem statement of this particular work.
+Based on the existing studies, the current state of reservation systems for charging infrastructure management is identified and outlined in the last section \ref{ch:Literature Review:sec:Current State} of this chapter.
+Given the current state of implemented systems of this kind and the results of the available research, the design part in chapter \ref{ch:Design} will use these results for the design of the system and corresponding processes implemented in this thesis.
+
+\section{Related Work}
+\label{ch:Literature Review:sec:Related Work}
+
+In the context of supporting the wider acceptance of \acrshortpl{ev} in the society, its decarbonization and the reduction of air pollution caused by vehicles using \acrshortpl{ice} \cite{basmadjian_reference_2020}, the integration of \acrshortpl{ev} in the daily lives of citizens is still in ongoing and far from being complete.
+Obstacles like insufficient charging infrastructure in comparison to the availability of gas stations, long charging times and high investments for the public and private sectors \cite{basmadjian_reference_2020,orcioni_ev_2020} are only a few examples mitigating the end users interest in switching to \acrshortpl{fev}.
+For this reason, the surrounding \acrshort{emobility} ecosystem including the software for the interaction and management of the user with the charging infrastructure and the convenience of the underlying processes used for the implementation is an essential part.
+Given the system landscape and protocols employed in these scenarios, the ability to reserve a \acrshort{cs} beforehand is usually lacking and has not yet been integrated into the current implementations of \acrshortpl{csms}.
+As part of the comprehensive literature review in this thesis, the following selected studies describe methods for applying reservation approaches and their respective processes to current implementations. This is intended to provide an extension to the existing system landscapes and protocols in this field, with the aim of achieving certain objectives. \\
+%% --------------------------------------------------------------------------------------------------------------------------------
+%% An Interoperable Reservation System for Public Electric Vehicle Charging Stations: A Case Study in Germany
+%% --------------------------------------------------------------------------------------------------------------------------------
+\noindent In \cite{basmadjian_interoperable_2019}, the authors argued that the reservation of charging infrastructure, especially for \acrshortpl{cs}, represent a pivotal role in a seamlessly integration of the \acrshort{cs} into the transportation and mobility sector.
+Apart from the basic requirements for the design and implementation of an interoperable reservation system, they provide a breakdown of the different reservation approaches into four types of reservations. 
+For designing their system, Basmadjian et al. used the \acrshort{emsa} \cite{kirpes_e-mobility_2019} framework as a blueprint for the system model and its engineering and implemented on of their reservation types as \acrshort{poc} in a showcase located in Bavaria, Germany.
+Proclaiming being the first contribution regarding the proposal of an interoperable reservation system for \acrshort{ev} charging, this study introduced the following four different kinds of reservations. Primarily based on the \textbf{start time} and the \textbf{reliability} a reservation takes place, a differentiation between \textit{Uncertain Ad-Hoc}, \textit{Guaranteed Ad-Hoc}, \textit{Uncertain Planned} and \textit{Guaranteed Planned} is provided.
+The \textit{Planned} reservation, in contrast to \textit{Ad-Hoc} reservations, allows the \acrshort{evu} to pre-block the respective connector, requiring start and end timestamps for the reservation, instead of the immediate blocking of a \acrshort{cs} during a pre-configured time span. 
+Moreover, when taking into account the reliability of a reservation and the corresponding charging stations, \textit{uncertain} reservations are not able to guarantee a free parking space at the specified connector, whereas \textit{guaranteed} ones are able to do so.
+Using the \textit{planned} reservation method makes it possible to make multiple reservations for one \acrshort{cs}, unlike the \textit{ad-hoc} setup where only one reservation is allowed.
+From the requirements that the authors gathered during the design process of their study, such as improving the short-term planning capabilities of \acrshortpl{emsp} and \acrshortpl{cso} or increasing the fare convenience for the \acrshortpl{evu}, their work resulted in the implementation of an uncertain ad-hoc reservation system, including a mobile application for the \acrshort{evu}, and the required back-end services for communication and data exchange with the \acrshortpl{cs}.
+Concerning data exchange and modelling, they relied on the \acrshort{ocpp} protocol and the \acrshort{iso} standard 15118 to facilitate standard communication between the system and the infrastructure.
+In addition to the proposed implementation, Basmadjian et al. reviewed available research on reservation systems for \acrshortpl{cs} as part of the literature review conducted in this study.
+In the course of their research, the authors observed that the majority of studies solely focus on improving the satisfaction of \acrshortpl{evu} by reducing their wait time and associated loading costs, while simultaneously maximising the utilisation of \acrshortpl{cs}.
+Therefore, these papers applied algorithmic approaches for efficient scheduling of reservations like in \cite{kim_efficient_2010,xiang_reservation-based_2011,qin_charging_2011} and do not provide sufficient and interoperable solution for reserving charging infrastructure emphasizing the need for standard communication protocols like \acrshort{ocpp} or common data models. 
+Consequently, the authors concluded that unlike other sectors, the implementation and analysis of reservations for \acrshortpl{cs} and \acrshortpl{ev} is still in a evolving stage. \\
+%% --------------------------------------------------------------------------------------------------------------------------------
+%% An OCPP-Based Approach for Electric Vehicle Charging Management
+%% --------------------------------------------------------------------------------------------------------------------------------
+\noindent Apart from reservation systems, which aim to manage the charging infrastructure through the targeted input of an \acrshort{evu}, other approaches, such as in \cite{hsaini_ocpp-based_2022}, have tackled the problem of \acrshort{cs} management in a more intelligent and automated way.
+Hsaini et al. also recognized the issue that the current versions of \acrshort{ocpp} enable reservations only at the time of booking through the 'ReserveNow' operation \cite{noauthor_ocpp_nodate-1,noauthor_ocpp_nodate}.
+Therefore, the authors want to improve the predefined reservation function to allow the \acrshortpl{evu} to reserve a \acrshort{cs} in advance, which resulted in a mobile application for the \acrshortpl{evu} for making the reservation, an algorithm for optimizing the charging schedule, a web application for monitoring purposes and the according backend, executing the operations based on \acrshort{ocpp}.
+For creating the according reservations, the \acrshort{evu} has to specify the arrival and departure time, the desired amount of energy, battery capacity, and optionally the initial state of charge with the desired state of charge by the mobile application.
+Once the optimization algorithm has been run in the backend application considering the provided user preferences, a list of available \acrshortpl{cs}, along with the available energy and corresponding electricity costs, is presented to the user. For a successful reservation the selection of the \acrshort{cs} and the provided time must be confirmed. \\
+%% --------------------------------------------------------------------------------------------------------------------------------
+%% EV Smart Charging with Advance Reservation Extension to the OCPP Standard
+%% --------------------------------------------------------------------------------------------------------------------------------
+\noindent A comparable approach is presented in \cite{orcioni_ev_2020}. By utilizing a mobile application, users can request a booking by defining their preferences and specifying their flexibility options regarding in terms of arrival time, battery's \acrshort{soc} and desired final charge.
+The system presents a listing of bookable slots that are generated based on the findings of an optimization algorithm. This enables the user to finalize the booking by adjusting the provided parameters through negotiation with the system itself. \\
+%% --------------------------------------------------------------------------------------------------------------------------------
+%% Charging reservation service for electric vehicles using automatic notification
+%% --------------------------------------------------------------------------------------------------------------------------------
+\noindent Unlike the reservation systems mentioned earlier, \cite{zarkeshev_charging_2018} suggests a solution that eliminates the \acrshort{evu}'s interaction until a certain point in the reservation process.
+Therefore, Zarkeshev and Csiszar developed a concept based on an automated reservation process that only requires notification of the user, using real-time information about the vehicle's status and location.
+Primarily designed for the usage in smart cities and scenarios alongside the highway, each \acrshort{cs} takes the role of a server with a pre-defined radius of operation. By driving through such a zone, the \acrshort{cs} automatically identifies the \acrshort{ev} and its battery level, which results in a automatic notification with a proposal to make a recharge in cases of low charging level. 
+Assuming the driver accepts the notification, the system will automatically reserve a charging slot at the \acrshort{cs}. The system will assign a charging time based on the availability of the \acrshort{cs} and the duration of the charge. These factors will be considered in relation to the status of the battery.
+Moreover, the server acts as a monitor, keeping track of all bookings and notifying the relevant drivers in the case of delayed arrivals, which could lead to cancellations or postponements of bookings, resulting in adjustments to the overall schedule. \\
+%% --------------------------------------------------------------------------------------------------------------------------------
+%% Electric vehicles charging reservation based on OCPP
+%% --------------------------------------------------------------------------------------------------------------------------------
+\noindent When considering the communication and information exchange exclusively between the \acrshortpl{ev} and the \acrshortpl{cs}, implementing charging management into a smart grid system alongside scenarios like \acrshort{v2g} could be a next possible step. 
+By using reservations, the solution presented in \cite{orcioni_electric_2018} proposes opportunities to optimize resources on both the power grid side and the \acrshort{evu} side.
+In addition to previous solutions, Orcioni et al. developed their approach by extending the \acrshort{ocpp} protocol with prescribed reservation functionality.
+This resulted in a mobile application for end-users, in which the related \acrshort{ocpp} operations are implemented in the backend service, allowing users to reserve a \acrshort{cs} in advance by negotiating charging parameters such as arrival time, duration, location, price, percentage of final charge and the required power.
+Moreover, a data model is provided that considers these parameters. \\
+%% --------------------------------------------------------------------------------------------------------------------------------
+%% SGAM-Based Analysis for the Capacity Optimization of Smart Grids Utilizing e-Mobility: The Use Case of Booking a Charge Session
+%% --------------------------------------------------------------------------------------------------------------------------------
+\noindent Based on smart grid integration approaches like \acrshort{v2g}, other studies like \cite{garcia_sgam-based_2023} utilize the reservation approach for the design of a flexible user-centric architecture for capacity optimization of the underlying power grid, considering the energy requirement of the grid and its capacity restrictions.
+Therefore, Garcia et al. applied the \acrshort{sgam} \cite{noauthor_sgam_nodate} methodologies to provide a potential implementation of \acrshort{emobility} as a distributed storage asset, also known as \acrshort{der}.
+Unlike the objectives of the previous studies, the modelling for booking a charge session through a mobile application, targets the balance of \acrshort{res}, along with the discharge of \acrshortpl{ev} compensating power peaks during times of high-demand. 
+As well as the other implementations, this system also based on the \acrshort{ocpp} protocol, and establishes a reservation process that locks the \acrshort{cs} after selection through an appropriate interface by the backend system. Unlocking takes place upon arrival and successful authorization via a token or in case of non-arrival of the driver. \\
+%% --------------------------------------------------------------------------------------------------------------------------------
+%% An Efficient Scheduling Scheme on Charging Stations for Smart Transportation
+%% --------------------------------------------------------------------------------------------------------------------------------
+\noindent Other algorithmic approaches using reservation processes to reduce the cost of charging or to increase consumer satisfaction of \acrshortpl{ev}, for example, also rely on reservation-based scheduling schemes.
+In the paper \cite{kim_efficient_2010}, for example, the authors propose a method for \acrshort{cs} to decide the service order of multiple requests, prohibit the introduction of additional systems altogether, and try to extend the functionality of \acrshort{cs} itself. 
+To address this, Kim et al. developed a linear rank function based on the estimated arrival time, waiting time and amount of power required to calculate the order of charging sessions.
+As a result, the person requesting the reservation may choose to take advantage of the opportunity to recharge, or may have to move to another station altogether. \\
+%% --------------------------------------------------------------------------------------------------------------------------------
+%% Electric Vehicle Smart Charging Reservation Algorithm
+%% --------------------------------------------------------------------------------------------------------------------------------
+\noindent Furthermore, in \cite{flocea_electric_2022} Flocea et al. addressed the issue of uncertain availability of \acrshort{cs} along the route of \acrshortpl{evu}. 
+This proposal aims to overcome the limitations of the 'ReserveNow' feature defined in the \acrshort{ocpp} protocol to enable drivers to plan longer trips by creating charging reservations for upcoming days.
+Based on the \acrshortpl{cs} reservation and transaction history, this solution is backed by an algorithm that generates the corresponding reservations in the form of intervals to guarantee the availability of the reserved connector when it arrives at the station and to avoid possible overlaps of reservations.
+To create a reservation, the user needs to choose a valid timeslot, including the start and end time, while preventing other \acrshortpl{evu} from charging their vehicles at the reserved \acrshort{cs}.
+In order to manage reservations internally, a reservation is assigned to a particular status type, which describes its position within the reservation life cycle within the system. 
+Apart from \textit{New}, \textit{In progress}, \textit{Completed}, the status \textit{Cancelled} is introduced, which allows the system to treat the reservation according to certain circumstances.
+Moreover, the reservation algorithm could adjust the reservation according to the previous conditions and assume that the reserved time counts as charging time. When the reserved time comes to an end, charging will stop automatically. \\
+%% --------------------------------------------------------------------------------------------------------------------------------
+%% A Reference Architecture for Interoperable Reservation Systems in Electric Vehicle Charging
+%% --------------------------------------------------------------------------------------------------------------------------------
+\noindent In terms of a more elevated perspective on reservation systems and potential architectures considering ways to select required stakeholders and requirements, \cite{basmadjian_reference_2020} presents a reference architecture to conceive interoperable reservation systems.
+The benefits of such architectures for future reservation systems in this context and the key stakeholders needed during the requirements engineering phase are listed by Basmadjian et al. in this paper.
+Besides the identification of the necessary requirements of the aforementioned stakeholders, the designed reference architecture and a \acrshort{poc} developed using this design, the authors introduced a set of design parameters for reservation systems.
+In order to achieve demand-side management and capacity planning of existing charging infrastructure through reservation systems, the following design parameters proposed by the authors must be considered: \textit{Enforceability}, \textit{Planning}, \textit{Fee}, \textit{Data Availability}, \textit{Roaming} and \textit{Scheduling}.
+When it comes to parameter coverage, each system can only fulfill a certain subset. The selection of these subsets should be based on the objectives the reservation system aims to achieve, during the design stage.
+As a result, different types of systems may be created, each tailored to a specific purpose or scenario. \\
+%% --------------------------------------------------------------------------------------------------------------------------------
+%% Mobile Charging as a Service: A Reservation-Based Approach
+%% --------------------------------------------------------------------------------------------------------------------------------
+\noindent In contrast to the fixed charging stations introduced in subsection \ref{ch:Fundamentals:sec:Electric Mobility:ssec:Charging Infrastructure} by the classification of available charging infrastructure in figure \ref{fig:charging-station-classification}, studies such as \cite{zhang_mobile_2020} consider reservation processes for the utilization of mobile charging stations using a reservation systems.
+The authors offer a design approach for an intelligent mobile charging control mechanism for electric vehicles, where mobile charging is promoted as an alternative recharging solution using mobile plug-in chargers to facilitate on-site charging service scenarios.
+Relying on a reservation-based scheduling scheme that approximates optimal solutions for mobile chargers circulating between parked vehicles with charging appointments, the aim is to use mobile vans with plug-in chargers as \acrshortpl{cs} to provide a versatile charging service.
+With the introduction of reservations, accurate estimates of future charging demand can be made and the strain on charging infrastructure and lack of \acrshortpl{cs} in certain areas could be alleviated.
+
+\section{Current State}
+\label{ch:Literature Review:sec:Current State}
+
+Considering the various processes and methods that propose approaches to managing \acrshortpl{cs} through reservations described in section \ref{ch:Literature Review:sec:Related Work}, the current state of reservation systems for charging infrastructure management is illustrated below. \\
+% Similarities
+\noindent Firstly, this section describes the similarities in the technologies used and the overlaps identified in process design and implementation.
+Most of the investigated systems include, in addition to the mobile applications for the \acrshortpl{evu} usage, one or more backend services that handle the information exchange between the mobile frontend and the corresponding charging infrastructure.
+For reservation creation and communication between the \acrshort{csms} and the \acrshort{cs}, the all systems rely on the \acrshort{ocpp} protocol as an open standard protocol for charging infrastructure communication.
+In order to mitigate unforeseen circumstances affecting the reservation made, the systems found included background processes ranging from cancellation of the reservation after a certain period of time, to automatic adjustment of the underlying charging timetable to reschedule the upcoming reservations.
+Moreover, certain methodologies suggest utilising physical obstacles, such as sensors or system-controlled blockers, to ensure the successful completion of the booking process. \\
+% Differences
+\noindent The most significant difference between the proposed solutions is the way a reservation is modelled as an entity within the system and the degree of interaction with the \acrshort{evu}.
+From fully automated scheduling algorithms that create reservations based on calculated intervals using vehicle and location data, requiring only confirmation from the user to minimise the need for user intervention, to methods that require various user inputs such as actual battery status, estimated time of arrival or desired battery charge level at the end of the reservation.
+Some proposals have combined both approaches and established negotiation processes that include game theoretical aspects to negotiate the reservation slot directly with the backend system or the \acrshort{cs}.
+Therefore, various properties are needed to model the reservation system internally. The properties that most reservations naturally support are the corresponding \acrshort{cs} and connector, as defined in \acrshort{ocpp}, as well as the start and end time, which extends the aforementioned protocol and simplifies reservation scheduling for the system. \\
+% Design Criteria
+\noindent In spite of the fact mentioned in \cite{basmadjian_interoperable_2019}, that the lack of extensive research and implementations unlike in other sectors, reservation systems for \acrshortpl{cs} and \acrshortpl{ev} still lack general and generic design requirements.
+Certain design criteria are identical across the existing implementations. This heavily relies on the required functionality and the objectives they have to fulfil.
+These may include the availability of payment options and the integration of self-managed rescheduling algorithms to reduce overlapping reservation intervals, and could be located within each system in a similar manner as stated or declared. \\
+% Results Considered
+\noindent Based on the results obtained, such as the reduced travel time depending on the demand on the charging infrastructure and the type of reservation chosen, reservation systems do not directly increase the utilisation of the charging infrastructure.
+Moreover, studies on alternative charging approaches like mobile \acrshortpl{cs}, that provide more flexible processes, have only just scratched the surface in the existing literature. Nor a focus on the interoperability of the resulting implementations could be identified. \\
+% Missing Features
+\noindent Concerning the architectural design of the systems, most of the reservation functionalities extend or integrate with the \acrshort{ocpp} standard and place their custom enhancements on top of it. Only in \cite{flocea_electric_2022} a reservation module is provided  as a separate functionality, co-existing with the \acrshort{ocpp} reservation functionality within the \acrshort{csms}.
+In terms of features such as the implementation of recurring reservations for more than one charging session within a specified date range, or the use of role concepts to control infrastructure management to differentiate functionality according to specific roles within the system, there is no elaboration.
+Moreover, there is no control flow available for a more detailed and precise regulation or differentiation of specific phases that a reservation could undergo. 

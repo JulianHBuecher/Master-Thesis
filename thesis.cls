@@ -207,6 +207,7 @@
 \RequirePackage{booktabs}
 \RequirePackage{longtable}
 \RequirePackage{array}
+\RequirePackage{tabularx}
 
 % Listings
 \usepackage{listings}
@@ -253,8 +254,14 @@
 
 %% Glossary
 \RequirePackage[%
-    toc,
     nonumberlist,
     acronym
     ]{glossaries}
  \renewcommand*{\glspostdescription}{}
+
+% Figures and Subfigures
+\RequirePackage{caption}
+\RequirePackage{subcaption}
+
+\RequirePackage{cprotect}
+\RequirePackage{multicol}

@@ -1,0 +1,52 @@
+%% LaTeX2e class for student theses
+%% sections/introduction.tex
+%%
+%% Karlsruhe University of Applied Sciences
+%% Faculty of  Computer Science and Business Information Systems
+%%
+%% --------------------------------------------------------
+%% | Derived from sdqthesis by Erik Burger burger@kit.edu |
+%% --------------------------------------------------------
+
+\chapter{Introduction}
+\label{ch:Introduction}
+
+Regarding the fact of a further decreasing amount of fossil fuels available for the production of products like gasoline, or the resulting consequences like global warming by burning these energy carriers. These are only two arguments in the debate about fostering the development of a more sustainable behavior in different areas of daily life \cite{kathiresh_e-mobility_2022}.
+Beside switching from coal or oil as a viable source for energy generation to renewable energies, or the transition from cars powered by \acrfull{ice} to a more environmental friendly alternative, is an essential step reducing the amount of \acrfull{co2} in the atmosphere and decreasing the elevating speed of the climate crisis.
+As part of the 'electrification of energy conversion systems in mobile platforms' \cite[165226]{adib_e-mobility_2019} in the context of \acrfull{emobility}, the industry and users still having several challenges to face.
+The most outstanding ones are the existing shortcomings in key technologies like batteries or power trains. In comparison to their current fossil alternatives, they lack in several aspects like efficiency or durability, which results in shorter operating ranges regarding to the limited capacities. In combination with the shortage of charging possibilities in sparsely populated areas or cities, the current shortcomings could not be countered effectively.
+Other negative site effects like the so called 'range anxiety' \cite{rauh_understanding_2015} experienced by most \acrfull{evu} in rural areas without a widespread charging infrastructure, affected the acceptance and changeover from cars with \acrshort{ice} to \acrfull{hev} or \acrfull{fev} additionally. 
+Furthermore, the waste produced by the production or disposal of \acrshort{ev} is a critical point. Especially the disposal of lithium-ion batteries lead to deleterious effects on the surrounding environment \cite{xu_generation_2017}.
+Nevertheless, the long term benefits of \acrshort{ev} and their impact in reducing \acrshort{co2} and the utilization of fossil fuels are unmistakable.
+Because of this, several institutions and governments are anxious to support the expansion of \acrshort{emobility} and try to counter the negative site effects mentioned above.
+For example subsidies and other inducements provided by the manufacturers as well as the state itself are countermeasures to promote \acrshortpl{ev} as a future transportation mean.
+
+\section{Conceptual Formulation}
+\label{ch:Introduction:sec:Conceptual Formulation}
+
+Due to the need of a system to administrate and monitor the required infrastructure, different approaches of managing \acrshortpl{cs} and according connectors have been established. Therefore, various software companies partnered with manufacturers of charging stations or institutions for standardization to establish a common denominator for information exchange.
+Their work resulted in standards like the \acrfull{ocpp}, \acrfull{ocpi} or ISO 15118, which provide a decent feature set for interaction between the \acrshortpl{evu}, the \acrshortpl{ev} and the corresponding \acrshortpl{cs}. Despite the extensive scope of processes covered, the mentioned standards are not considered as complete and require additional refinements and extensions for certain situations.
+Therefore, nearly every year new major versions with minor fixes and improvements in form of new features is released. 
+Considering the evaluation of specific feature gaps, especially management or administration processes, ensuring a fair and well-regulated use of the single charging possibilities, is a necessary functionality most implementations are missing nowadays. Addressing this particular use case, this thesis describes a process for reservations of charging points or connectors for a specified time range in advance. Beside providing the \acrshortpl{evu} a guarantee for charging, this feature set should enable a fine grained administration of \acrshortpl{cs} for owners of semi-public or private parking lots and offer an alternative to the first-come-first-serve principle currently used.
+
+\section{SAP SE}
+\label{ch:Introduction:sec:SAP SE}
+
+This work was part of a master's thesis at SAP SE, which is a multinational software corporation based in Walldorf, Germany. It is one of the world's leading enterprise software companies and is renowned for its innovative solutions that help businesses manage their operations effectively. It was founded in 1972 by Dietmar Hopp, Hasso Plattner, Claus Wellenreuther, Hans-Werner Hector, and Klaus Tschira \cite{noauthor_inventing_nodate}. 
+The company's goal is to develop standard application software for real-time business data processing and improve the way businesses managed their operations. Beside SAP S/4HANA and SAP ERP (Enterprise Resource Planning), SAP offers a wide range of enterprise software products and service and catering to various business needs and industries.
+Beside manufacturing industries, the finance and healthcare sector, as well as, retail, utilities, and public sector organizations SAP engages in the development of emerging technologies such as artificial intelligence, machine learning, Internet of Things (IoT), or solutions in the \Gls{emobility} sector.
+This includes software for the management of existing \acrshortpl{cs} within the company or applications for supporting the \acrshortpl{evu} by a more comfortable way of finding free charging opportunities. As part of this approach driving the expansion of \Gls{emobility} in the enterprise world, this thesis provides additional concepts for the integration in existing software applications and example workflows for advanced management of the charging infrastructure. 
+
+\newpage
+
+\section{Document Structure}
+\label{ch:Introduction:Document Structure}
+
+As main focus of this work, the following chapters describe a potential solution for conceptualization and implementation of a reservation system based on the existing SAP open source solution \textit{Open e-Mobility}. 
+Starting with the introduction of the necessary information for contextualization, the conceptional part afterwards gathered the required use cases for the design of the corresponding processes. 
+Followed by a structured timeline describing the approaches for the theoretical part as well as the implementation part separated into single steps. 
+Next, an evaluation of existing work covering similar approaches for handling the main task mentioned in \ref{ch:Introduction:sec:Conceptual Formulation}, takes place.
+This leads to the design part covering the use cases gathered in chapter \ref{ch:Requirements Engineering} and illustrate them in form of flowchart diagrams, which are basis of the implementation. 
+Based on the results of the preceding analysis and the designing phase, a documentation describing the translation of the selected processes for implementation in software components inside the application follows. It contains a detailed explanation of the involved entities, actors and the corresponding systems.
+Afterwards an evaluation and validation of the results based on the created scenario is appended. 
+The closing of this paper is composed of a conclusion in combination with impulses for further development and integration of other aspects touched by this work.

@@ -1,8 +1,8 @@
 %% LaTeX2e class for student theses
-%% sections/abstract_de.tex
+%% sections/abstracts/abstract_de.tex
 %%
 %% Karlsruhe University of Applied Sciences
-%% Faculty of  Computer Science and Business Information Systems
+%% Faculty of Computer Science and Business Information Systems
 %%
 %% --------------------------------------------------------
 %% | Derived from sdqthesis by Erik Burger burger@kit.edu |
@@ -10,19 +10,18 @@
 
 \Abstract
 % Problem
-Aufgrund der sich stetig weiterentwickelnden Technologien im Kontext von Elektromobilit\"at und der daraus resultierenden steigenden Auslastung der existierenden Ladeinfrastruktur, sind Engp\"asse in der Nutzung \"offentlicher, wie auch nicht-\"offentlicher Ladestationen eine zu erwartende Konsequenz. 
-Trotz der Evaluation und des Einsatzes von hoch-automatisierten Mechanismen zur Lastverteilung im Falle von Spannungsspitzen und der Nutzung optimierter Methodiken f\"ur das Laden elektrisch-betriebener Fahrzeuge, wie dem \Gls{smartcharging}, werden beispielsweise die Aspekte der geplanten Nutzung vorhandener Ladeinfrastruktur nur teilweise betrachtet. 
-Die daraus resultierende Notwendigkeit eines systemgest\"utzten Ansatzes zur Administration und Verteilung von Ladem\"oglichkeiten ist somit ein zentraler Aspekt f\"ur die weitere Etablierung von elektrisch-betriebenen Fahrzeugen innerhalb der Gesellschaft.
+Aufgrund der sich stetig weiterentwickelnden Technologien im Kontext von Elektromobilit\"at und der damit verbundenen Auslastung von Lade-, wie auch Verkehrsinfrastruktur, sind Engp\"asse in der Verwendung von Ladestationen eine zu erwartende Konsequenz. 
+Trotz der Nutzung intelligenter Mechanismen zur Lastverteilung und computer-gest\"utzter Verfahren f\"ur das Laden elektrisch-betriebener Fahrzeuge, beispielsweise \Gls{smartcharging}, finden Szenarien wie das gezielte Verwalten der Nutzung vorhandener Ladeinfrastruktur in Form von Reservierungen nur wenig Verwendung.
+Die daraus resultierende Notwendigkeit eines systemgest\"utzten Ansatzes zur Administration und Verteilung von Ladem\"oglichkeiten ist somit ein zentraler Aspekt f\"ur die weitere Etablierung von \acrfull{ev} innerhalb der Gesellschaft und deren Akzeptanz als sicheres und verl\"assliches Fortbewegungsmittel.\\
 % Target
-Hieraus resultierte die zentrale Fragestellung nach den notwendigen Funktionen und Anforderungen an ein solches System, die in der hier vorliegenden Arbeit aus unterschiedlichen Perspektiven beleuchtet wurde. 
-Diese Fragestellung wurde als Forschungsfrage einer Master-Thesis, die in Kooperation mit der SAP SE in der Abteilung S4 IC\&Q2C PM DHPR GER absolviert wurde, er\"ortert.
+Welche funktionalen- und nicht-funktionalen Anforderungen sollte solch ein System erf\"ullen? Diese Frage wird anhand konkreter Use Cases, eingebettet in ein realitätsnahes Szenario, in der hier vorliegenden Arbeit aus unterschiedlichen Perspektiven beleuchtet. 
+Die Bearbeitung dieser Problemstellung wurde in Form einer Master-Thesis in Kooperation mit der SAP SE durchgef\"uhrt.\\
 % Approach
-Beginnend mit einer theoretischen Betrachtung der bereits vorhandenen Funktionen, die basierend auf Standards durch die Hersteller elektrischer Lades\"aulen bereits angeboten werden, folgte die Sammlung und Analyse von Anforderungen, die nicht durch etwaige Standards w\"ahrend der Bearbeitungszeit der hier vorliegenden Ausarbeitung abgedeckt wurden.
+Beginnend mit einer theoretischen Betrachtung der bereits vorhandenen Funktionen, die basierend auf offenen Industriestandards, wie dem \acrfull{ocpp} oder dem \acrfull{ocpi}, durch die Hersteller elektrischer Lades\"aulen bereits angeboten werden, folgte die Sammlung und Analyse von Anforderungen, die w\"ahrend der Bearbeitungszeit der hier vorliegenden Arbeit noch nicht als Teil eines der bereits aufgeführten Standards abgedeckt wurden.
+Anschließend erfolgte unter Verwendung einer Teilmenge der bereits identifizierten Funktionsbausteine die Umsetzung notwendiger Basisfunktionalität in Form eines \acrshort{poc}.\\
 % Results
-Somit konnte eine Grundmenge an Operationen und Vorg\"angen isoliert werden, die durch das zu konzeptionierende System in Form von  Basisfunktionalit\"at umzusetzen sind, um dem Nutzer eine m\"oglichst eing\"angige Verwendung zu gew\"ahrleisten.
-Anschließend erfolgte die Umsetzung eines selktierten Feature Sets, die auf Basis der Open E-Mobility L\"osung, entwickelt von der SAP SE, beispielhaft mittels eines "Proof-of-Concept" umgesetzt wurde. 
-Neben der noch fehlenden Implementierung, der im OCPP 1.6 umgesetzten ReserveNow und der Cancel Reservation Operation, die bisher noch nicht implementiert wurden, erfolgte die Implementierung der Reservierungs-Erweiterung \"uber die Anwendungsbestandteile des webbasierten \href{https://github.com/JulianHBuecher/ev-dashboard}{Dashboards}, der \href{https://github.com/JulianHBuecher/ev-mobile}{Mobile Applikaktion}, sowie des \href{https://github.com/JulianHBuecher/ev-server}{Backend-Servers}.
-Die entstandene Anwendung soll in Anlehnung an bestehende Reservierungssysteme demonstrieren, wie Nutzer \"uber die unterschiedlichen Schnittstellen, die das System zur Verwaltung der Infrastruktur anbietet, mit geringem Aufwand die f\"ur sie passenden Optionen setzen und somit eine Ladestation f\"ur einen gewissen Zeitraum reservieren k\"onnen.
-Eine Evaluation der implementierten Funktionen wurde anhand des \href{https://github.com/SAP/e-mobility-charging-stations-simulator}{e-mobility charging stations simulator} durchgef\"uhrt, der entsprechend der bereits angesprochenen fehlenden Funktionen aus dem OCPP 1.6 im Rahmen dieser Arbeit angepasst wurde.
+Resultierend konnte nach Durchlaufen der theoretischen und praktischen Phase dieser Arbeit eine Grundmenge an Operationen und Vorg\"angen auf Basis der Open Source Software \textbf{Open E-Mobility}, entwickelt von der SAP SE, beispielhaft als Bestandteil des konstruierten Szenarios umgesetzt und erfolgreich simuliert werden. 
+Die Implementierung des Moduls für die Reservierung von Ladeinfrastruktur konnte als unabhängige Funktionalität innerhalb der unterschiedlichen Anwendungsbestandteile wie der webbasierten \href{https://github.com/JulianHBuecher/ev-dashboard}{Oberfläche}, der \href{https://github.com/JulianHBuecher/ev-mobile}{Mobile Applikaktion}, sowie des \href{https://github.com/JulianHBuecher/ev-server}{Backend-Servers} integriert werden.
+In Anlehnung an bestehende Reservierungssysteme demonstriert die Anwendung, wie Nutzer \"uber das System zugewiesene Ladeinfrastruktur verwalten und f\"ur einen definierten Zeitraum reservieren k\"onnen.\\
 % Further Research Areas
-Eine Integration der Funktionalit\"aten des \href{https://github.com/sap-labs-france/emobility-smart-charging}{Smart Charging Services}, der als Teil der oben genannten Open Source L\"osung ist, waren dabei nicht Teil der Betrachtung. Es werden jedoch Ans\"atze und M\"oglichkeiten beschrieben, die innerhalb weiterer Arbeiten verwendet werden k\"onnen, um Reservierungen und \Gls{smartcharging} zu verbinden.
+Entsprechend der zugrundegelegten Implementierung besteht die M\"oglichkeit der Nutzung von Reservierungen innerhalb anderer Szenarien, wie beispielsweise im Kontext von \Gls{smartcharging}. Hier sind in Kombination mit den Zeitr\"aumen für die einzelnen Reservierungen Ans\"atze bez\"uglich bidirektionaler Ladevorg\"ange, beziehungsweise dem \acrfull{v2g}, zur Reduktion der Auslastung des Stromnetzes durchaus denkbar.

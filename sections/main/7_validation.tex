@@ -2,7 +2,7 @@
 %% sections/main/7_validation.tex
 %%
 %% Karlsruhe University of Applied Sciences
-%% Faculty of  Computer Science and Business Information Systems
+%% Faculty of Computer Science and Business Information Systems
 %%
 %% --------------------------------------------------------
 %% | Derived from sdqthesis by Erik Burger burger@kit.edu |
@@ -11,17 +11,66 @@
 \chapter{Analysis and Validation}
 \label{ch:Analysis and Validation}
 
+After the design and the implementation of the proposed application model and its functionalities supposed to be necessary in the context of a reservation system for charging infrastructure management. This chapter concludes the assumptions made during the process of designing and implementing the aforementioned aspects.
+This involves the assessment of the stated goals regarding the final system design and the degree of fulfillment.
+Furthermore, open issues are discussed, which could not be addressed in the context of this work but considered as necessary for compulsory for a sufficient experience using this particular kind of system as well as its limitations.
+
 \section{Achievement of Objectives}
 \label{ch:Analysis and Validation:sec:Achievement of Objectives}
 
-\dots
+For assessing the produced output, this section recaps the relevant objectives stated at the start of this particular work and set them into the context of the achieved targets.
+Beginning with a recap of the formerly state objectives introduced in section \ref{ch:Requirements Engineering:sec:Goals} as part of the design chapter.
+%% --------------------------------------------------------
+%% Goal 1 - Management Capabilities
+%% --------------------------------------------------------
+Introduced as first goal, the capability of management concerning the reservations created and administered within the system has top priority. According the designed processes, the ability to create, edit, cancel and to delete a reservation entity is identified as target.
+Furthermore, the configuration of the system to provide the extended reservation capability in contrast to the standard operations defined in \acrshort{ocpp} are considered as relevant.
+%% --------------------------------------------------------
+%% Goal 2 - Self-Healing and Autonomous Processes
+%% --------------------------------------------------------
+Self-healing and autonomy regarding the management of the contained entities and the underlying infrastructure requiring as less interaction with a physical user, the second goal sets the objective to provide capabilities which allow the system to fully manage the life-cycle of its concerning entities on its own.
+
+%% --------------------------------------------------------
+%% Goal 3 - Support of relevant standards
+%% --------------------------------------------------------
+Regarding the previously mentioned \acrshort{ocpp} standard primarily used throughout this work, 
+%% --------------------------------------------------------
+%% Goal 4 - Modular Design
+%% --------------------------------------------------------
+
+Considering the actual output and the deficiencies, the following ratings could be assigned to the goals previously recapped.
+%% --------------------------------------------------------
+%% Goal 1 - Management Capabilities
+%% --------------------------------------------------------
+
+%% --------------------------------------------------------
+%% Goal 2 - Self-Healing and Autonomous Processes
+%% --------------------------------------------------------
+
+%% --------------------------------------------------------
+%% Goal 3 - Support of relevant standards
+%% --------------------------------------------------------
+
+%% --------------------------------------------------------
+%% Goal 4 - Modular Design
+%% --------------------------------------------------------
+
 
 \section{Open Issues}
 \label{ch:Analysis and Validation:sec:Open Issues}
 
-\dots
+Afterwards, considered use cases for implementation are listed, which could not be achieved during the processing time of this work, but as part of future implementations.
+
+% Smart Charging Integration
+% Re-scheduling of existing reservations and the according confirmation message for the user
+% Fees and Payment
+% Parent RFID Tag Integration
+% Enable Reservations on CS via the UI not using the configuration metadata
+% Reservations on logical connector 0
 
 \section{Limitations}
 \label{ch:Analysis and Validation:sec:Limitations}
 
 According to the system as non-physical entity, it could not cover all aspects of managing the connected infrastructure. Beside the system itself, other controlling entities are necessary which could interact directly with the \acrshortpl{evu} and could take immediate action in certain cases.
+
+% Guaranteeing the reservation considering no way to block the parking lot

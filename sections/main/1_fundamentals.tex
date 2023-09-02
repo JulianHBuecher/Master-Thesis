@@ -33,10 +33,10 @@ This enables the driver to bridge shorter distances by only using the power of t
 Therefore, they use the brake resistance to alter the resulting power into electricity, which goes directly into the battery.
 \acrshortpl{hev} are very similar to \acrshortpl{phev}, because they could use both power sources. But in contrast to a \acrshort{phev}, a \acrshort{hev} cannot be plugged in for charging \cite{kathiresh_e-mobility_2022}.
 
-\begin{figure}[!ht]
+\begin{figure}[h]
     \centering
     \includegraphics[scale=0.4]{resources/images/main/1_fundamentals/ElectricVehicleTypes.png}
-    \caption{Classification approach for different \acrshort{ev} types based on \cite{acharige_review_2023}}
+    \caption{Classification approach for different \acrshort{ev} types based on \cite{acharige_review_2023}.}
     \label{fig:ev-classification}
 \end{figure}
 
@@ -50,9 +50,9 @@ Based on the vehicle and used battery, the power demand is varying. Therefore, t
 \begingroup
 \setlength{\tabcolsep}{10pt} % Default value: 6pt
 \renewcommand{\arraystretch}{1.5} % Default value: 1
-\begin{table}[!ht]
+\begin{table}[h]
 \centering
-\caption{Differentiation of accessibility in case of charging opportunities based on \cite{kathiresh_e-mobility_2022},\cite[18-19]{linnemann_elektromobilitat_2020}}
+\caption{Differentiation of accessibility in case of charging opportunities based on \cite{kathiresh_e-mobility_2022},\cite[18-19]{linnemann_elektromobilitat_2020}.}
     \begin{tabular}{c|c|m{5.5cm}|c}
     Accessibility & Restrictions & Location & Charging Level \\ \hline
     Public & No & fleets, highway, distribution centers & 3 \\
@@ -65,10 +65,10 @@ Based on the vehicle and used battery, the power demand is varying. Therefore, t
 
 \noindent Alongside the separation according to the accessibility level, a differentiation based on classes of \acrfullpl{cs} is possible. For illustration of the dependencies and affiliations between the different classes, the following illustration \ref{fig:charging-station-classification} shows a detailed overview. 
 
-\begin{figure}[!ht]
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.4]{resources/images/main/1_fundamentals/ChargingStationClassification.png}
-\caption{Classification for different types of charging stations based on \cite{afshar_literature_2020}}
+\caption{Classification for different types of charging stations based on \cite{afshar_literature_2020}.}
 \label{fig:charging-station-classification}
 \end{figure}
 
@@ -85,9 +85,9 @@ On top of the described components, various safety features are integrated to pr
 \begingroup
 \setlength{\tabcolsep}{10pt} % Default value: 6pt
 \renewcommand{\arraystretch}{1.5} % Default value: 1
-\begin{table}[!ht]
+\begin{table}[h]
     \centering
-    \caption{Listing of different \acrshort{ev} charging levels based on \cite{acharige_review_2023}}
+    \caption{Listing of different \acrshort{ev} charging levels based on \cite{acharige_review_2023}.}
     \begin{tabular}{c|c|m{6.5cm}}
         Charging Level & Charging Power & Use Case \\ \hline
          1 & 1.44 \acrshort{kW} - 1.9 \acrshort{kW} & Typically the slowest charging option and suitable for overnight charging at home \\
@@ -113,7 +113,7 @@ Generally, further advancements in this technology like the increase in range of
 \label{ch:Fundamentals:sec:Electric Mobility:ssec:Relevant Standards}
 
 To provide a general interface for information exchange between \acrshortpl{cs}, \acrshortpl{ev} and their users, several organizations, initiatives and the industry established several standards.
-Beside the \acrfull{ocpp} \cite{noauthor_ocpp_nodate-1}, a communication protocol, developed by the \acrfull{oca} \cite{noauthor_open_nodate}, other protocols and specifications exist, covering different aspects and scenarios relevant during or before the charging process.
+Beside the \acrfull{ocpp} \cite{noauthor_ocpp_nodate}, a communication protocol, developed by the \acrfull{oca} \cite{noauthor_open_nodate}, other protocols and specifications exist, covering different aspects and scenarios relevant during or before the charging process.
 In addition to the previous mentioned \acrshort{ocpp}, further standards relevant in this work will be listed and explained afterwards.
 
 \subsubsection{Open Charge Point Protocol}
@@ -122,7 +122,7 @@ In addition to the previous mentioned \acrshort{ocpp}, further standards relevan
 The \acrfull{ocpp} describes an open industry-standard communication protocol used especially in charging infrastructure for \acrshortpl{ev}. Proposed by the ElaadNL foundation as an open protocol supporting the communication between \acrshort{cs} and the corresponding backend services, resulting in a transfer of ownership to \acrshort{oca} in 2014 \cite{garofalaki_electric_2022}.
 In general, the \acrshort{ocpp} is designed to provide interoperability and seamless integration between different charging station vendors and network operators, ensuring that \acrshort{ev} drivers can charge their vehicles at any compatible \acrshort{cs}. 
 Therefore, it is maintained by the \acrfull{oca}, a consortium of \acrshort{ev} charging infrastructure stakeholders, as open protocol and not proprietary to any specific manufacturer or organization. 
-This should ensure that the \acrshort{ocpp} remains a collaborative and evolving standard \cite{noauthor_ocpp_nodate-1}. \\
+This should ensure that the \acrshort{ocpp} remains a collaborative and evolving standard \cite{noauthor_ocpp_nodate}. \\
 From an architectural point of view, the protocol could be described in form of a client/server architecture. The \acrshort{evse} in this model acts as the client, while the \acrshort{csms} serves as the server. 
 The server responds to the client's requests and manages the charging processes accordingly. This request-response model, where the client sends requests to the server, and the server responds with the appropriate information or action enables real-time communication between the \acrfull{cs} and the connected \acrfull{cms}.
 As an interface for communication, two different types of protocols are used. On the one side, the WebSocket protocol, described in \ref{ch:Fundamentals:sec:Data Exchange:ssec:WebSocket}, for bidirectional communication, providing a persistent connection between the \acrshort{evse} and the \acrshort{cms} and allowing a faster and more efficient data exchange. On the other side, \acrfull{soap}, see \ref{ch:Fundamentals:sec:Data Exchange:ssec:SOAP}, could be used for one-way communication.
@@ -131,7 +131,7 @@ The versions are illustrated as floating point numbers, which are increasing bas
 The most recent protocol versions, often used in existing applications, are \acrshort{ocpp} 1.6 and \acrshort{ocpp} 2.0. \\ \\
 \noindent For the communication between \acrshort{cs}, \acrshort{csms} and the \acrshort{evu} the \acrshort{ocpp} protocol relies on so called operations. Each of these operations describes a set of instructions, which are necessary to fulfill, to successfully complete the underlying process.
 According to the required operations used in the context of this work, a subset of operations are selected, which are elucidated in the following list. 
-The wording and the explanations are based on the standard documentation for the \acrshort{ocpp} version 1.6 \cite{noauthor_ocpp_nodate-1}:
+The wording and the explanations are based on the standard documentation for the \acrshort{ocpp} version 1.6 \cite{noauthor_ocpp_nodate}:
 
 \begin{description}
     \item[Authorize] Before starting a charging session, the \acrshort{evu} \acrfull{rfid} card or other identification is sent to the central system for authorization. The \acrshort{cms} checks the driver's credentials and responds with an authorization status.

@@ -262,6 +262,16 @@
 % Figures and Subfigures
 \RequirePackage{caption}
 \RequirePackage{subcaption}
+\RequirePackage{wrapfig}
 
 \RequirePackage{cprotect}
 \RequirePackage{multicol}
+
+% Colors
+\RequirePackage{color}
+\RequirePackage{xcolor}
+
+% Venn Diagram
+\RequirePackage{tikz}
+% Icons
+\RequirePackage{fontawesome5}

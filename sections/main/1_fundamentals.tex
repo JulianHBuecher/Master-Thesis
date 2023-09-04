@@ -13,7 +13,7 @@
 \label{ch:Fundamentals}
 
 The subsequent chapter provides a fundamental understanding of the concepts and general conditions, which apply in the sector of \gls{emobility}, and therefore are omnipresent in most of the described scenarios later on.
-First of all, section \ref{ch:Fundamentals:sec:Electric Mobility} gives a general review of \gls{emobility}, like the involved actors and its systems. Furthermore, existing standards for picturing the communication between these actors and systems and a brief introduction of \gls{smartcharging} including its variations follow.
+First of all, section \ref{ch:Fundamentals:sec:Electric Mobility} gives a general review of \gls{emobility}, like the involved actors and its systems. Furthermore, existing standards for picturing the communication between these actors and systems and a brief introduction of smart charging including its variations follow.
 The next section \ref{ch:Fundamentals:sec:Reservation Systems} illustrates the basic functionality of a reservation system itself, its use cases and a differentiation between common types of reservation systems.
 Finally, section \ref{ch:Fundamentals:sec:Data Exchange} lists important communication protocols and data exchange formats used in the according standards described in \ref{ch:Fundamentals:sec:Electric Mobility:ssec:Relevant Standards}.
 
@@ -153,7 +153,7 @@ This makes the \acrshort{ocpi} standard more suitable in case of an openness and
 \noindent In case of available features, \acrshort{ocpi} provides defined endpoints, used for communication between \acrshort{cs}, \acrshortpl{cms}, \acrshortpl{emsp} and \acrshortpl{cpo}. These endpoints include for example functionalities like location discovery, charge point data, authorization, charging sessions, and error handling. 
 For integrating \acrshort{ocpi} into existing software systems it is heavily based on the paradigm of \acrfull{rest}. This allows communication via standard HTTP methods utilizing \acrfull{json} as data format for transmitting information. 
 
-The listing below provides a short overview of available features and functionalities provided by \acrshort{ocpi} \cite{noauthor_ocpiocpi_2023}:
+The listing below provides a short overview of available features and functionalities provided by \acrshort{ocpi} \cite{noauthor_open_2021}:
 
 \begin{description}
     \item[Location Discovery] Charging networks can exchange information about available charging locations, providing details such as location coordinates, \acrshort{cs} types, and status.
@@ -176,11 +176,11 @@ In respect of these gaps, still existing in the \acrshort{iso} 15118, it is far 
 \subsection{Smart Charging}
 \label{ch:Fundamentals:sec:Electric Mobility:ssec:Smart Charging}
 
-The technology of \Gls{smartcharging} or intelligent charging, is a systematic approach, which optimizes the charging process of  \acrshortpl{ev} to be more efficient, cost-effective, and environmentally friendly utilizing information and communication technologies, considering factors such as electricity demand, grid capacity, renewable energy availability, and preferences of single users \cite{deb_smart_2022}.
+The technology of smart charging or intelligent charging, is a systematic approach, which optimizes the charging process of  \acrshortpl{ev} to be more efficient, cost-effective, and environmentally friendly utilizing information and communication technologies, considering factors such as electricity demand, grid capacity, renewable energy availability, and preferences of single users \cite{deb_smart_2022}.
 One of the primary goals of this methodology is to balance the demand on the underlying grid, affected by charging large numbers of \acrshortpl{ev} simultaneously \cite{daina_electric_2017}. Especially during peak hours increased electricity costs or potential blackouts could result. 
-Therefore, \gls{smartcharging} takes the current load of the grid into account and adjust the possible charging rates based on the given constraints to prevent overloading the grid and optimizing the use of available energy \cite{garcia-villalobos_plug-electric_2014}. 
-Beside the unidirectional charging method originally called \acrfull{v1g}, the approach of \acrfull{v2g} enables \gls{smartcharging} systems to charge bidirectionally between the \acrshortpl{ev} battery and the grid \cite[199]{kathiresh_e-mobility_2022}. During times of high demand, \acrshortpl{ev} with sufficient battery capacity can supply energy to the grid. This concept turns \acrshortpl{ev} into mobile energy storage units, enhancing grid stability and resiliency.
-To offer all these functions, \Gls{smartcharging} relies on data connectivity and communication between the single \acrshortpl{cs}, the \acrshortpl{ev} and the underlying grid, which makes it vulnerable for malign third-party entities as well. On the other side, these aspects are capable of contributing to an overall improved grid management. Grid operators could gain insights into electricity demand patterns and plan grid upgrades accordingly.
+Therefore, smart charging takes the current load of the grid into account and adjust the possible charging rates based on the given constraints to prevent overloading the grid and optimizing the use of available energy \cite{garcia-villalobos_plug-electric_2014}. 
+Beside the unidirectional charging method originally called \acrfull{v1g}, the approach of \acrfull{v2g} enables smart charging systems to charge bidirectionally between the \acrshortpl{ev} battery and the grid \cite[199]{kathiresh_e-mobility_2022}. During times of high demand, \acrshortpl{ev} with sufficient battery capacity can supply energy to the grid. This concept turns \acrshortpl{ev} into mobile energy storage units, enhancing grid stability and resiliency.
+To offer all these functions, smart charging relies on data connectivity and communication between the single \acrshortpl{cs}, the \acrshortpl{ev} and the underlying grid, which makes it vulnerable for malign third-party entities as well. On the other side, these aspects are capable of contributing to an overall improved grid management. Grid operators could gain insights into electricity demand patterns and plan grid upgrades accordingly.
 
 \subsection{Smart Grid}
 \label{ch:Fundamentals:sec:Electric Mobility:ssec:Smart Grid}

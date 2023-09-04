@@ -11,7 +11,7 @@
 \chapter{Implementation}
 \label{ch:Implementation}
 
-To build on the design of the processes in the previous chapter, the actual implementation of the corresponding functionality within the applications of the 'Open e-Mobility' solution \cite{noauthor_open_2023} is presented.
+To build on the design of the processes in the previous chapter, the actual implementation of the corresponding functionality within the applications of the underlying solution is presented.
 First, some preliminary work is considered, using the standard functionality for reservations according to the \acrshort{ocpp} standard in version 1.6.
 This foundation allows the extension to encapsulate these functionalities in order to ensure compliance with the standard.
 After completing the initial development stages, the proposed design for the entities and processes is translated into code. This is followed by an analysis to identify the packages and components that the extension must use to ensure its operability.
@@ -28,7 +28,7 @@ However, for reasons of completeness, the frameworks and programming languages u
 \label{ch:Implementation:sec:System Prerequisites}
 
 In terms of standards compatibility, there were issues with the backend, web frontend, and mobile application, as they did not support the 'Reserve Now' operation of \acrshort{ocpp} version 1.6, nor did they support the 'Cancel Reservation' operation either.
-Additionally, the 'e-mobility-charging-station-simulator' \cite{noauthor_julianhbuechere-mobility-charging-stations-simulator_nodate} used for simulating the test environment also lacked this functionality.
+Additionally, the charging station simulator used for local simulations of the test environment also lacked this functionality.
 To establish a common baseline, as mentioned in \ref{ch:Approach}, the first step of the implementation phase was to align the current implementation status with the predefined operations in the relevant standard.
 As a result, the necessary entities and feature toggles were implemented and verified against the processes outlined in the \acrfull{ocpp} standard documentation.
 Not included in this study is a comprehensive explanation of the development steps required to adjust the applications. Therefore, it is assumed to be a necessary prerequisite for the topic covered in this study.
@@ -41,10 +41,10 @@ Beginning with the implementation of the reservation entity based on the given d
 To ensure type safety and to follow the existing design of the application, using the type-safe system of \textit{TypeScript}, the entities are implemented as interfaces.
 By employing this technique, this implementation ensures the specific types for their corresponding properties and considers software design principles such as reusability suggested by Gamma et al. in \cite[p.~47ff]{gamma_design_2015}. 
 In addition to providing extensibility through the potential of deriving from these instances, this interface-driven method enables developers to adapt the entities and combine them into more complex types, covering advanced scenarios. \\
-\noindent To implement the dedicated reservation statuses and types, and to associate them with the appropriate stages in their life-cycle, the concept of \textit{Enumerations} is used. This ensures secure type transitions, as suggested in the design chapter, and is widely available in most programming languages.
-An example of such predefined life-cycle transitions is provided by the implementation in listing \ref{listing:state-transitions}, which covers some instances of transitions below. 
+\noindent To implement the dedicated reservation statuses and types, and to associate them with the appropriate stages in their life cycle, the concept of \textit{Enumerations} is used. This ensures secure type transitions, as suggested in the design chapter, and is widely available in most programming languages.
+An example of such predefined life cycle transitions is provided by the implementation in listing \ref{listing:state-transitions}, which covers some instances of transitions below. 
 
-\lstinputlisting[caption={State transitions enforcing the reservation life-cycle using TypeScript \cite{noauthor_javascript_nodate}}, label=listing:state-transitions, language=TypeScript]{resources/code/states/state_transitions.ts}
+\lstinputlisting[caption={State transitions enforcing the reservation life cycle using TypeScript \cite{noauthor_javascript_nodate}}, label=listing:state-transitions, language=TypeScript]{resources/code/states/state_transitions.ts}
 
 \noindent The resulting class diagram reveals the final implementation of the classes within the codebase, which, in addition to the \texttt{Reservation} interface, includes the connections to the other parts of the resulting entity.
 Alongside the previously mentioned \texttt{ReservationStatus} and the \texttt{ReservationType}, the diagram in figure \ref{fig:reservation-class-diagram} shows the other relevant interfaces. 
@@ -83,7 +83,7 @@ The \texttt{\acrshort{odata} Server}, with the inclusion of the \textbf{\acrshor
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.4]{resources/images/main/6_implementation/DeploymentView.png}
-    \caption{Overview of the various functional components within 'Open e-Mobility' \cite{noauthor_open_2023}.}
+    \caption{Overview of the various functional components within the existing project.}
     \label{fig:module-view}
 \end{figure}
 
@@ -105,7 +105,7 @@ However, all of these artifacts and their associated changes are addressed in th
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.4]{resources/images/main/6_implementation/PackageDiagram.png}
-    \caption{Overview of the extended packages within the targeted section of 'Open e-Mobility' \cite{noauthor_open_2023}.}
+    \caption{Overview of the extended packages within the targeted section of the backend project.}
     \label{fig:package-view}
 \end{figure}
 
@@ -123,7 +123,7 @@ Considering only the information required from other application domains, the po
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.4]{resources/images/main/6_implementation/ReservationComponents.png}
-    \caption{Overview of the individual components of the 'Open e-Mobility' \cite{noauthor_open_2023} web service.}
+    \caption{Overview of the individual components inside the extended web service.}
     \label{fig:component-view}
 \end{figure}
 
@@ -272,7 +272,7 @@ Derived from the \textbf{Update Reservation} procedure described in \ref{ch:Impl
 Like its predecessors, the initiation of the downstream logic in the \texttt{ReservationService} undergoes the initial validation checks after request delegation by the \texttt{ReservationRouter}.
 This ensures, that the incoming inquiry aligns according to the defined criteria within the solution and mitigates unintentional behavior resulting from malformed user input.
 By not ending the process prematurely due to erroneous data, the actual cancellation functionality within the service method \texttt{cancelReservation} is initiated.
-Starting with the retrieval of the record from the database using the provided \acrshort{id}, the validation of the life-cycle transition of the current status, as discussed in \ref{ch:Design:sec:Reservation:ssec:Reservation Status}, follows.
+Starting with the retrieval of the record from the database using the provided \acrshort{id}, the validation of the life cycle transition of the current status, as discussed in \ref{ch:Design:sec:Reservation:ssec:Reservation Status}, follows.
 This ensures that only those objects that are suitable for cancellation can be cancelled by the user and the system, otherwise the process is terminated.
 If the scheduled arrival time is already reached, the corresponding \acrshort{cs} is contacted, resulting in an immediate cancellation at that station.
 After updating the status to \texttt{Cancelled}, in the case of a cancelled reservation, and successfully validating it once more, the entity is saved to the database again. The act of withdrawal a booking concludes with an outgoing cancellation notification from the \texttt{NotificationHandler} to the appropriate system user.
@@ -406,7 +406,7 @@ The example configuration within the administration area of the web frontend for
     \label{fig:enable-reservation-impl}
 \end{figure}
 
-\noindent If the \texttt{Reservation} component is not active, the ’Open e-Mobility' \cite{noauthor_open_2023} solution provides solely the basic \acrshort{ocpp} reservation feature set using the standard 'Reserve Now' and 'Cancel Reservation' operations \cite{noauthor_ocpp_nodate}. This does not include the extension of recurring and reservations in advance, as discussed in section \ref{ch:Implementation:sec:System Prerequisites}.
+\noindent If the \texttt{Reservation} component is not active, the adjusted solution provides solely the basic \acrshort{ocpp} reservation feature set using the standard 'Reserve Now' and 'Cancel Reservation' operations \cite{noauthor_ocpp_nodate}. This does not include the extension of recurring and reservations in advance, as discussed in section \ref{ch:Implementation:sec:System Prerequisites}.
 
 \subsection{Scheduling Capabilities}
 \label{ch:Implementation:sec:Reservation System:ssec:Scheduling Capabilities}
@@ -466,7 +466,7 @@ Considering this case, it is utilized to invalidate expired bookings, change the
 \subsubsection{Free Reserved Connectors}
 \label{ch:Implementation:sec:Reservation System:ssec:Scheduling Capabilities:sssec:Free Reserved Connectors}
 
-While the \textbf{Expire Reservation} function looks after the expiry as a natural element of the booking life-cycle, the \textbf{Free Reserved Connectors} task has a more regulative purpose.
+While the \textbf{Expire Reservation} function looks after the expiry as a natural element of the booking life cycle, the \textbf{Free Reserved Connectors} task has a more regulative purpose.
 Taking the position of an imaginary steward, it monitors all ongoing engagements on the \acrshortpl{cs} and identifies the ones where the user has not arrived after a certain period of time after the supposed arrival time.
 Following the \acrshort{ocpp} standard, the reservation lasts until the expiry time is reached. As the expiration time is undefined, it could be several hours later and block the station during this time. 
 To mitigate this issue in the handling of reservations, the proposal provides a background task, implemented in \texttt{CancelUnmetReservationsTask} and described in the figure \ref{fig:free-connector-seqflow}.

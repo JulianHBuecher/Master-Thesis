@@ -61,10 +61,10 @@ Following this, a list summarising the scheduled iterations and associated timef
 \section{Actual Course Of Action}
 \label{ch:Approach:sec:Actual Course Of Action}
 
-As there is a limited amount of available research and existing projects on reservation features for the management of \acrshortpl{cs} and charging infrastructure, the analysis and setup of the 'Open e-Mobility' \cite{noauthor_open_2023} solution and its particular components commenced a day earlier than planned.
+As there is a limited amount of available research and existing projects on reservation features for the management of \acrshortpl{cs} and charging infrastructure, the analysis and setup of the 'Open e-Mobility' \cite{noauthor_github_nodate,noauthor_github_nodate-1,noauthor_github_nodate-2,noauthor_github_nodate-3} solution and its particular components commenced a day earlier than planned.
 Consequently, some adjustments have been made to the above timescales for the general processing of the relevant parts.
 Beginning with the identification of missing functionality required for the subsequent implementation of the customised processes.
-The first step was to investigate the 'e-mobility charging stations simulator' \cite{noauthor_julianhbuechere-mobility-charging-stations-simulator_nodate} for local simulation of a customizable charging infrastructure.
+The first step was to investigate the 'e-mobility charging stations simulator' \cite{noauthor_github_nodate-3} for local simulation of a customizable charging infrastructure.
 Because of the identified feature gap regarding missing reservation capabilities conforming with \acrshort{ocpp} 1.6 \cite{noauthor_ocpp_nodate}, the implementation of this crucial feature for testing and evaluation purposes was included as preliminary work for the 'Open e-Mobility' team.
 After the team members had successfully reviewed the implemented logic and minor reworks of the code base, the changes were merged into the standard product.
 Now, the extended \acrshort{cs} simulator was then used as a reservable charging infrastructure for the subsequent iterations.
@@ -87,7 +87,7 @@ The resulting schedule, including the iterations, their specific duration, and t
         Iteration & From & To & Objective \\
         \hline
         1 & 17.04.2023 & 28.04.2023 & Feature gap detection within the existing application \\
-        2 & 01.05.2023 & 12.05.2023 & Adjustments to the 'e-mobility charging stations simulator' \cite{noauthor_julianhbuechere-mobility-charging-stations-simulator_nodate} to support reservations complying to \acrshort{ocpp} version 1.6 \\
+        2 & 01.05.2023 & 12.05.2023 & Adjustments to the 'e-mobility charging stations simulator' \cite{noauthor_github_nodate-3} to support reservations complying to \acrshort{ocpp} version 1.6 \\
         3 & 15.05.2023 & 19.05.2023 & Implementation of \acrshort{ocpp} 1.6 reservation functionality in the backend application \\
         4 & 22.05.2023 & 02.06.2023 & Implementation of \acrshort{ocpp} 1.6 reservation functionality in the web frontend application \\
         5 & 05.06.2023 & 30.06.2023 & Implementation of customized reservation process in the frontend and backend applications \\
@@ -108,7 +108,7 @@ Therefore, this section mentions these tasks in addition to a brief explanation 
     Hence, the MongoDB \cite{noauthor_mongodb_nodate} database's custom setup, including test data and users, already existing as part of the local setup, was employed as a blueprint for creating the necessary manifests required for the \acrshort{k8s} deployment.
     \item[Task 2 - MongoDB Helm Chart] To further reduce the effort required to deploy the database application to \acrshort{k8s} instances, the Helm \cite{noauthor_helm_nodate} toolbox and its charts for encapsulating \acrshort{k8s} manifests are integrated.  
     From the manifest files created in \textbf{task 1}, the corresponding Helm charts for a deployment are created, providing parameterization of a namespace and all required \acrshort{k8s} resources, such as 'PersistentVolumes' \cite{noauthor_persistent_nodate}, 'ConfigMaps' \cite{noauthor_configmaps_nodate} or 'Namespaces' \cite{noauthor_namespaces_nodate}. 
-    \item[Task 3 - \acrshort{k8s} Deployment] For the integration of the remaining applications of the 'Open e-Mobility' \cite{noauthor_open_2023} solution, additional Helm charts could be organized for the backend and the frontend application. 
+    \item[Task 3 - \acrshort{k8s} Deployment] For the integration of the remaining applications of the solution, additional Helm charts could be organized for the backend and the frontend application. 
     Regarding the limited resources provided by the used orchestration service, the new charts required further modifications to integrate with the MongoDB chart and the deployment restrictions of the project. This involves a shift from the predefined microservice-based deployment strategy to a monolithic approach resulting in reduced resource allocation.
     \item[Task 4 - Ingress Deployment \& Public Availability] In order to access the applications within the \acrshort{k8s} cluster, it is necessary to use an 'Ingress' \cite{noauthor_ingress_nodate} acting as a reverse proxy. 
     Therefore, this ingress must be located within the 'Namespace' the application lives in.
@@ -122,6 +122,6 @@ In terms of application distribution, only one node is used with multiple pods w
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.4]{resources/images/main/3_approach/KubernetesDeployment.png}
-    \caption{\acrshort{k8s} deployment architecture for the 'Open e-Mobility' \cite{noauthor_open_2023} solution.}
+    \caption{Elaborated \acrshort{k8s} deployment architecture for the concerned solution.}
     \label{fig:k8s-setup}
 \end{figure}

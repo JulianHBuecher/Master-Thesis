@@ -12,20 +12,49 @@
 \chapter{Resume and Outlook}
 \label{ch:Resume and Outlook}
 
-Regarding the results achieved as part of the previous chapters, the following sections provide a resume summarizing the essential parts of this work and providing an outlook considering the limitations of the elaborated approach and prepare possible problem statements for future work in this field.
+Summarising the results achieved in the development of a comprehensive reservation system for the management of charging infrastructure, this final chapter provides, besides a resume concluding the tasks of this work and a consideration of the contribution to the results already elaborated in the literature, an outlook on the future possibilities for this category of systems, as well as a proposal for future work. \\
 %% --------------------------------------------------------
 %% Resume
 %% --------------------------------------------------------
-
+\noindent Especially the administration and maintenance of charging infrastructure faces several constraints that are not only determined by existing standards or technical limitations. A frequently underestimated fact is the process-related impediments to ensuring the intended behaviour from the system, the charging environment and the driver.
+Beyond the behaviour of the individual system components and the corresponding actors, the exchange of information between the components is another aspect that needs to be considered in the process of designing an extensible system that should allow both the interconnectivity of several stations from different manufacturers and the ease of access by users.
+Therefore, the proposed design and development of a comprehensive solution aims to address all these concerns by extending one of the available communication standards to provide a \acrshort{poc} that demonstrates at least a basic set of features across multiple applications.
+Concerning the fulfilment of the goals initially stated at the beginning of this work, this approach is at least capable of handling charging appointments according to the \acrshort{ocpp} standard in version 1.6 and is therefore applicable for the intention of being used within universal scenarios dealing with the problem of coordinated \acrshort{cs} allocation. 
+Beside the standard reservation method, which only permits immediate blocking of a connector, extending the functionality of \acrshort{ocpp} not only allows users to make arrangements in advance for future charging sessions but also recurring bookings not accommodated by other system approaches during the time of this research.
+Mitigating the inconvenience of making a booking for every single day, it is a more convenient method for drivers seeking to use a particular station over a longer period of time, spanning multiple days. Which also addresses the needs of the actors, certainly in the conceptualised scenario of this work, where the actors have dedicated parking spaces that they belong to.
+More generally, these features are also applicable to car parks owned by providers who, in the mind of the author, need to explicitly control the individual parking spaces equipped with \acrshortpl{cs}.
+Supported by the introduction of additional states describing the reservation life cycle, both the administrator and user gain more precise control over the created entity. At the same time, this provides a much more detailed way of monitoring and management.  \\
+%% --------------------------------------------------------
+%% Scientific Contribution
+%% --------------------------------------------------------
+\noindent Taking into account the aspects listed above, the previously reviewed proposal for a systematic approach regarding \acrshortpl{cs} allocation allows the following contributions in terms of supporting the existing references.
+By introducing requirements for specific background processes, such as managing non-arriving \acrshortpl{evu} and initiating mitigation processes prior to the start of a charging session at stations with pending reservations, the range of scenarios respected in other projects could be extended.
+Alongside highlighting problematic situations, this documentation provides suggestions for resolving these conflicts using the options typically available to that system.
+This ensures a higher degree of enforcing arriving reservations and a more automated approach to managing infrastructure availability, avoiding unnecessary blockages, due to the background processes mentioned above. 
+Combined with the additional life cycle states describing the validity of a booking and detailed consideration of relevant error cases, including both the exceptions from the processes and those from the charging infrastructure, a new terminology as well as attention to scenarios requiring more complex combinations were introduced.
+Furthermore, the elaborated entities describe a suitable way to encapsulate the request objects of the base standard, which also serves as a guideline for further extensions. \\
 %% --------------------------------------------------------
 %% Outlook
 %% --------------------------------------------------------
-The usage of \acrshortpl{ev} and the requirement for an expanding charging infrastructure leads to necessity for further development in this area. Beside the basic functionalities provided today by different standards, a need for further development especially in the management of charging infrastructure is inevitable. 
+\noindent Switching the perspective from solely focusing on managing stations or infrastructure at a specific location, to considering the possibility of connecting different infrastructures, creating a network of interconnected stations communicating via a common backbone, the problem most highlighted in the context of \acrshort{emobility}, also known as 'range anxiety' \cite{rauh_understanding_2015}, could also be addressed through the use of reservation systems.
+As suggested in the literature by \cite{zarkeshev_charging_2018}, enabling \acrshortpl{ev} to share data on their current battery status and charging needs directly with the station, together with the use of roaming capabilities that build a heterogeneous networked infrastructure with the ability to reserve the stations along the route, could alleviate such fears.
+Moreover, linking several \acrshortpl{cso}, \acrshortpl{cpo} and \acrshortpl{emsp} would lead to a higher acceptance of their services by the \acrshortpl{evu}, and thus to an increase in both usage and profits.
+This could facilitate the development of new areas, offering numerous business prospects, by supporting the installation of stations and expanding the existing infrastructure.
+Nevertheless, it is important to take into account the increased load on the grid that would be caused by this. However, by knowing the amount of time that the \acrshort{ev} will eventually park at the \acrshort{cs} location, combined with the current battery state, the amount of energy required to recharge to a full state of charge could be determined.
+The remaining unneeded power could therefore be used by smart charging scenarios such as \acrshort{v2g}, which aims to support overall grid stability using excessive power from \acrshortpl{ev}.
+Other applications could include \acrshort{v2b} to return energy to the building where the power unit is located, \acrshort{v2h} to replace the building by the driver's home, or \acrshort{v2x} to cover various targets.
+In order to further promote the adoption of \acrshortpl{ev}, enhance the corresponding infrastructure and provide support for all the scenarios mentioned, the need for future development work in this area is obvious. \\
 %% --------------------------------------------------------
 %% Future Work
 %% --------------------------------------------------------
-Integration of Smart Charging service of the 'Open e-Mobility' solution as well as the simulation of the offered reservation approach utilizing tools like \href{https://github.com/aicenter/agentpolis}{AgentPolis}.
-Furthermore, the notification regarding block vehicles on \acrshortpl{cs} parking lots could be integrated.
-Additionally, optimization problems could be formulated based on the users preferences according the time, duration and charging power they require.
-Reservations on mobile charging stations could be included as well.
-As well as mapping to other existing open source standards to allow different kind of charging infrastructure to be registered.
+\noindent Regarding the purpose of subsequent elaborations, below are some examples that the author of this work considers significant and possibly useful for future research. 
+First to be mentioned are the fundamental constraints imposed by the state of the grid, which require special attention. Without a functional grid to power the relevant stations and vehicles, further developments in energy storage and infrastructure observation are pointless.
+Therefore, the simulations already in existence, taking into account the different types of elaborated reservations to measure their impact on the journey duration and overall comfort, introduced by Basmadjian et al. in \cite{basmadjian_reference_2020,basmadjian_interoperable_2019}, could be used as groundwork to create scenarios specifically to simulate the effects of reservations to cushion peek loads using \acrshort{v2g}.
+Utilizing the existing software tooling like \href{https://github.com/aicenter/agentpolis}{AgentPolis} \cite{noauthor_agentpolis_2022}, already used in the above simulations to create the infrastructure and agent-based drivers, all that needs to be added is the power grid.
+Alongside further investigations into effective prevention of parking space blockades by users who have not reserved a space using sensor-based solutions, another completely unexplored area is the integration of mobile \acrshortpl{cs} as movable unit.
+Abstracting from the issues of continuous power demand from stationary units permanently connected to the grid, mobile stations in the form of vehicles could potentially address the problems of limited parking spaces equipped with \acrshortpl{cs}. The integration of reservations into such more mobile scenarios could also offer new opportunities, as explored by \cite{zhang_mobile_2020}.
+Putting all these considerations in a nutshell, the field of reservation systems for charging infrastructure management offers many opportunities and approaches for improvement, from the creation of a new standard that introduces a new communication protocol, to the use of machine learning algorithms for advanced optimisation techniques. \\
+%% --------------------------------------------------------
+%% Results
+%% --------------------------------------------------------
+The concrete results of this master's thesis and the necessary changes made to the applications in the course of this work, are available in the corresponding public forks of the original repositories within the 'reservation-process' branch. The relevant \acrshortpl{url}, as hyperlinks, are deposited in the following declarations for the \href{https://github.com/JulianHBuecher/ev-server/tree/reservation-process}{backend}, \href{https://github.com/JulianHBuecher/ev-mobile/tree/reservation-process}{mobile} and \href{https://github.com/JulianHBuecher/ev-dashboard/tree/reservation-process}{web} components of the \textbf{Open e-Mobility} project \cite{noauthor_github_nodate,noauthor_github_nodate-1,noauthor_github_nodate-2}. 

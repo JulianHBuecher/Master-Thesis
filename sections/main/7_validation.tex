@@ -98,7 +98,7 @@ It is important to note that this section does not offer in-depth implementation
 %% Parent RFID Tag Integration
 %% --------------------------------------------------------
 \noindent In the case of the \acrshort{ocpp} standard, the specification enables the use of a parent \acrshort{id} tag, which represents a subset of \acrshort{rfid} tags covered by the superior entity. Every tag belonging to this group is capable of initiating the charging session on a reserved connector.
-Covered by the underlying 'Open e-Mobility' backend \cite{noauthor_github_nodate-2}, only \texttt{SiteArea} entities offer the options the possibility to nest site areas within another and organize them into a ranking omitting the associated \acrshort{rfid} tags.
+Covered by the underlying \textbf{Open e-Mobility} backend \cite{noauthor_github_nodate-2}, only \texttt{SiteArea} entities offer the options the possibility to nest site areas within another and organize them into a ranking omitting the associated \acrshort{rfid} tags.
 Possibly, the tags within the parent areas may also have the ability to charge at the stations within the specific child areas. However, this behavior could not be confirmed in the current study and was not found to be part of the logic governing the initiation of the charging session.
 Resulting in a more detailed examination of the charging process, this capability was not taken into account during the design stage but was introduced as a property within the \texttt{Reservation} for later implementation.
 Therefore, this work assumes that the typical user, who would represent the majority of the \acrshortpl{evu}, only considers to create reservations for himself or for certain persons on their behalf. \\ 
@@ -130,7 +130,7 @@ Furthermore, the addition of the present battery capacity and the intended ultim
 %% --------------------------------------------------------
 %% Smart Charging Integration
 %% --------------------------------------------------------
-Widening the perspective from a pure cost estimation to include current electricity prices and take into account the resulting load of connected vehicles on the underlying power grid, the concept of smart charging opens up a new area of problem statements, in particular regarding addressing grid stability and the power distribution during peak demand.
+Widening the perspective from a pure cost estimation to include current electricity prices and take into account the resulting load of connected vehicles on the underlying power grid, the concept of \textbf{smart charging} opens up a new area of problem statements, in particular regarding addressing grid stability and the power distribution during peak demand.
 Apart from mitigating power outages, assisting end users to plan their charging sessions more effectively based on the optimization algorithms utilized in smart charging, there could be significant benefits in incorporating reservations as well.
 By providing inputs such as arrival and departure times in combination with the amount of energy required, these algorithms could work with more reliable values than those previously predicted and should therefore produce better results.
 Therefore, the \texttt{Reservation} entity could be expanded to include details on the current battery charge of the used car and the aforementioned pricing capabilities, in order to allow an intelligent charging system taking the negotiate the best option for charging the user's vehicle, taking into account the information provided, as suggested in \cite{orcioni_ev_2020}.

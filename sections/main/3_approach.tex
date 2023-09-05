@@ -61,11 +61,11 @@ Following this, a list summarising the scheduled iterations and associated timef
 \section{Actual Course Of Action}
 \label{ch:Approach:sec:Actual Course Of Action}
 
-As there is a limited amount of available research and existing projects on reservation features for the management of \acrshortpl{cs} and charging infrastructure, the analysis and setup of the 'Open e-Mobility' \cite{noauthor_github_nodate,noauthor_github_nodate-1,noauthor_github_nodate-2,noauthor_github_nodate-3} solution and its particular components commenced a day earlier than planned.
+As there is a limited amount of available research and existing projects on reservation features for the management of \acrshortpl{cs} and charging infrastructure, the analysis and setup of the \textbf{Open e-Mobility} \cite{noauthor_github_nodate,noauthor_github_nodate-1,noauthor_github_nodate-2,noauthor_github_nodate-3} solution and its particular components commenced a day earlier than planned.
 Consequently, some adjustments have been made to the above timescales for the general processing of the relevant parts.
 Beginning with the identification of missing functionality required for the subsequent implementation of the customised processes.
 The first step was to investigate the 'e-mobility charging stations simulator' \cite{noauthor_github_nodate-3} for local simulation of a customizable charging infrastructure.
-Because of the identified feature gap regarding missing reservation capabilities conforming with \acrshort{ocpp} 1.6 \cite{noauthor_ocpp_nodate}, the implementation of this crucial feature for testing and evaluation purposes was included as preliminary work for the 'Open e-Mobility' team.
+Because of the identified feature gap regarding missing reservation capabilities conforming with \acrshort{ocpp} 1.6 \cite{noauthor_ocpp_nodate}, the implementation of this crucial feature for testing and evaluation purposes was included as preliminary work for the \textbf{Open e-Mobility} team.
 After the team members had successfully reviewed the implemented logic and minor reworks of the code base, the changes were merged into the standard product.
 Now, the extended \acrshort{cs} simulator was then used as a reservable charging infrastructure for the subsequent iterations.
 Particularly, to validate the implementation of reservations compliant with version 1.6 of the \acrshort{ocpp} protocol, considering both pre-existing functionalities in the backend application and the adaptations according to this work.
@@ -116,7 +116,9 @@ Therefore, this section mentions these tasks in addition to a brief explanation 
     In combination with a public \acrshort{dn} and the corresponding \acrshort{ip} address, the final stage of the \acrshort{k8s} deployment consisted of configuring the ingress deployment and registering it at a \acrshort{dn} service.
 \end{description}
 
-As a result, the \acrshort{k8s} setup shown in \ref{fig:k8s-setup}, considers a deployment scenario that includes a custom namespace, referred to in this project as \verb|ev|, containing the particular applications, an NGINX ingress controller with a publicly accessible \acrshort{dn}, and the MongoDB database with built-in reinitialization of custom test data and users.
+\newpage
+
+\noindent As a result, the \acrshort{k8s} setup shown in \ref{fig:k8s-setup}, considers a deployment scenario that includes a custom namespace, referred to in this project as \verb|ev|, containing the particular applications, an NGINX ingress controller with a publicly accessible \acrshort{dn}, and the MongoDB database with built-in reinitialization of custom test data and users.
 In terms of application distribution, only one node is used with multiple pods within the \acrshort{k8s} cluster.
 
 \begin{figure}[h]

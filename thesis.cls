@@ -3,6 +3,13 @@
 %%
 %% Karlsruhe University of Applied Sciences
 %% Faculty of  Computer Science and Business Information Systems
+%% Distributed Systems (vsys) / Datacentric Syoftware Systems (DSS)
+%%
+%% Prof. Dr. Christian Zirpins
+%% christian.zirpins@h-ka.de
+%%
+%%
+%% Version 0.3, 2022-12-16
 %%
 %% --------------------------------------------------------
 %% | Derived from sdqthesis by Erik Burger burger@kit.edu |
@@ -18,11 +25,13 @@
 %% ---------------------------------------------------------------
 %% | Based on KOMAscript by Markus Kohm http://www.komascript.de |
 %% ---------------------------------------------------------------
+
 \LoadClass[12pt,twoside,headsepline,a4paper,titlepage=true,DIV=15,BCOR=20mm]{scrbook}
 
 %% -----------------------
 %% | Headers and footers |
 %% -----------------------
+
 \RequirePackage[automark]{scrlayer-scrpage}
 
 \clubpenalty=10000 %prevent orphans
@@ -69,34 +78,42 @@
 % nicer spacing for enumerations
 \RequirePackage{enumitem}
 
+% set ragged text with hyphenation
+\usepackage{ragged2e}
+
 %% --------------
 %% | Title page |
 %% --------------
 
 % Logos
-\newcommand{\thegrouplogo}{IWI-HsKA_CMYK_V01}
+\newcommand{\thegrouplogo}{HKA_IWI_Wortmarke_CMYK}
 \newcommand{\grouplogo}[1]{\renewcommand{\thegrouplogo}{#1}}
-\newcommand{\printgrouplogo}{\includegraphics[width=6.0cm]{logos/\thegrouplogo}}
-\newcommand{\nogrouplogo}{\renewcommand{\printgrouplogo}{}}
+\newcommand{\theunilogo}{HKA_IWI_Bildmarke_CMYK}
+\newcommand{\unilogo}[1]{\renewcommand{\theunilogo}{#1}}
+\newcommand{\thelogoscale}{.4}
+\newcommand{\printgrouplogo}{\includegraphics[scale=\thelogoscale]{logos/\thegrouplogo}}
+\newcommand{\printunilogo}{\includegraphics[scale=\thelogoscale]{logos/\theunilogo}}
+\newcommand{\nogrouplogo}{\renewcommand{\printgrouplogo}{}\renewcommand{\printunilogo}{}}
 
-\titlehead{%
-% HSKA logo german/english
-\iflanguage{ngerman}
-{\includegraphics[height=2.5cm]{logos/hska_logo_CMYK}}
-{\includegraphics[height=2.5cm]{logos/hska_logo_CMYK}}
-\hfill
-% IWI logo
-%\printgrouplogo
-\ThisCenterWallPaper{1}{logos/title-background.pdf}
+\titlehead{
+\parbox[l][7cm][t]{.5\textwidth}{\printgrouplogo}
+\parbox[l][7cm][t]{.5\textwidth}{\hfill\printunilogo}
+% Raise Title left of vertical HKA logo
+\vspace{-4cm}
 }
 
-%
-\setkomafont{title}{\huge\sffamily\bfseries}
+\setkomafont{title}{\huge\sffamily}
 \setkomafont{subtitle}{\normalfont\large}
 
-\uppertitleback{Hochschule Karlsruhe Technik und Wirtschaft\\ Fakult\"at f\"ur Informatik und Wirtschaftsinformatik\\ Moltkestr.\ 30\\ 76133 Karlsruhe}
+\addtokomafont{title}{\RaggedRight}
+\addtokomafont{subtitle}{\RaggedRight}
+\addtokomafont{author}{\RaggedRight}
+
+\uppertitleback{Hochschule Karlsruhe -- University of Applied Sciences\\ Fakult\"at f\"ur Informatik und Wirtschaftsinformatik\\ Moltkestr.\ 30, 76133 Karlsruhe, Germany}
 
 %% variables for title page
+\newcommand{\thetitle}{}
+\newcommand{\theinstitute}{}
 \newcommand{\thethesistype}{}
 \newcommand{\thereviewerone}{}
 \newcommand{\thereviewertwo}{}
@@ -106,8 +123,10 @@
 \newcommand{\theeditend}{}
 
 %% formatting commands for titlepage
+\newcommand{\mytitle}[1]{\title{\parbox{11cm}{\RaggedRight #1}}%
+  \renewcommand{\thetitle}{#1}}
 \newcommand{\thesistype}[1]{\subtitle{\vskip2em #1 \iflanguage{english}{of}{von}}%
-\renewcommand{\thethesistype}{#1}}
+  \renewcommand{\thethesistype}{#1}}
 \newcommand{\myinstitute}[1]{\renewcommand{\theinstitute}{#1}}
 \newcommand{\reviewerone}[1]{\renewcommand{\thereviewerone}{#1}}
 \newcommand{\reviewertwo}[1]{\renewcommand{\thereviewertwo}{#1}}
@@ -123,11 +142,12 @@
 
 \newcommand{\settitle}{%
 \publishers{%
+\RaggedRight
 \large
-\iflanguage{english}{at the Faculty of Computer Science and\\Business Information Systems}%
-{an der Fakult\"at f\"ur Informatik und Wirtschaftsinformatik}\\[2em]
-%\theinstitute\\[2em]
-\begin{tabular}{l l}
+\iflanguage{english}{at the Faculty of Computer Science and Business Information Systems}%
+{an der Fakult\"at f\"ur Informatik und Wirtschaftsinformatik}\\
+\theinstitute\\[2em]
+\begin{tabular}{ll}
   \iflanguage{english}{Reviewer}{Erstgutachter}: & \thereviewerone\\
   %skip w/o second reviewer
   \ifthenelse{\equal{\thereviewertwo}{}}{}{%
@@ -189,9 +209,6 @@
 
 % enumerate subsubsections
 \setcounter{secnumdepth}{3}
-
-% wallpaper for title page (HSKA-Frame)
-\RequirePackage{wallpaper}
 
 % subimport of files
 \RequirePackage{import}
@@ -257,7 +274,7 @@
     nonumberlist,
     acronym
     ]{glossaries}
- \renewcommand*{\glspostdescription}{}
+\renewcommand*{\glspostdescription}{}
 
 % Figures and Subfigures
 \RequirePackage{caption}

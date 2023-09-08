@@ -335,7 +335,8 @@ As depicted in Figure \ref{fig:delete-reservation-seqflow}, when a deletion requ
 With respect to the attached \acrshort{id} that denotes the booking the user intends to delete, the \texttt{ReservationStorage} retrieves the entity from the database and thus verifies its existence this way.
 In addition to verifying the existence of the record, the current booking status is assessed to initiate additional measures for managing ongoing reservations.
 This includes preventing the deletion of bookings in progress without notice for example. To manage ongoing appointments, the system contacts the relevant stations by using the \texttt{contactChargingStation} method to release the respective \acrshortpl{cs} and connectors.
-Due to the lack of a specific delete operation in the \acrshort{ocpp} standard, the deletion encapsulates the cancellation operation for a standardized communication with the \acrshort{cs}. As the station does not possess the ability to store history, the cancellation could be described as equivalent to a deletion at the charging infrastructure level.
+Due to the lack of a specific delete operation in the \acrshort{ocpp} standard, the deletion encapsulates the cancellation operation for a standardized communication with the \acrshort{cs}. 
+As the station does not possess the ability to store history, the cancellation could be described as equivalent to a deletion at the charging infrastructure level.
 After resolving the dependencies of the booking with the infrastructure, the \texttt{ReservationStorage} ultimately deletes the record in the database.
 
 \newpage
@@ -369,7 +370,9 @@ With reference to further development for the mobile versions, it may be feasibl
     \label{fig:impl-delete-reservation}
 \end{figure}
 
-\noindent To allow both atomic and batch deletion of entities, the \acrshort{rest} methodology recommends introducing the endpoints listed in the table \ref{tab:delete-reservation-rest}. For distinguishing between both operations, in order to delete a single object, the user must reference it by its \acrshort{id}. In the case of deleting multiple entries, the user has to submit multiple entries, omitting the \acrshort{id} path parameter.
+\noindent To allow both atomic and batch deletion of entities, the \acrshort{rest} methodology recommends introducing the endpoints listed in the table \ref{tab:delete-reservation-rest}. 
+For distinguishing between both operations, in order to delete a single object, the user must reference it by its \acrshort{id}. 
+In the case of deleting multiple entries, the user has to submit multiple entries, omitting the \acrshort{id} path parameter.
 
 \begingroup
 \setlength{\tabcolsep}{10pt} % Default value: 6pt

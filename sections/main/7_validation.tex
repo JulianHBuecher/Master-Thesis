@@ -44,7 +44,7 @@ Covered by the \textit{Support of relevant standards}, the intention is to provi
 %% --------------------------------------------------------
 %% Goal 4 - Modular Design
 %% --------------------------------------------------------
-After gathering the required functionalities and referencing the relevant standards that the system must consider, the objective of '\textbf{Module Design}' focuses on addressing the design of the solution in terms of software components and the necessary abstraction from the remaining system landscape.
+After gathering the required functionalities and referencing the relevant standards that the system must consider, the objective of \textit{Modular Design} focuses on addressing the design of the solution in terms of software components and the necessary abstraction from the remaining system landscape.
 Resulting in the ambition to provide as much decoupling as possible, which promotes both resiliency of the overall system in case of failure, and easier carve-out of functionality for individual service deployments. Furthermore, this permits integration within other services or the potential for reuse within other deployment scenarios. \\
 
 \noindent Considering the above objectives and their relation to the current output, the following conclusions can be drawn with regard to the achievement of the stated targets. It is important to note that the purpose of this Section is not to provide a detailed summary of each functionality and label it as complete or incomplete. 
@@ -130,7 +130,7 @@ Furthermore, the addition of the present battery capacity and the intended ultim
 %% --------------------------------------------------------
 %% Smart Charging Integration
 %% --------------------------------------------------------
-Widening the perspective from pure cost estimation to include current electricity prices and take into account the resulting load of connected vehicles on the underlying power grid, the concept of \textbf{smart charging} opens up a new area of problem statements, in particular regarding addressing grid stability and the power distribution during peak demand.
+Widening the perspective from pure cost estimation to include current electricity prices and taking into account the resulting load of connected vehicles on the underlying power grid, the concept of \textbf{smart charging} opens up a new area of problem statements. This includes in particular, addressing grid stability as well as the power distribution during peak demand.
 Apart from mitigating power outages, and assisting end users to plan their charging sessions more effectively based on the optimization algorithms utilized in smart charging, there could be significant benefits in incorporating reservations as well.
 By providing inputs such as arrival and departure times in combination with the amount of energy required, these algorithms could work with more reliable values than those previously predicted and should lead to better results.
 As an extension to the \texttt{Reservation} entity, details on the current battery charge of the used car and the aforementioned pricing capabilities could be incorporated as well. 
@@ -142,8 +142,10 @@ From the author's perspective, this could open the door to more advanced smart c
 \section{Limitations}
 \label{ch:Analysis and Validation:sec:Limitations}
 
-The fact that a software solution is described as part of the non-physical world places certain limitations on the capabilities of such solutions. This is particularly true for reservation systems that aim to connect physical and virtual entities and attempt to ensure specific user behavior with respect to the established rule set.
-By considering the booking of suitable charging sessions in public and semi-public parking facilities equipped with \acrshortpl{cs}, various scenarios may arise where the user may be prevented from charging their vehicle due to the misbehavior of other drivers or system users, with the system being unable to prevent this from happening.
+The fact that a software solution is described as part of the non-physical world places certain limitations on the capabilities of such solutions. 
+This is particularly true for reservation systems that aim to connect physical and virtual entities and attempt to ensure specific user behavior with respect to the established rule set.
+By considering the booking of suitable charging sessions in public and semi-public parking facilities equipped with \acrshortpl{cs}, various scenarios may arise where the user may be prevented from charging their vehicle due to the misbehavior of other drivers or system users. 
+Concerning these situations, the system will not always be able to prevent them from happening.
 To name just a few examples, starting with the most trivial one of a vehicle blocking the reserved parking space. Thus, the reservation does not allow the vehicle to be charged at this particular station, the parking space itself could not be blocked for this driver.
 From the perspective of some researchers in the literature, the introduction of physical barriers that block these parking spaces until the appropriate driver arrives is essential, as suggested by the authors in \cite{basmadjian_reference_2020}.
 But considering the expenses involved in installing such facilities, the efficiency in terms of cost and maintenance is beyond the scope of many \acrshortpl{cso} and the providers of parking space. \\

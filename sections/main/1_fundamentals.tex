@@ -47,7 +47,7 @@ Therefore, brake resistance is employed to convert the power generated into elec
 
 To facilitate the growing number of \acrshortpl{ev}, a crucial aspect is the establishment of a broad charging infrastructure comprising multiple \acrshortpl{cs}. As highlighted in \cite{gnann_fast_2018}, the requirements for charging infrastructure are highly variable, depending on the battery capacity and charging rate, which is predicted to increase in the future.
 In order to satisfy the various power requirements and to cover the wide range of vehicles and used batteries, a heterogeneous range of \acrshortpl{cs} exists.
-From stations providing so--called slow charging with a power supply up to 22 \acrshort{kW}, more advanced technologies allow fast charging \acrshortpl{cs} for power requirements above this certain range. \\
+From stations providing so--called slow charging with a power supply up to 22 kW, more advanced technologies allow fast charging \acrshortpl{cs} for power requirements above this certain range. \\
 \noindent For a better understanding of the different scenarios in which a \acrshort{cs} could be used for charging, this work divides the infrastructure and the corresponding stations into three different groups. 
 These groups, classified according to accessibility level for the \acrshortpl{evu}, are presented in Table \ref{tab:cs-accessibility-levels} alongside their user restrictions, the associated locations, and most commonly used charger levels:
 
@@ -95,10 +95,10 @@ On top of the described components, various safety features are integrated to pr
     \caption{Listing of different \acrshort{ev} charging levels based on \cite{acharige_review_2023}.}
     \begin{tabular}{c|c|m{6.5cm}}
         Charging Level & Charging Power & Use Case \\ \hline
-         1 & 1.44 \acrshort{kW} - 1.9 \acrshort{kW} & Typically the slowest charging option and suitable for overnight charging at home \\
-         2 & 3.1 \acrshort{kW} - 19.2 \acrshort{kW} & Provides faster charging compared to Level 1 and is commonly used for home charging setups and public charging stations \\
-         3 & 20 \acrshort{kW} - 350 \acrshort{kW} & Fast charging operates at a higher voltage, directly charging the vehicle's battery with \acrshort{dc} power. Commonly used in public fast--charging stations.\\
-         \acrshort{xfc} & > 350 \acrshort{kW} & Ultra--fast charging provides the fastest charging option. Commonly used in commercial settings.
+         1 & 1.44 kW - 1.9 kW & Typically the slowest charging option and suitable for overnight charging at home \\
+         2 & 3.1 kW - 19.2 kW & Provides faster charging compared to Level 1 and is commonly used for home charging setups and public charging stations \\
+         3 & 20 kW - 350 kW & Fast charging operates at a higher voltage, directly charging the vehicle's battery with direct current power. Commonly used in public fast--charging stations.\\
+         \acrshort{xfc} & > 350 kW & Ultra--fast charging provides the fastest charging option. Commonly used in commercial settings.
     \end{tabular}
     \label{tab:ev-charging-levels}
 \end{table}
@@ -118,7 +118,7 @@ Generally, the advances in this technology leading to an increase in the range o
 \label{ch:Fundamentals:sec:Electric Mobility:ssec:Relevant Standards}
 
 To establish a comprehensive interface for information exchange between \acrshortpl{cs}, \acrshortpl{ev}, and their users, various organizations, initiatives and the industry have established several standards for communication between the single actors in this particular environment.
-Besides the \acrfull{ocpp} \cite{noauthor_ocpp_nodate}, a communication protocol, developed by the \acrfull{oca} \cite{noauthor_open_nodate}, other protocols and specifications exist, covering different aspects and scenarios relevant during or before the charging process.
+Aside from the \acrfull{ocpp} \cite{noauthor_ocpp_nodate}, a communication protocol, developed by the \acrfull{oca} \cite{noauthor_open_nodate}, other protocols and specifications exist, covering different aspects and scenarios relevant during or before the charging process.
 In addition to the previously mentioned \acrshort{ocpp}, further standards relevant to this work are listed and explained below.
 
 \subsubsection{Open Charge Point Protocol}
@@ -183,7 +183,7 @@ The concept of smart charging or intelligent charging is a systematic approach t
 Therefore, the subsequent calculations consider factors such as electricity demand, grid capacity, availability of renewable energy, and individual user preferences to allow for optimizations in the user's decision--making \cite{deb_smart_2022}.
 One of the primary goals of this methodology is to balance the demand on the underlying grid, affected by charging large numbers of \acrshortpl{ev} simultaneously \cite{daina_electric_2017}. Especially during peak hours increased electricity costs or potential blackouts could result. 
 In order to mitigate these situations, smart charging takes the current load of the grid into account and adjusts the possible charging rates based on the given constraints to prevent overloading the grid and optimizing the use of available energy \cite{garcia-villalobos_plug-electric_2014}. 
-Besides the unidirectional charging method originally known as \acrfull{v1g}, the approach of \acrfull{v2g} enables smart charging systems to charge bidirectionally between the \acrshortpl{ev} battery and the grid \cite[199]{kathiresh_e-mobility_2022}. Allowing \acrshortpl{ev} with sufficient battery capacity to return energy to the grid during times of high demand and turning them into mobile energy storage units to enhance grid stability and resiliency.
+Compared to the unidirectional charging method originally known as \acrfull{v1g}, the approach of \acrfull{v2g} enables smart charging systems to charge bidirectionally between the \acrshortpl{ev} battery and the grid \cite[199]{kathiresh_e-mobility_2022}. Allowing \acrshortpl{ev} with sufficient battery capacity to return energy to the grid during times of high demand and turning them into mobile energy storage units to enhance grid stability and resiliency.
 To offer all these functions, smart charging relies on data connectivity and communication between the single \acrshortpl{cs}, the \acrshortpl{ev}, and the underlying grid, which makes it vulnerable to malign third--party entities as well. On the other side, these factors can contribute to better grid management overall, giving grid operators insight into electricity demand patterns and enabling them to plan grid upgrades accordingly.
 
 \subsection{Smart Grid}
@@ -200,9 +200,9 @@ This approach is very similar to the \acrshort{v2g} functionality of smart charg
 \section{Reservation Systems}
 \label{ch:Fundamentals:sec:Reservation Systems}
 
-Originally developed as \acrfull{crs} to facilitate collaboration between airline and technology companies \cite{xiang_evolution_2020}, the reservation system's main objective as a tool for booking resources without the need for paper or other systems for organization, has evolved over time.
+Originally, current reservation systems were developed as \acrfull{crs} to facilitate collaboration between airlines and technology companies \cite{xiang_evolution_2020}. The original objective of the system to be a tool to book resources without the need for paper or other management systems has obviously evolved over time, as have the functionalities and capabilities of these systems.
 Started as a centrally managed system with restricted access to call center operators, which administered the available resources for their corresponding airlines or hotel chains, the further development of the world wide web in 1989 led to a transformation away from the \acrshort{crs} to online booking systems, also known as web--based \acrfullpl{ibe}, directly available to the customer via their personal computers at home.
-In general, a reservation system could be described by definition as a software application or platform that facilitates the process of booking and securing limited services, resources, or accommodations in advance. 
+In general, a reservation system could be defined as a software application or platform that facilitates the process of booking and securing limited services, resources, or accommodations in advance, based on the definition of Xiang et al. \cite[p.~2]{xiang_evolution_2020}. 
 As mentioned previously, besides its original application in the travel or hospitality industry, it is also a common tool for the administration of the transportation or entertainment industry. With the goal of simplifying reservation procedures for customers and minimizing administrative tasks, while increasing user satisfaction.
 Based on the system architecture and the technologies employed, reservation systems could vary depending on the functionalities required. When utilized in a web-based application, such as an online booking system, it is essential to consider different constraints and use cases, compared to a local system within one institution. 
 To abstract from the requirements necessary for particular deployment scenarios, the following section outlines a set of fundamental characteristics and functionalities that a reservation system should typically encompass. While the chosen list of features may not encompass all the use cases required for a specific system, it should furnish a brief overview for general purposes.
@@ -210,8 +210,8 @@ For reference and guidance in the case of the functionality of the reservation s
 \textbf{Booking and Scheduling} could be described as the main purpose of a reservation system. By using this feature users can view available dates, times, or slots and make reservations for specific services, activities, or resources. The system ensures that conflicting bookings do not occur.
 To provide an overview, which represents the availability of the aforementioned resources, the system requires \textbf{Real--Time Availability}. Therefore, users can see immediately if the desired service or resource is available for the chosen date and time.
 For the purpose of personalizing the user experience, retaining reservation history, and enabling loyalty rewards, the common reservation application provides a \textbf{User Registration and Authentication} feature to allow the user to create an account or log into restricted areas of the system to book a reservation.
-Besides managing and monitoring bookings, the option to securely pay for allocated properties using a credit card or digital wallet via \textbf{Online Payments} often is part of the service offering.
-To acknowledge successful reservations or notify the user of any changes to their booking, a \textbf{Confirmation and Notifications} should be embedded in the application. This feature not only serves as a confirmation of the booking but also provides proof of the transaction and could include details such as booking \acrshort{id}, date, time, and location.
+Additionally, managing and monitoring bookings, the option to securely pay for allocated properties using a credit card or digital wallet via \textbf{Online Payments} often is part of the service offering.
+To acknowledge successful reservations or notify users of any changes to their bookings, a \textbf{Confirmation and Notifications} should be embedded in the application. This feature not only acts as a confirmation of the booking, but also evidence of the completed transaction and may contain information such as booking \acrshort{id}, date, time, and location.
 Regarding the need for modification or cancellation of the reservation, the system should provide \textbf{Cancellation and Modification} features, enabling the user to cancel or modify their reservations within a specified time frame. Additionally, cancellation policies eventually exist for penalties punishing late cancellations.
 Moreover, apart from the management of the reservations made through the system, it should provide a \textbf{Inventory Management} for the owners of the resources and help them manage their possessions.
 Other features such as \textbf{Reporting and analytics} or the \textbf{Integration with Other Systems}, which allow the generation of reports on booking trends, revenue, and occupancy rates, are advanced functionalities typically not visible to the end--user. Mostly offered as an administrative service offering to extend the basic use of the system, reporting and third--party integration of other systems, such as customer relationship management (CRM), is not part of every software suite. 
@@ -220,17 +220,18 @@ This also applies to the integration of payment gateways.
 \section{Data Exchange}
 \label{ch:Fundamentals:sec:Data Exchange}
 
-After the presentation of the various services, their communication channels, and the information provided within Section \ref{ch:Fundamentals:sec:Electric Mobility:ssec:Relevant Standards}, the subsequent Section deals in more detail with the underlying technical concepts integrated that are integrated into the protocols used.
-Besides a brief overview of \acrfull{rest} in \ref{ch:Fundamentals:sec:Data Exchange:ssec:REST}, a quick summary of the technologies \acrfull{soap} in \ref{ch:Fundamentals:sec:Data Exchange:ssec:SOAP} and WebSockets in \ref{ch:Fundamentals:sec:Data Exchange:ssec:WebSocket} follows. 
+After the presentation of the various services, their corresponding communication channels, and the information provided within Section \ref{ch:Fundamentals:sec:Electric Mobility:ssec:Relevant Standards}, the subsequent Section deals in more detail with the technical concepts that underlie both the protocols and the application.
+In addition to a brief overview of \acrfull{rest} in \ref{ch:Fundamentals:sec:Data Exchange:ssec:REST}, a quick summary of the technologies \acrfull{soap} in \ref{ch:Fundamentals:sec:Data Exchange:ssec:SOAP}, \acrfull{odata} in \ref{ch:Fundamentals:sec:Data Exchange:ssec:OData} and WebSockets in \ref{ch:Fundamentals:sec:Data Exchange:ssec:WebSocket} follows. 
 
 \subsection{REST}
 \label{ch:Fundamentals:sec:Data Exchange:ssec:REST}
 
 Introduced by Roy Fielding as an architectural style \cite{patni_pro_2017} to design distributed systems, \acrfull{rest} provides concepts and a set of constraints that define resources accessed via a common interface by \acrshort{http} methods specified in the standard protocol description.
-Stated as the general set of \acrshort{http} methods used to query a \acrshort{rest} \acrshortpl{api}, the methods \verb|GET|, \verb|POST|, \verb|PUT| and \verb|DELETE| are the most representative examples in the context of web development. 
-Representing CRUD operations similar to the functionalities utilized in the context of relational and non--relational databases, these methods presume the activation of certain functionalities within the respective targets.
+Stated as the general set of \acrshort{http} methods used to query a \acrshort{rest} \acrfullpl{api}, the methods \verb|GET|, \verb|POST|, \verb|PUT| and \verb|DELETE| are the most representative examples in the context of web development. 
+Representing a set of standardized operations, also known as \acrshort{crud} operations, similar to the functionalities utilized in the context of relational and non--relational databases, these methods assume the activation of certain functionalities within the respective targets.
 The verbs used to name the operations carry significant meaning, indicating the associated functionality and the expected outcome of the call.
-Besides the mere retrieval of data, which is usually performed by the use of \verb|GET|, the creation and update of an entity involves either \verb|POST| or \verb|PUT|, resulting in a different expected behavior and outcome.
+Aside from the mere retrieval of data, which is usually performed by the use of \verb|GET|, the creation and update of an entity involves either \verb|POST| or \verb|PUT|.
+Intentionally, while awaiting a specific result from performing a read operation, creation methods may or may not return the resulting object. Both possibilities align with the standard and result in subtly different behaviors due to varying design decisions, such as prioritizing reducing network bandwidth versus usability.
 To determine the appropriate targets for the client, \acrshort{rest} defines the concept resources, which allows a resource identifier to be mapped in the form of a \acrshort{uri} or a \acrshort{urn}. Following this pattern, a legitimate resource representing a car is presumably indicated by the  \verb|http://rest.service.com/cars|. 
 Sending a \acrshort{http} request with the \verb|GET| method to this resource should result in a list of cars provided by the service. As a valid format for representing data, both \acrshort{json} and \acrshort{html} documents are permissible. Even images could be utilized.
 Further data elements defined by \acrshort{rest} are resource metadata, representation metadata, and control data, which are only mentioned here for completeness. 
@@ -241,13 +242,26 @@ In addition to these core components, \acrshort{rest} provides numerous options 
 
 As a counterpart to the \acrshort{rest} protocol described in the previous Section \ref{ch:Fundamentals:sec:Data Exchange:ssec:REST}, \acrshort{soap} was created by Dave Winer and others in collaboration with Microsoft \cite{patni_pro_2017} to addresses the demands of enterprise software.
 The fundamental idea of \acrshort{soap} is to provide data as services, tagged with names consisting of both verbs and nouns. For instance, the service named \textit{getCar} is exclusively for providing information about cars and is not intended for any other objectives.
-In contrast to \acrshort{rest}, this ensures better communication of the purpose for which the method is intended, as well as the necessary data that this particular function relies on to fulfill its purpose. All of this information about the handled objects and parameters is communicated to the client prior to the actual interaction and described as part of a \acrshort{wsdl}.
-This creates a so-called contract between a server and a client, providing security and authorization as well as more direct access to objects available on the server.
+In contrast to \acrshort{rest}, this ensures better communication of the purpose for which the method is intended, as well as the necessary data that this particular function relies on to fulfill its purpose. All of this information about the handled objects and parameters is communicated to the client prior to the actual interaction and described as part of a \acrfull{wsdl} document, which is publicly available from the \acrshort{url} of the particular services implementing this protocol.
+This creates a so-called contract between a server and a client, providing security and authorization as well as more direct access to objects available on the server. As a result, these components are much more tightly coupled.
 Therefore, \acrshort{soap}, as outlined in \cite[4]{patni_pro_2017}, is typically recommended for scenarios involving use cases considering transactional operations or when the environment is dependent on this protocol.
+
+\subsection{OData}
+\label{ch:Fundamentals:sec:Data Exchange:ssec:OData}
+
+Another option for implementing web-based services besides utilizing only the \acrshort{rest} architectural style is the \acrshort{odata} protocol, which aims to build on top of the \acrshort{rest} to provide both a higher level of consistency in terms of breaking changes and to increase interoperability between the communication partners \cite{noauthor_documentation_nodate}.
+To accomplish these goals, \acrshort{odata} services, similar to services implementing \acrshort{soap}, supply a metadata definition using \acrfull{csdl} as a metadata description language ensuring a machine-readable form of the service functionalities it provides.
+In the case of generic clients with no knowledge of the implemented logic of the services, these documents exchanged as part of a preflight request between server and requestor, give the clients the ability to interact in a formalized way.
+Alongside these outstanding features, the \acrshort{odata} standard offers additional concepts such as \textit{namespaces} or specific \acrshort{url} conventions to cover much more advanced scenarios. 
+Nevertheless, these aspects are beyond the scope of this informative Section and are not covered in this brief introduction.
 
 \subsection{WebSocket}
 \label{ch:Fundamentals:sec:Data Exchange:ssec:WebSocket}
 
-Based on the RFC 6455 \cite{melnikov_websocket_2011}, the WebSocket protocol facilitates two--way communication between a client and a remote host. Once trust has been established using the origin--based security model that is commonly used by current browser applications, the subsequent connection and trust establishment enables the protocol to communicate utilizing basic message framing, layered over \acrshort{tcp}.
-This gives applications designed primarily for use on the Web the ability to construct two-way communication with servers without the need to open multiple \acrshort{http} connections.
-In addition to its use over unencrypted \acrshort{http} channels, the WebSocket protocol can utilize encrypted traffic via HTTPS on port 443.
+Based on the RFC 6455 standard \cite{melnikov_websocket_2011}, the WebSocket protocol facilitates two--way communication between a client and a remote host. Formerly, clients on the web who needed to establish bidirectional communication with their server had to utilize \acrshort{http} calls to request updates from their correspondent and send notifications in response.
+Resulting in numerous obstacles for the server and its client, including the quantity of open \acrfull{tcp} connections and the overhead generated by the bloating headers appended to each request.
+Trying to solve these problems, the WebSocket protocol suggests using only one \acrshort{tcp} connection for traffic in both directions.
+In order to create this information channel, Fette and Melnikov's proposal allows taking advantage of existing infrastructure, which lets the users replace existing technologies using \acrshort{http} as the transport layer within their applications.
+To initiate the data exchange process, this communication approach relies on establishing trust through exchanging preliminary handshakes and utilizing the origin--based security model, which is commonly implemented in current browser applications.
+Once the trust between server and client is established, the protocol allows the applications to communicate utilizing basic message framing layered over \acrshort{tcp} stack. This grants web-based services the ability to construct efficient information exchange in two directions, without the need to open multiple \acrshort{http} connections.
+Apart from the possibility of using the WebSocket protocol over unencrypted \acrshort{http} channels, it can be utilized in encrypted traffic via \acrfull{https} on port 443 as well.

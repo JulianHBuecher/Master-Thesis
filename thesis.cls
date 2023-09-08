@@ -271,6 +271,7 @@
 
 %% Glossary
 \RequirePackage[%
+    toc,
     nonumberlist,
     acronym
     ]{glossaries}
@@ -292,3 +293,9 @@
 \RequirePackage{tikz}
 % Icons
 \RequirePackage{fontawesome5}
+
+% Table of Content
+\RequirePackage[nottoc]{tocbibind}
+\renewcommand{\lstlistoflistings}{\begingroup
+    \tocfile{\lstlistingname}{lol}
+\endgroup}

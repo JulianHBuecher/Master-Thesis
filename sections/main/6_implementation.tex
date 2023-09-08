@@ -14,11 +14,11 @@
 To build on the design of the processes in the previous chapter, the actual implementation of the corresponding functionality within the applications of the underlying solution is presented.
 First, some preliminary work is considered, using the standard functionality for reservations according to the \acrshort{ocpp} standard in version 1.6.
 This foundation allows the extension to encapsulate these functionalities in order to ensure compliance with the standard.
-After completing the initial development stages, the proposed design for the entities and processes is translated into code. This is followed by an analysis to identify the packages and components that the extension must use to ensure its operability.
-Considering the system roles mentioned in chapter \ref{ch:Requirements Engineering}, the assignment of the respective rules, the allowed scopes, and the respective functionality is taken into account.
+After completing the initial development stages, the proposed design for the entities and processes is translated into code. This is succeeded by an analysis to identify the packages and components that the extension must use to ensure its operability.
+Considering the system roles mentioned in chapter \ref{ch:Requirements Engineering}, the assignment of the respective rules, the allowed scopes, and the respective functionality are taken into account.
 Furthermore, to enable access through client applications, the implemented functionality is mapped to specific endpoints representing resources according to the underlying \acrshort{rest} principles described in \ref{ch:Fundamentals:sec:Data Exchange:ssec:REST}.
 A more detailed insight into these resources in combination with their behavior is offered at the end, highlighting the interaction between the components to satisfy the preconceived logic. \\
-\noindent Due to the focus on providing a reservation creation and management process, emphasis is given to the development of the parts that constitute the logical units of the process. 
+\noindent Concerning solely a reservation creation and management process, emphasis is given to the development of the parts that constitute the logical units of the process. 
 While the frontend logic is vital to illustrate the user interaction with the backend service and guide them through the procedure, the corresponding implementations are only shown as the established interfaces based on the pre-existing designs in the applications.
 This bridges the gap between the mockups created in terms of their influence on the final results. Hence, they are included as an attachment to each specified capability. 
 The same applies to the frameworks and programming languages used. To provide a technology-agnostic approach, the specific characteristics of the technologies in terms of implementations are not addressed.
@@ -31,14 +31,14 @@ In terms of standards compatibility, there were issues with the backend, web fro
 Additionally, the charging station simulator used for local simulations of the test environment also lacked this functionality.
 To establish a common baseline, as mentioned in \ref{ch:Approach}, the first step of the implementation phase was to align the current implementation status with the predefined operations in the relevant standard.
 As a result, the necessary entities and feature toggles were implemented and verified against the processes outlined in the \acrfull{ocpp} standard documentation.
-Not included in this study is a comprehensive explanation of the development steps required to adjust the applications. Therefore, it is assumed to be a necessary prerequisite for the topic covered in this study.
+Not included in this study is a comprehensive explanation of the development steps required to adjust the applications which is assumed to be a necessary prerequisite for the topic covered in this study.
 Although other standards, such as the \acrshort{ocpi} or \acrshort{oicp} mentioned in chapter \ref{ch:Fundamentals} and part of the backend implementation, also offer reservation proposals, these are not addressed in this work as well.
 
 \section{Reservation}
 \label{ch:Implementation:sec:Reservation}
 
 Beginning with the implementation of the reservation entity based on the given design.
-To ensure type safety and to follow the existing design of the application, using the type-safe system of \textit{TypeScript}, the entities are implemented as interfaces.
+To ensure type safety and to comply with the existing design of the application, using the type-safe system of \textit{TypeScript}, the entities are implemented as interfaces.
 By employing this technique, this implementation ensures the specific types for their corresponding properties and considers software design principles such as reusability suggested by Gamma et al. in \cite[p.~47ff]{gamma_design_2015}. 
 In addition to providing extensibility through the potential of deriving from these instances, this interface-driven method enables developers to adapt the entities and combine them into more complex types, covering advanced scenarios. \\
 \noindent To implement the dedicated reservation statuses and types, and to associate them with the appropriate stages in their life cycle, the concept of \textit{Enumerations} is used. This ensures secure type transitions, as suggested in the design chapter, and is widely available in most programming languages.
@@ -49,7 +49,7 @@ An example of such predefined life cycle transitions is provided by the implemen
 \noindent The resulting class diagram reveals the final implementation of the classes within the codebase, which, in addition to the \texttt{Reservation} interface, includes the connections to the other parts of the resulting entity.
 Alongside the previously mentioned \texttt{ReservationStatus} and the \texttt{ReservationType}, the diagram in Figure \ref{fig:reservation-class-diagram} shows the other relevant interfaces. 
 For example, the \texttt{ReservationAuthorizationActions} as part of the internal privilege control system, ensuring access to specific operations and entities through \texttt{AuthorizationDefinitions} and their according \texttt{AuthorizationActions}.
-Therefore, these interfaces, along with the \texttt{CreatedUpdatedProps}, could be categorized as administrative properties to provide uniform handling of system entities internally.
+Thus, these interfaces, along with the \texttt{CreatedUpdatedProps}, could be categorized as administrative properties to provide uniform handling of system entities internally.
 
 \begin{figure}[h]
     \centering
@@ -66,7 +66,7 @@ According to the \texttt{Reservation} interface as the foundation for further de
 
 In order to take up the groundwork provided by the construction of the \texttt{Reservation} entity and the process design, the development of the reservation system according to the gathered work is next.
 For a better understanding of the application serving as a baseline for the reservation extension, the system itself is analyzed by considering different views on the system and its modules.
-Therefore different views out of the context of software architecture are used, to facilitate interested readers of this work to come up with an own implementation utilizing the provided design approaches.
+As a result, different views out of the context of software architecture are used, to facilitate interested readers of this work to come up with an own implementation utilizing the provided design approaches.
 
 \subsection{Architectural Views}
 \label{ch:Implementation:sec:Reservation System:ssec:System Architecture}
@@ -75,7 +75,7 @@ Starting with a high-level view of the existing system architecture, which encap
 Regarding the assumptions of this work, the most significant modules and interfaces including the \acrshort{rest} server, the \textbf{WebSocket} interfaces, and the \acrshort{odata} interface due to its growing importance in the business world and for the purpose of completeness.
 In respect of the prefix used, each server responds to a different type of communication protocol to provide a specific set of features.
 Enabling several clients to use the \acrshort{rest} protocol for communication purposes, the \texttt{REST Server} allows data exchange based on \acrshort{http} requests, facilitating the \acrshort{rest} principles described in \ref{ch:Fundamentals:sec:Data Exchange:ssec:REST}. 
-Therefore, this server encloses the functionality of the subsequent servers using so-called \acrshort{rest} resources to provide homogeneous entry points that the clients could use to communicate with the servers behind it, without having to know each specific resource. 
+For this purpose, this server encloses the functionality of the subsequent servers using so-called \acrshort{rest} resources to provide homogeneous entry points that the clients could use to communicate with the servers behind it, without having to know each specific resource. 
 In the case of the \textbf{WebSocket} interface, the backend system provides a reliable way to exchange data in real--time using the \textbf{WebSocket} protocol mentioned in \ref{ch:Fundamentals:sec:Data Exchange:ssec:WebSocket}. 
 Primarily, this interface is used to communicate with the managed charging infrastructure, including directly accessing the \texttt{\acrshort{ocpp} Server} for the administration of \acrshortpl{cs}.
 The \texttt{\acrshort{odata} Server}, with the inclusion of the \textbf{\acrshort{odata} REST Interface}, allows \acrshort{odata} clients to access the backend functionalities. By enhancing the capabilities of the standard \acrshort{rest} protocol through publishing a public description of the offered services in the form of a description document similar to the \acrshort{soap} \acrshort{wsdl}, it provides an alternative for utilizing the services in more advanced scenarios.
@@ -95,7 +95,7 @@ For a deeper understanding of the internal structure of this server, and to redu
 \label{ch:Implementation:sec:Reservation System:ssec:Architectural Views:sssec:Packages}
 
 After the choice of the \texttt{REST server} as the location for the reservation functionality, the introduced architectural style of decomposition allows for the arbitrary adjustment of the perspective into which a system and its modules could be further subdivided.
-Therefore, Figure \ref{fig:package-view} illustrates the extraction process of relevant modules into packages that structure the application. This view not only shows the logical structure of the project but also allows developers to group together functionality or logical units with a high degree of cohesion in a particular location.
+As part of Figure \ref{fig:package-view}, the utilized extraction process of relevant modules into packages that structure the application is displayed. This view not only shows the logical structure of the project but also allows developers to group together functionality or logical units with a high degree of cohesion in a particular location.
 As introduced in the previous Section with reference to the class diagram \ref{fig:reservation-class-diagram} for the reservation type, the entity, also known as a type, can be located in within the \texttt{types} package. 
 The \texttt{requests}, which represent pre-defined request bodies for the request \texttt{validator} instances, sanitize incoming payloads before processing. Following this naming convention, applicable to all types of implementations in the application structure, the corresponding packages could be easily identified.
 So the appropriate implementations for \texttt{router} and \texttt{service}, to provide the \acrshort{rest} resources as well as the \texttt{storage} classes for database access can be readily determined. 
@@ -110,7 +110,7 @@ However, all of these artifacts and their associated changes are addressed in th
 \end{figure}
 
 \noindent With the structure of the service and the location of the adaptations in mind, the next step is to introduce the components and their associated connectors. Architecturally, the 'component-and-connector views (C\&C)' \cite[p.~136]{clements_documenting_2011} are used to show the inner workings of the system and the interaction between the individual components. 
-Regarding the follow-up implementation, this aspect could be used for orientation and guidance in the project and provide a starting point for further development tasks to locate the changes introduced by this work.
+Concerning the follow-up implementation, this aspect could be used for orientation and guidance in the project and provide a starting point for further development tasks to locate the changes introduced by this work.
 
 \subsubsection{Components}
 \label{ch:Implementation:sec:Reservation System:ssec:Architectural Views:sssec:Components}
@@ -118,7 +118,7 @@ Regarding the follow-up implementation, this aspect could be used for orientatio
 Before elaborating on the behavioral interaction between the components, all the implemented aspects have to be mapped in the context of the designed system. Thus, Figure \ref{fig:component-view} provides an overview of the added components and their integration with the already existing ones.
 In line with the C\&C view, the connectors indicate the available and required functionalities and establish the appropriate connections between the corresponding components, resulting in the reservation system as part of the existing service landscape.
 For the purpose of abstraction between the existing implementations and the extension, this work treats the \texttt{Reservation System} as an independent subsystem that requires only a restricted number of dependencies to other areas of the application.
-Considering only the information required from other application domains, the portability as a self-contained system to other scenarios therefore should be guaranteed.
+Considering only the information required from other application domains, the portability as a self-contained system to other scenarios should be guaranteed.
 
 \begin{figure}[h]
     \centering
@@ -140,7 +140,7 @@ On the basis of the elaborated components and their location within the architec
 \label{ch:Implementation:sec:Reservation System:ssec:Management Capabilities}
 
 Combining the designed processes and the aforementioned architectural views, the next parts describe the actual functionality implemented within the reservation system, keeping in mind the implemented components.
-Therefore, the management capabilities for reservation entities, including creation, update, deletion, and cancellation, are presented through the interaction of the respective parts of the system. This also incorporates the administrative capability to enable the reservation extension. 
+Beginning with the management capabilities for reservation entities, which include creation, update, deletion, and cancellation offered as the basic operations offered by this functional module. This also incorporates the administrative capability to enable the reservation extension. 
 In order to gain insight into the implementation of the backend logic in the frontend parts, as well as the comparison with the previously designed mockups, this theoretical perspective is complemented by the final implementation in the frontend applications of the system.
 
 \subsubsection{Create Reservation}
@@ -212,8 +212,8 @@ In conformity with its logical twin, the user request passes through \texttt{Res
 Then, \texttt{ReservationValidatorRest} performs the initial input validation, before querying the reservation associated with the provided \acrshort{id} through \\ \texttt{ReservationStorage}.
 Because of the aforementioned overlaps between the creation and updating process, no further description of the other steps undertaken is given in order to avoid repetition, which results from the fact that the reservation system updates reservations in a manner comparable to the \acrshort{cs} outlined in the \acrshort{ocpp} standard.
 As indicated there, an existing reservation with the same \acrshort{id} is replaced by any incoming reservation with the same \acrshort{id}.  
-Such a flawed design could allow the cancellation of reservations made by other users who have the same \acrshort{id} as the existing reservation at the station, which should be prevented.  Therefore, the implementation in the proposed system approach checks for this rare but possible case.
-Regarding future work, this behavior should be observed, as it is still included in the latest \acrshort{ocpp} version 2.0 specification.
+Such a flawed design could allow the cancellation of reservations made by other users who have the same \acrshort{id} as the existing reservation at the station, which should be prevented. So, the proposed system approach implements a check for this uncommon but potential scenario.
+Relating to future work, this behavior should be observed, as it is still included in the latest \acrshort{ocpp} version 2.0 specification.
 In order to handle alterations to the \acrshort{cs} or connector, the updating procedure guarantees the revocation of the booking at the previous station and gets in contact with the new station accordingly.
 
 \newpage
@@ -331,8 +331,8 @@ An example of the list view with the quick action buttons displayed at the list 
 \label{ch:Implementation:sec:Reservation System:ssec:Management Capabilities:sssec:Delete Reservation}
 
 Extending the \textbf{Cancel Reservation} functionality, \textbf{Delete Reservation} not only cancels the reservations that are currently ongoing within the system or the \acrshortpl{cs}, it also removes them from the database entirely.
-Therefore, as depicted in Figure \ref{fig:delete-reservation-seqflow}, when a deletion request is received from the user at the \texttt{ReservationRouter}, the \texttt{ReservationValidatorRest} validates it again and returns the process execution to the \texttt{ReservationService}. The latter continues the deletion process once the data entered is correctly validated.
-Regarding the attached \acrshort{id} that denotes the booking the user intends to delete, the \texttt{ReservationStorage} retrieves the entity from the database and thus verifies its existence this way.
+As depicted in Figure \ref{fig:delete-reservation-seqflow}, when a deletion request is received from the user at the \texttt{ReservationRouter}, the \texttt{ReservationValidatorRest} validates it again and returns the process execution to the \texttt{ReservationService}. The latter continues the deletion process once the data entered is correctly validated.
+With respect to the attached \acrshort{id} that denotes the booking the user intends to delete, the \texttt{ReservationStorage} retrieves the entity from the database and thus verifies its existence this way.
 In addition to verifying the existence of the record, the current booking status is assessed to initiate additional measures for managing ongoing reservations.
 This includes preventing the deletion of bookings in progress without notice for example. To manage ongoing appointments, the system contacts the relevant stations by using the \texttt{contactChargingStation} method to release the respective \acrshortpl{cs} and connectors.
 Due to the lack of a specific delete operation in the \acrshort{ocpp} standard, the deletion encapsulates the cancellation operation for a standardized communication with the \acrshort{cs}. As the station does not possess the ability to store history, the cancellation could be described as equivalent to a deletion at the charging infrastructure level.
@@ -349,7 +349,7 @@ After resolving the dependencies of the booking with the infrastructure, the \te
 
 \noindent As well as the referred counterpart, the delete operation, is also designed in the form of a single button. It is included within every screen showing a particular booking, enabling the user to delete at least one entity inside the system.
 In terms of a larger \acrshort{gui} for interaction, the browser app allows the user to delete multiple reservations at once, as indicated by the provided \acrshort{rest} endpoints in the table \ref{tab:delete-reservation-rest}.
-Regarding further development for the mobile versions, it may be feasible to implement a multi-select interface to enable the inclusion of multiple list entries within a single delete request.
+With reference to further development for the mobile versions, it may be feasible to implement a multi-select interface to enable the inclusion of multiple list entries within a single delete request.
 
 \begin{figure}[h]
     \centering
@@ -369,7 +369,7 @@ Regarding further development for the mobile versions, it may be feasible to imp
     \label{fig:impl-delete-reservation}
 \end{figure}
 
-\noindent To allow both atomic and batch deletion of entities, the \acrshort{rest} methodology recommends introducing the endpoints listed in the table \ref{tab:delete-reservation-rest}. Therefore, it is possible to reference a single object using the \acrshort{id} or to send multiple entries by omitting the latter.
+\noindent To allow both atomic and batch deletion of entities, the \acrshort{rest} methodology recommends introducing the endpoints listed in the table \ref{tab:delete-reservation-rest}. For distinguishing between both operations, in order to delete a single object, the user must reference it by its \acrshort{id}. In the case of deleting multiple entries, the user has to submit multiple entries, omitting the \acrshort{id} path parameter.
 
 \begingroup
 \setlength{\tabcolsep}{10pt} % Default value: 6pt
@@ -393,7 +393,7 @@ Regarding further development for the mobile versions, it may be feasible to imp
 
 Representing the final predefined management capability established during the preceding design phase, the \textbf{Enable Reservations} function enables the system administrator to activate the extension developed in this work.
 This feature is part of the \texttt{Tenant Component} modules, which stand for different feature sets that the tenants can be enabled for.  
-Due to the varying requirements and challenges faced by each organization, as identified by their dedicated tenant, the range of usable functionalities differs significantly. Therefore, in most cases, only subsets of the entire feature set that the system offers are enabled.
+Due to the varying requirements and challenges faced by each organization, as identified by their dedicated tenant, the range of usable functionalities differs significantly. Which only requires subsets of the system's feature sets to be enabled simultaneously.
 However, certain dependencies exist between the various components, which necessitate activating specific ones in order to enable the usability as a whole. The reason for this is that each module determines the amount of data and information available to the tenant, therefore, activating a certain group of components is logical.
 For example, the tenant component \texttt{Reservation} depends on the corresponding \texttt{Organization} component to get access to the \acrshortpl{cs} on the different sites of the organization and the relevant users. Otherwise, the system denies to enable this component on itself.
 Components such as the \texttt{Car} component may be activated upon request, to offer a wider range of features to the particular component. In the case of the \texttt{Reservation} component, this enables the integration of cars into the reservation.
@@ -413,7 +413,7 @@ The example configuration within the administration area of the web frontend for
 
 Complementing the management capabilities covered in the previous subsection \ref{ch:Implementation:sec:Reservation System:ssec:Management Capabilities}, the ability to schedule and process pre-configured tasks automatically without any interaction is a key aspect for developing a system that manages distributed infrastructure facilities. 
 To maximize automation, the proposed scheduling capabilities comprise a set of batch processing jobs that are intended to run sequentially and can be enabled on demand within the \acrshort{json} configuration file \texttt{src/assets/config.json} included with the project. 
-In addition to task activation and ensuring the specified sequential order, this file also allows for specifying the execution intervals in the form of \texttt{*/1 * * * *}, employed as the syntax for \gls{cron} jobs in the \gls{unix} world, to schedule job processing at specific times.
+In addition to task activation and ensuring the specified sequential order, this file also allows for specifying the execution intervals in the form of \texttt{*/1 * * * *}, employed as the syntax for Cron jobs in the \textit{UNIX} world, to schedule job processing at specific times.
 For the execution to behave as expected, the reservation component module introduced in \ref{ch:Implementation:sec:Reservation System:ssec:Management Capabilities:sssec:Enable Reservations} must be enabled. Otherwise, regardless of the activation, these tasks are not running.
 The pivotal function for handling these tasks is represented by the \texttt{TenantSchedulerTask} already mentioned as one of the key components for the working system in \ref{ch:Implementation:sec:Reservation System:ssec:Architectural Views:sssec:Components}.
 As the top-level entity overseeing all available tasks for execution, it executes the activated ones at their designated time intervals on the server.
@@ -431,7 +431,7 @@ Due to the fact that the user can create reservations in the future, the corresp
 To do this, the \textbf{Schedule Reservation} task shown in Figure \ref{fig:schedule-reservation-seqflow}, implemented as \texttt{SynchronizeReservationTask}, loads all reservations with status \texttt{SCHEDULED} for the next 15 minutes from the database.
 Also, to enable recurrent events, this comprises bookings with the status \texttt{IN\_PROGRESS} as well. 
 In the further processing of the combined booking types, the \texttt{synchronizeWithChargingStation} method checks for currently running charging sessions on the respective stations and connectors. If these sessions are not assigned to the \acrshort{rfid} tag that belongs to the reservation, the method stops them immediately.
-Therefore, the \texttt{ChargingStationClient} is used, which is a product of the \texttt{ChargingStationClientFactory} that controls instantiation using factory methods, to communicate directly with the \acrshort{cs}.
+To address this, the \texttt{ChargingStationClient} is used, which is a product of the \texttt{ChargingStationClientFactory} that controls instantiation using factory methods, to communicate directly with the \acrshort{cs}.
 Otherwise, the reservation is made directly on the \acrshort{cs} and if it has a \texttt{SCHEDULED} status, it is adjusted accordingly. A notification is then sent to the user via the \texttt{NotificationHelper} to inform that a booked charging session is forthcoming.
 Besides saving the updated reservation in the database, its \acrshort{id} is assigned to the associating connector on the \acrshort{cs} in the database using the \texttt{updateConnectorWithReservation} method.
 
@@ -496,14 +496,14 @@ Seizing the suggestions presented in the \textbf{Scheduling Capabilities} subsec
 This should ensure that the \acrshort{evu} can make informed decisions based on up-to-date information provided by the system.
 In the case of the \texttt{ChargingStationBlocked} notification, no suitable location could be identified. An integration within the \textbf{Schedule Reservation} process would lead to a simultaneous notification of the user blocking the \acrshort{cs} as well as the user of the reservation. 
 Possibly resulting in the parallel switching of drivers to a new station and the situation that this notification was intended to prevent. \\
-\noindent Regarding the support for multiple languages both the notifications and the labels of the \acrshort{gui} elements, which normally adapt to the language set in the user's profile, are only translated into English and German.
+\noindent In terms of the support for multiple languages both the notifications and the labels of the \acrshort{gui} elements, which normally adapt to the language set in the user's profile, are only translated into English and German.
 Other language options, including Spanish, French, and Italian, are not part of this approach and further work needs to be done to allow these languages to be used properly.
 
 \subsection{Additional Capabilities}
 \label{ch:Implementation:sec:Reservation System:ssec:Additional Capabilities}
 
 During development, more ways to enhance the reservation approach with extended features beyond the defined use cases could be identified.
-These capabilities, since they have no direct use regarding the basic functionality in interaction with the system, are listed as \textbf{Additional Capabilities} and are therefore mentioned here as part of an informative Section to possibly be considered as useful for other scenarios that may arise during other studies in this area.
+These capabilities, since they have no direct use affecting the basic functionality in interaction with the system, are listed as \textbf{Additional Capabilities} and are mentioned here as part of an informative Section to possibly be considered as useful for other scenarios that may arise during other studies in this area.
 
 \subsubsection{Export Reservation}
 \label{ch:Implementation:sec:Reservation System:ssec:Additional Capabilities:sssec:Export Reservation}
@@ -536,7 +536,7 @@ If the database crashes or there is a risk of unwanted data loss, these files co
 Due to the assumption, that the individuals create their reservations directly by selecting the \acrshortpl{cs} from the map view, considered as the entry point of the mobile application, or by using the various filter options within the web app, a pre-filtering mechanism to narrow down the options for available stations during a specific time in the future was not included in the design.
 However, the proposed solution provides a method for making bookings without pre-selecting the \acrshort{cs}, which leads to the requirement of choosing a suitable station while setting the reservation constraints. To promote a more convenient recommendation mechanism, the creation process should be supported by minimizing the number of stations presented that are not otherwise occupied at the given time.
 Taking this into account, the initial concept of the underlying logic resembles a simple intersection, similar to the one shown in Figure \ref{fig:reservable-cs}. In this way, the appropriate subset of connectors available for reservation could be easily identified.
-Therefore, the code loads all the entries for the given period and all the \acrshortpl{evse} registered in the system in order to perform an intersection of the two sets and select only the stations inside the \textbf{blue area}, as shown in the diagram below. These stations comprise the subset of options to be offered by the input fields.
+Hence, the code loads all the entries for the specified period and all the \acrshortpl{evse} registered in the system in order to perform an intersection of the two sets and select only the stations inside the \textbf{blue area}, as shown in the diagram below. These stations comprise the subset of options to be offered by the input fields.
 If other \acrshortpl{evu} create reservations during this process that would affect the offered selection, the service should detect any resulting overlaps and handle them appropriately as usual.
 
 \begin{figure}[h]
@@ -574,7 +574,7 @@ If other \acrshortpl{evu} create reservations during this process that would aff
 
 Besides the aforementioned feature sets and their related endpoints, a web service following the \acrshort{rest} architectural model requires additional interfaces, e.g. for information retrieval.
 Consequently, according to this approach, endpoints must be supplied for so-called \texttt{READ} operations. The function's connotation implies that these endpoints are accessible for requesting data when calling the corresponding \acrshort{url}.
-Therefore, the resource for collecting reservations, following the naming convention of the \acrshort{rest} method, is the plural form of the handled entity name. Given the proposed solution and the reservation as the underlying entity, the resource provided by this system is called \texttt{reservations}.
+Following the naming convention of the \acrshort{rest} method, the resource for collecting reservations is declared as its plural form of the handled entity name in lowercase. Given the proposed solution and the reservation as the underlying entity, the resource provided by this system is called \texttt{reservations}.
 Resulting in the interfaces listed in Table \ref{tab:read-reservations-rest} and accessible through the reservation \acrshort{api}, mainly employed for providing clients access to the internal system information.
 
 \begingroup
@@ -599,7 +599,7 @@ Resulting in the interfaces listed in Table \ref{tab:read-reservations-rest} and
 To assign the necessary functionality to each system role, as described in the chapter of requirements engineering, particularly  Section \ref{ch:Requirements Engineering:sec:Role Mapping}, the capabilities required to fulfill their purpose must be considered according to the principles of least privilege, which are explained in \cite{ma_specifying_2011}.
 Additionally, to supplement the mapping of feature sets to roles, the solution distinguishes between specific scopes that describe the range of information available to that particular role.
 Roles assigned with the \textit{Own} scope only have access to their own data and cannot view reservations made by other profiles, for example.
-Therefore, the \textit{Site} scope exists, enabling the assigned role to access all data related to the particular site.
+That falls within the scope of the \textit{Site}, allowing the assigned role to access all data pertaining to that specific location.
 With this privilege, the respective user can create, update, or cancel bookings for all users assigned to this site, for instance. An exception to this privilege set is the \textit{Admin} role, which is not limited to a dedicated site and allows the user to manage all entities related to the entire tenant. 
 Concerning the use cases from chapter \ref{ch:Requirements Engineering} and their associated actors, the final mapping of the developed processes is presented in Table \ref{tab:role-function-mapping} as defined in the file \texttt{AuthorizationsDefinition.ts} as part of the backend project.
 
@@ -623,8 +623,8 @@ Concerning the use cases from chapter \ref{ch:Requirements Engineering} and thei
 \end{table}
 \endgroup
 
-\noindent Afterwards, the assignment decisions regarding the \textit{Delete Reservation} and \textit{Enable Reservations} actions are revisited for a better understanding. The choice to allow only the \textit{Admin} user to perform the \textit{Delete Reservation} action is not solely based on the use case design.
-This work assumes, that disruptive actions, such as entity deletion, should only be carried out when excluding system users and removing their information, which can be classified as an administrative task and therefore limited to system administrators.
+\noindent Afterwards, the assignment decisions in the context of the \textit{Delete Reservation} and \textit{Enable Reservations} actions are revisited for a better understanding. The choice to allow only the \textit{Admin} user to perform the \textit{Delete Reservation} action is not solely based on the use case design.
+This work assumes, that disruptive actions, such as entity deletion, should only be carried out when excluding system users and removing their information, which can be classified as an administrative task and solely limited to system administrators.
 Concerning basic users, it is more likely that they use the cancel operation to properly revoke their reservations than to delete them completely.
 In the case of the \textit{Enable Reservations} task, only the \textit{Super Admin} can access the relevant sections of the administration dashboard to configure the tenants, thus, making this role the exclusive entity for assigning this feature. 
 On the other hand, this profile is unable to manage entities within the particular tenants itself, hence the need to assign it additional privileges for managing reservations is mandatory. 
@@ -638,7 +638,7 @@ To alleviate these uncertainties, a software solution should always inform the u
 Due to the nature of distributed systems, the client and the corresponding server are decoupled, and the only way the server could keep the client informed of the above scenarios is to use the \acrshort{http} status codes as part of each request to exchange information.
 Apart from failures within the system itself in the form of outages or targeted attacks, the charging infrastructure and the associated \acrshortpl{cs} should also be considered as an extra source of errors. 
 To effectively identify and manage exceptions in both the backend and frontend applications, this study translated each potential exception into a status code for meaningful reservation error handling.
-The following list only reflects the current state of implementation regarding the aforementioned range of capabilities, as well as the current state of the \acrshort{ocpp} standard, which is not meant to be complete. Therefore, potentially more scenarios and relevant exception--handling mechanisms have to be introduced in the future.
+The list below only reflects the current state of implementation concerning the aforementioned range of capabilities, as well as the current state of the \acrshort{ocpp} standard, which is not meant to be complete. Potentially, additional scenarios and relevant exception--handling mechanisms need to be incorporated in the future.
 
 \begin{multicols}{2}
 \begin{description}

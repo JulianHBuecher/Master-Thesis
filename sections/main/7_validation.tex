@@ -79,7 +79,7 @@ Nevertheless, initiating the desired behavior when calling functionalities as pa
 %% Goal 4 - Modular Design
 %% --------------------------------------------------------
 Concluding the assessment of the project's objectives, the \textit{Modular Design} evaluates the architectural metrics, particularly the coherence of the system as well as the interaction of the introduced components with the existing ones located within other logical areas of the application.
-From the very beginning of the conceptualization of the entities, care was taken to keep the dependencies on other objects within the system as limited as possible. Therefore, only the essential relations, such as the reference to the relevant \acrshortpl{cs} and the \acrshort{rfid} tag of the user who created the booking request, are integrated, and are also mandatory in terms of the underlying \acrshort{ocpp} standard.
+From the very beginning of the conceptualization of the entities, care was taken to keep the dependencies on other objects within the system as limited as possible. For this purpose, only the essential relations, such as the reference to the relevant \acrshortpl{cs} and the \acrshort{rfid} tag of the user who created the booking request, are integrated, and are also mandatory in terms of the underlying \acrshort{ocpp} standard.
 Examining the ability of the system to selectively activate functions, the modular design of the reservation subsystem also allows its complete deactivation by the superior administrator. As previously stated, deactivating this module restricts the system's users to the booking options according to the established standard.
 To guarantee this functionality is enforced, the relevant components implement this logical toggle to prevent unauthorized use by tenants that are not enabled for this operation.
 In terms of dependencies referencing other components that are not directly part of the subsystem, only the connection to the dedicated storage classes for retrieving user and information about the \acrshortpl{cs} is established. This includes the integration of the component responsible for generating and sending notifications to the appropriate client devices.
@@ -92,7 +92,7 @@ This led to the conclusion that looking at the logic of the service alone, it ma
 \label{ch:Analysis and Validation:sec:Open Issues}
 
 Because of the variety of possible ways in which pure reservation systems could be implemented in order to allow their users to book the managed limited resources, not all features and capabilities could be integrated into the final stage of the application.
-Therefore, this Section aims to provide a comprehensive outline of the capabilities that the actual system does not cover in terms of managing the reservations themselves, as well as the use of methodologies that are highly relevant in the context of \acrshort{emobility} and the use of \acrshortpl{ev}.
+The aim of this Section is to give a comprehensive outline of the capabilities that the actual system does not cover in terms of managing the reservations themselves, as well as the use of methodologies that are highly relevant in the context of \acrshort{emobility} and the use of \acrshortpl{ev}.
 It is important to note that this Section does not offer in-depth implementation guidance for incorporating these features, but rather presents them concisely for potential inclusion in future work. \\ \\
 %% --------------------------------------------------------
 %% Parent RFID Tag Integration
@@ -101,7 +101,7 @@ It is important to note that this Section does not offer in-depth implementation
 Covered by the underlying \textit{Open e-Mobility} backend \cite{noauthor_github_nodate-2}, only \texttt{SiteArea} entities offer the option the possibility to nest site areas within another and organize them into a ranking omitting the associated \acrshort{rfid} tags.
 Possibly, the tags within the parent areas may also have the ability to charge at the stations within the specific child areas. However, this behavior could not be confirmed in the current study and was not found to be part of the logic governing the initiation of the charging session.
 Resulting in a more detailed examination of the charging process, this capability was not taken into account during the design stage but was introduced as a property within the \texttt{Reservation} for later implementation.
-Therefore, this work assumes that the typical user, who would represent the majority of the \acrshortpl{evu}, only considers creating reservations for himself or for certain persons on their behalf. \\ 
+As part of this work, the typical user, who represents the majority of the \acrshortpl{evu}, only considers creating reservations for himself or on behalf of certain individuals. \\ 
 %% --------------------------------------------------------
 %% Reservations on logical connector 0
 %% --------------------------------------------------------
@@ -116,7 +116,7 @@ In order to introduce this capability, the relevant frontend interfaces necessit
 Remaining within the context of particular frontend functionalities, configuring each \acrshortpl{cs} so far is only possible by adjusting the \textit{configuration key} key-value pairs within the \acrshort{ocpp} parameter Section of the \acrshort{cs}.
 For instance, enabling the support of bookings on logical connector zero could be achieved by modifying or adding this value as a free-form string in the browser version of the service offering. 
 Apart from a good level of technical knowledge, this requires an understanding of the concept of these keys in combination with the values they support. 
-The same principle applies to adjusting the provided features at the station. Through the use of so--called \textit{feature profiles} \cite{noauthor_ocpp_nodate}, functionalities such as reservation support can be fully disabled at the respective station.
+The same principle applies to adjusting the available features at the station. Through the use of so--called \textit{feature profiles} \cite{noauthor_ocpp_nodate}, functionalities such as reservation support can be fully disabled at the respective station.
 By their simple existence as string values inside an array, they represent the corresponding features enabled on the station, the chance of editing such data structures freehand without typing errors is practically nonexistent.
 As suggested here, and to facilitate easier use, the administrative user should be able to easily adjust these parameters by selecting the desired capability on the dedicated station using a feature toggle or a checkbox in the corresponding part of the \acrshort{gui}. \\
 %% --------------------------------------------------------
@@ -124,7 +124,7 @@ As suggested here, and to facilitate easier use, the administrative user should 
 %% --------------------------------------------------------
 Regarding the \texttt{Tenant Component} entity introduced in the \textit{Implementation} chapter within sub-subsection \ref{ch:Implementation:sec:Reservation System:ssec:Management Capabilities:sssec:Enable Reservations}, there are additional opportunities to integrate the existing modules into the reservation system proposal. 
 Apart from integrating the \textbf{Car} component to assign cars of the \acrshortpl{evu} to the corresponding reservations, another option is, to utilize the \textbf{Fees and Payment} component.
-For instance, the standard consumer has to pay for the electricity used to charge a vehicle as well as to compensate the company providing the service. Therefore, payment options and pricing calculations are crucial for effective accounting by both parties. 
+For instance, the standard consumer has to pay for the electricity used to charge a vehicle as well as to compensate the company providing the service. Thus, payment options and pricing calculations are crucial for effective accounting by both parties. 
 Considering the actual properties of the booking entity, parameters such as arrival and departure time, combined with the current price available from the power supplier, could be used to estimate the later price of the charging session, allowing the user to know the actual cost of their charging before booking.
 Furthermore, the addition of the present battery capacity and the intended ultimate battery level could enable a more accurate computation. \\
 %% --------------------------------------------------------
@@ -132,8 +132,9 @@ Furthermore, the addition of the present battery capacity and the intended ultim
 %% --------------------------------------------------------
 Widening the perspective from pure cost estimation to include current electricity prices and take into account the resulting load of connected vehicles on the underlying power grid, the concept of \textbf{smart charging} opens up a new area of problem statements, in particular regarding addressing grid stability and the power distribution during peak demand.
 Apart from mitigating power outages, and assisting end users to plan their charging sessions more effectively based on the optimization algorithms utilized in smart charging, there could be significant benefits in incorporating reservations as well.
-By providing inputs such as arrival and departure times in combination with the amount of energy required, these algorithms could work with more reliable values than those previously predicted and should therefore produce better results.
-Therefore, the \texttt{Reservation} entity could be expanded to include details on the current battery charge of the used car and the aforementioned pricing capabilities, in order to allow an intelligent charging system to negotiate the best option for charging the user's vehicle, taking into account the information provided, as suggested in \cite{orcioni_ev_2020}.
+By providing inputs such as arrival and departure times in combination with the amount of energy required, these algorithms could work with more reliable values than those previously predicted and should lead to better results.
+As an extension to the \texttt{Reservation} entity, details on the current battery charge of the used car and the aforementioned pricing capabilities could be incorporated as well. 
+This could permit an intelligent charging system to negotiate the best option for charging the user's vehicle, taking into account the available information, as suggested in \cite{orcioni_ev_2020}.
 From the author's perspective, this could open the door to more advanced smart charging strategies, including \acrshort{v2g} scenarios. \\
 
 \noindent Despite the wide range of functionalities available, such systems are also limited in their ability to prevent certain situations or enforce correct functioning. These situations are addressed as part of the final Section of this chapter.

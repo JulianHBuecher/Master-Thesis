@@ -29,7 +29,7 @@ This involves analyzing existing work on reservation processes used for managing
 With regards to the default processing time mentioned earlier, the duration for compilation as well as analysing articles and field projects related to this area is set to one month. 
 The expected result should be used as the groundwork for the subsequent practical part, which is summarised in chapter \ref{ch:Literature Review}.
 As well as examining the current state of reservation systems, this review process defines a boundary for the necessary fundamentals of contextualization, resulting in the chapter \ref{ch:Fundamentals}.
-Therefore, a systematic requirements engineering, taking into account the facts gathered during the research phase and the collection of baselines, using a customised scenario to select relevant use cases, results in the chapter \ref{ch:Requirements Engineering}.
+Therefore, systematic requirements engineering, taking into account the facts gathered during the research phase and the collection of baselines, using a customised scenario to select relevant use cases, results in the chapter \ref{ch:Requirements Engineering}.
 Chapter \ref{ch:Design} presents the design phase, which follows the summarized requirements in chapter \ref{ch:Requirements Engineering} and the results of the literature review in chapter \ref{ch:Literature Review}. During this phase, mockups of the relevant interfaces as well as the underlying processes will be created.
 With the help of these designed concepts, the actual implementation of the reservation module resulting in chapter \ref{ch:Implementation} takes place.
 Subsequently, the theoretical Section concludes by validating the achieved functionality and presenting the final results, culminating in \ref{ch:Analysis and Validation}. Potential avenues for further research are also highlighted.
@@ -70,7 +70,7 @@ After the team members had successfully reviewed the implemented logic and minor
 Now, the extended \acrshort{cs} simulator was then used as a reservable charging infrastructure for the subsequent iterations.
 Particularly, to validate the implementation of reservations compliant with version 1.6 of the \acrshort{ocpp} protocol, considering both pre-existing functionalities in the backend application and the adaptations according to this work.
 This included not only the backend development but also the implementations within the frontend application during iterations three and four.
-Due to the partially existing features mentioned above, the third iteration takes less time than expected, resulting in an earlier commencement of the relevant functions in the web frontend.
+Due to the partially existing features mentioned above, the third iteration takes less time than expected, resulting in an earlier commencement of the relevant functions within the web frontend.
 In light of the time savings achieved in the preceding iterations, the fifth iteration for implementing the custom reservation function began prematurely as well. 
 To account for the unexpected scope of required operations alongside an end-to-end development approach, the author decided to merge the fifth and sixth iterations, resulting in an extended fifth iteration and a total of six iterations instead of the originally planned seven iterations.
 Because of the previous schedule adjustments, the final iteration also started earlier and was completed later than intended. 
@@ -103,7 +103,7 @@ Therefore, this Section mentions these tasks in addition to a brief explanation 
 
 \begin{description}
     \item[Task 1 - MongoDB Manifests] As the public repository offers no other deployment options, the only available one was containerization and operation using the Docker Compose orchestration tool \cite{noauthor_overview_2023}. 
-    To offer a more scalable and robust solution, the industry standard for deploying containerized applications therefore recommends employing \acrshort{k8s} \cite{noauthor_produktionsreife_nodate} as a sophisticated orchestrator. This led to this first task. 
+    To offer a more scalable and robust solution, the industry standard for deploying containerized applications, therefore, recommends employing \acrshort{k8s} \cite{noauthor_produktionsreife_nodate} as a sophisticated orchestrator. This led to this first task. 
     Nevertheless, the manifest files essential for creating a 'StatefulSets' \cite{noauthor_statefulsets_nodate} deployment, a standard way for deploying database applications inside \acrshort{k8s}, were still not yet included in the current project. 
     Hence, the MongoDB \cite{noauthor_mongodb_nodate} database's custom setup, including test data and users, already existing as part of the local setup, was employed as a blueprint for creating the necessary manifests required for the \acrshort{k8s} deployment.
     \item[Task 2 - MongoDB Helm Chart] To further reduce the effort required to deploy the database application to \acrshort{k8s} instances, the Helm \cite{noauthor_helm_nodate} toolbox and its charts for encapsulating \acrshort{k8s} manifests are integrated.  

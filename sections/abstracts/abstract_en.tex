@@ -11,21 +11,20 @@
 
 \Abstract
 % Problem
-Due to the continuous development of technologies in the context of electric mobility leading to an increased load on charging, as well as the existing transport infrastructure, bottlenecks in the use of charging stations are inevitable.
-Despite the application of intelligent mechanisms for load distribution and the use of computer-aided processes for charging electric vehicles, also known as smart charging, scenarios such as the appropriate management of this type of infrastructure that facilitates reservations, receive little attention. 
-Therefore, a system-controlled approach for the administration and distribution of charging facilities emerged as a key aspect for the further establishment of \acrfull{ev} in society and its acceptance as a safe and reliable means of transport.\\
+The continuous development of technologies related to \acrfull{emobility} is driving increased demand for the charging and transportation infrastructure. This inevitably leads to bottlenecks in the use of the corresponding \acrfullpl{cs}.
+Despite the application of intelligent mechanisms for load distribution and the use of computer--aided processes for charging electric vehicles, also known as smart charging, scenarios such as the appropriate management of this type of infrastructure that facilitates reservations, receive little attention. 
+Therefore, a system--controlled approach for the administration and distribution of charging facilities emerged as a key aspect for the further establishment of \acrfull{ev} in society and its acceptance as a safe and reliable way of transport.\\
 % Target
-What are the functional and non-functional requirements that such a system should satisfy? This paper explores this question from different perspectives utilizing detailed use cases based on a real-world scenario.
-In cooperation with SAP SE, this master's thesis addresses this specific type of problem statement as an integral part of its subsequent work.\\
+What are the functional and non--functional requirements that such a system should satisfy? This question is examined from various perspectives based on a real--world scenario and the corresponding use cases as part of this master's thesis in cooperation with SAP~SE.\\
 % Approach
 The first part of this work begins with a theoretical examination of existing functionality covered by open industry standards, such as the \acrfull{ocpp} or \acrfull{ocpi}. 
-As an open standard, many manufacturers of electric charging equipment implement these features as standard in their products, allowing a wide range of stations to be covered by using one of these for implementation.
-Hereinafter, the collection and analysis of requirements that are not part of any of the already listed standards at the time of writing this thesis. 
-Finally, a subset of the identified functional modules is used to implement the required basic functionality in the form of a \acrshort{poc}.\\
+As an open standard, many manufacturers of electric charging equipment implement these features in their products, allowing potential service providers to cover a wide range of stations by supporting one or more of these de facto standards.
+Hereinafter, the thesis presents the collection and analysis of requirements that are not part of any of the already listed standards at the time of writing. 
+Resulting in the selection of a subset of functional modules that is used to implement the design proposal as a \acrfull{poc}, demonstrating the feasibility of the proposed design.\\
 % Result
-After the theoretical part, which isolates the necessary functionality for building a comprehensive reservation system, a basic set of operations and processes covering this functionality is implemented as part of the \acrshort{emobility} open source software from SAP SE, also known as \textit{Open e-Mobility}.
-In order to validate the developed approach, the reservation module's implementation as independent functionality could be successfully validated using a simulated test environment, verifying the standards-compliant features incorporated by the web-based \href{https://github.com/JulianHBuecher/ev-dashboard/tree/reservation-process}{user interface}, the \href{https://github.com/JulianHBuecher/ev-mobile/tree/reservation-process}{mobile application} and the \href{https://github.com/JulianHBuecher/ev-server/tree/reservation-process}{backend service}.
-Regarding current reservation systems, the suggested solution showcases the desired functionality of allowing users to oversee both allocated charging infrastructure as well as the corresponding reservations.\\
+After the theoretical part, which isolates the necessary use cases for building a comprehensive reservation system, a basic set of operations and processes covering this functionality is implemented as part of the \acrshort{emobility} open source software from SAP~SE, also known as \textit{Open e--Mobility}.
+Besides the implementation, the reservation module's capabilities were successfully validated by using a simulated test environment, verifying compliance in terms of the aforementioned standards.
+Regarding current reservation systems, the suggested solution, encompassing the web--based \href{https://github.com/JulianHBuecher/ev-dashboard/tree/reservation-process}{user interface}, the \href{https://github.com/JulianHBuecher/ev-mobile/tree/reservation-process}{mobile application} and the \href{https://github.com/JulianHBuecher/ev-server/tree/reservation-process}{backend service}, showcases the desired functionality of allowing users to oversee both allocated charging infrastructure as well as the corresponding reservations.\\
 % Further Research Areas
 Based on the underlying implementation, reservations can also be used in other scenarios in the described problem space. 
 The use of reservations in combination with the time periods of the individual entries could be used for bi-directional charging, better known as \acrfull{v2g}, in order to avoid load peaks in the power grid.

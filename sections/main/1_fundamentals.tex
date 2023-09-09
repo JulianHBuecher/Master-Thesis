@@ -37,7 +37,7 @@ Therefore, brake resistance is employed to convert the power generated into elec
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{resources/images/main/1_fundamentals/ElectricVehicleTypes.png}
+    \includegraphics[width=0.8\textwidth]{resources/images/main/1_fundamentals/ElectricVehicleTypes.png}
     \caption{Classification approach for different \acrshort{ev} types based on \cite{acharige_review_2023}.}
     \label{fig:ev-classification}
 \end{figure}
@@ -73,7 +73,7 @@ These groups, classified according to accessibility level for the \acrshortpl{ev
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{resources/images/main/1_fundamentals/ChargingStationClassification.png}
+\includegraphics[width=0.8\textwidth]{resources/images/main/1_fundamentals/ChargingStationClassification.png}
 \caption{Classification for different types of \acrshortpl{cs} based on \cite{afshar_literature_2020}.}
 \label{fig:charging-station-classification}
 \end{figure}
@@ -95,10 +95,10 @@ On top of the described components, various safety features are integrated to pr
     \caption{Listing of different \acrshort{ev} charging levels based on \cite{acharige_review_2023}.}
     \begin{tabular}{c|c|m{6.5cm}}
         Charging Level & Charging Power & Use Case \\ \hline
-         1 & 1.44 kW - 1.9 kW & Typically the slowest charging option and suitable for overnight charging at home \\
-         2 & 3.1 kW - 19.2 kW & Provides faster charging compared to Level 1 and is commonly used for home charging setups and public charging stations \\
-         3 & 20 kW - 350 kW & Fast charging operates at a higher voltage, directly charging the vehicle's battery with direct current power. Commonly used in public fast--charging stations.\\
-         \acrshort{xfc} & > 350 kW & Ultra--fast charging provides the fastest charging option. Commonly used in commercial settings.
+         1 & 1.44 kW -- 1.9 kW & Typically the slowest charging option and suitable for overnight charging at home \\
+         2 & 3.1 kW -- 19.2 kW & Provides faster charging compared to Level 1 and is commonly used for home charging setups and public charging stations \\
+         3 & 20 kW -- 350 kW & Fast charging operates at a higher voltage, directly charging the vehicle's battery with direct current power. Commonly used in public fast--charging stations.\\
+         \acrshort{xfc} & >350 kW & Ultra--fast charging provides fastest charging option. Commonly used in commercial settings. 
     \end{tabular}
     \label{tab:ev-charging-levels}
 \end{table}
@@ -127,13 +127,13 @@ In addition to the previously mentioned \acrshort{ocpp}, further standards relev
 The \acrfull{ocpp} outlines an open industry--standard communication protocol, used especially in charging infrastructure for \acrshortpl{ev}. Proposed by the ElaadNL foundation as an open protocol to support the communication between \acrshort{cs} and the related backend services, the ownership was transferred to \acrshort{oca} in 2014 \cite{garofalaki_electric_2022}.
 In general, the \acrshort{ocpp} is designed to provide interoperability and seamless integration between different \acrshort{cs} vendors and network operators, ensuring that \acrshort{ev} drivers can charge their vehicles at any compatible \acrshort{cs}.
 Therefore, it is maintained by the \acrfull{oca}, a consortium of \acrshort{ev} charging infrastructure stakeholders, as an open protocol and not proprietary to any specific manufacturer or organization. 
-Ensuring that the \acrshort{ocpp} remains a collaborative and evolving standard \cite{noauthor_ocpp_nodate}. \\
+In this way, it is ensured that the \acrshort{ocpp} remains a collaborative and evolving standard \cite{noauthor_ocpp_nodate}. \\
 From an architectural point of view, the protocol could be described in the form of a client/server architecture. The \acrshort{evse} in this model acts as the client, while the \acrshort{csms} serves as the server. 
 The server responds to the client's requests and manages the charging processes accordingly. This request--response model, where the client sends requests to the server, and the server responds with the appropriate information or action enables real--time communication between the \acrfull{cs} and the connected \acrfull{cms}.
-As an interface for communication, two different types of protocols are used. On the one side, the WebSocket protocol, described in \ref{ch:Fundamentals:sec:Data Exchange:ssec:WebSocket}, for bidirectional communication, providing a persistent connection between the \acrshort{evse} and the \acrshort{cms} and allowing a faster and more efficient data exchange. On the other side, \acrfull{soap}, as described in \ref{ch:Fundamentals:sec:Data Exchange:ssec:SOAP}, is suitable for the implementation of one--way communication between the respective entities.
+As an interface for communication, two different types of protocols are used. On the one side, the WebSocket protocol, described in \ref{ch:Fundamentals:sec:Data Exchange:ssec:WebSocket}, for bidirectional communication, providing a persistent connection between the \acrshort{evse} and the \acrshort{cms} allowing a faster and more efficient data exchange. On the other side, \acrfull{soap}, as described in \ref{ch:Fundamentals:sec:Data Exchange:ssec:SOAP}, is suitable for the implementation of one--way communication between the respective entities.
 To differentiate between particular feature sets, the \acrshort{ocpp} is versioned. 
 The versions are presented as floating point numbers, which increase with major or minor releases within the nomenclature, such as \acrshort{ocpp} 1.6 and \acrshort{ocpp} 2.0. Representing the latest versions of the protocol, which are widely used in current implementations. \\ \\
-\noindent For the communication between \acrshort{cs}, \acrshort{csms} and the \acrshort{evu}, the \acrshort{ocpp} protocol relies on so called operations. Each of these operations describes a set of instructions, which are necessary to fulfill, to successfully complete the underlying process.
+\noindent For the communication between \acrshort{cs}, \acrshort{csms} and the \acrshort{evu}, the \acrshort{ocpp} protocol relies on so called operations. Each of these operations describes a set of instructions, which are necessary to fulfill and successfully complete the underlying process.
 According to the required operations used in the context of this work, a subset of operations are selected, which are elucidated in the following list. 
 The wording and the explanations are based on the standard documentation for the \acrshort{ocpp} version 1.6 \cite{noauthor_ocpp_nodate}:
 
@@ -181,7 +181,7 @@ However, the required level of data granularity or quality is not specified \cit
 
 The concept of smart charging or intelligent charging is a systematic approach that optimizes the charging process of \acrshortpl{ev} to be more efficient, cost-effective, and environmentally friendly using information and communication technologies. 
 Therefore, the subsequent calculations consider factors such as electricity demand, grid capacity, availability of renewable energy, and individual user preferences to allow for optimizations in the user's decision--making \cite{deb_smart_2022}.
-One of the primary goals of this methodology is to balance the demand on the underlying grid, affected by charging large numbers of \acrshortpl{ev} simultaneously \cite{daina_electric_2017}. Especially during peak hours increased electricity costs or potential blackouts could result. 
+One of the primary goals of this methodology is to balance the demand on the underlying grid, affected by charging large numbers of \acrshortpl{ev} simultaneously \cite{daina_electric_2017}. Especially during peak hours increased electricity costs or potential blackouts could occur. 
 In order to mitigate these situations, smart charging takes the current load of the grid into account and adjusts the possible charging rates based on the given constraints to prevent overloading the grid and optimizing the use of available energy \cite{garcia-villalobos_plug-electric_2014}. 
 Compared to the unidirectional charging method originally known as \acrfull{v1g}, the approach of \acrfull{v2g} enables smart charging systems to charge bidirectionally between the \acrshortpl{ev} battery and the grid \cite[199]{kathiresh_e-mobility_2022}. Allowing \acrshortpl{ev} with sufficient battery capacity to return energy to the grid during times of high demand and turning them into mobile energy storage units to enhance grid stability and resiliency.
 To offer all these functions, smart charging relies on data connectivity and communication between the single \acrshortpl{cs}, the \acrshortpl{ev}, and the underlying grid, which makes it vulnerable to malign third--party entities as well. On the other side, these factors can contribute to better grid management overall, giving grid operators insight into electricity demand patterns and enabling them to plan grid upgrades accordingly.
@@ -193,19 +193,21 @@ More generally, the terminology of a \acrfull{sg} describes the characteristics 
 It consists of multiple parts, like a sufficient infrastructure, applications, and several technologies to manage the energy flow inside the grid.
 This includes, for example, monitoring and measuring solutions as important cornerstones, allowing the grid to support an efficient generation and distribution of power. Supplemented by the behavior of the users connected to the \acrshort{sg}, which is a component of the continuously operating optimization procedures.
 Based on \cite{moreno_escobar_comprehensive_2021}, researchers have identified 94 potential optimization algorithms thus far, primarily implemented in central orchestration systems and observing the \acrshort{sg} to manage these kinds of distributed networks.
-As a result, the smart grid controls, based on the predetermined objectives, the power flow dynamically and in an intelligent way to meet the demands of all the nodes in the network. Compared to the existing grid, which provides power in an unidirectional manner, smart grids allow the delivery of power in a bidirectional way. 
+As a result, the smart grid is capable of dynamically and intelligently controlling the flow of power based on predetermined objectives to meet the needs of all nodes in the network. 
+Considering the delivery of electricity, compared to existing grids that deliver power in one direction only, smart grids enable bi--directional power delivery.  
 Therefore, the smart grid utilizes \acrshort{der}, such as \acrshortpl{ev} or renewable energy sources, located at consumer homes, to absorb surplus power when not in use.
 This approach is very similar to the \acrshort{v2g} functionality of smart charging described in \ref{ch:Fundamentals:sec:Electric Mobility:ssec:Smart Charging} and could be combined with it.
 
 \section{Reservation Systems}
 \label{ch:Fundamentals:sec:Reservation Systems}
 
-Originally, current reservation systems were developed as \acrfull{crs} to facilitate collaboration between airlines and technology companies \cite{xiang_evolution_2020}. The original objective of the system to be a tool to book resources without the need for paper or other management systems has obviously evolved over time, as have the functionalities and capabilities of these systems.
+Originally, current reservation systems were developed as \acrfull{crs} to facilitate collaboration between airlines and technology companies \cite{xiang_evolution_2020}. The original objective of the system to be a tool to book resources without the need for paper or other management systems has obviously evolved over time.
+This also applies to the features and abilities of these systems.
 Started as a centrally managed system with restricted access to call center operators, which administered the available resources for their corresponding airlines or hotel chains, the further development of the world wide web in 1989 led to a transformation away from the \acrshort{crs} to online booking systems, also known as web--based \acrfullpl{ibe}, directly available to the customer via their personal computers at home.
 In general, a reservation system could be defined as a software application or platform that facilitates the process of booking and securing limited services, resources, or accommodations in advance, based on the definition of Xiang et al. \cite[p.~2]{xiang_evolution_2020}. 
 As mentioned previously, besides its original application in the travel or hospitality industry, it is also a common tool for the administration of the transportation or entertainment industry. With the goal of simplifying reservation procedures for customers and minimizing administrative tasks, while increasing user satisfaction.
 Based on the system architecture and the technologies employed, reservation systems could vary depending on the functionalities required. When utilized in a web-based application, such as an online booking system, it is essential to consider different constraints and use cases, compared to a local system within one institution. 
-To abstract from the requirements necessary for particular deployment scenarios, the following section outlines a set of fundamental characteristics and functionalities that a reservation system should typically encompass. While the chosen list of features may not encompass all the use cases required for a specific system, it should furnish a brief overview for general purposes.
+To abstract from the requirements necessary for particular deployment scenarios, the following section outlines a set of fundamental characteristics and functionalities that a reservation system should typically encompass. While the chosen list of features may not include all the use cases required for a specific system, it should furnish a brief overview for general purposes.
 For reference and guidance in the case of the functionality of the reservation system, the existing research and literature on hotel reservation systems such as \cite{delizo_online_2013,bemile_online_nodate} as well as the common functionalities found in current booking systems are used.
 \textbf{Booking and Scheduling} could be described as the main purpose of a reservation system. By using this feature users can view available dates, times, or slots and make reservations for specific services, activities, or resources. The system ensures that conflicting bookings do not occur.
 To provide an overview, which represents the availability of the aforementioned resources, the system requires \textbf{Real--Time Availability}. Therefore, users can see immediately if the desired service or resource is available for the chosen date and time.
@@ -214,7 +216,7 @@ Additionally, managing and monitoring bookings, the option to securely pay for a
 To acknowledge successful reservations or notify users of any changes to their bookings, a \textbf{Confirmation and Notifications} should be embedded in the application. This feature not only acts as a confirmation of the booking, but also evidence of the completed transaction and may contain information such as booking \acrshort{id}, date, time, and location.
 Regarding the need for modification or cancellation of the reservation, the system should provide \textbf{Cancellation and Modification} features, enabling the user to cancel or modify their reservations within a specified time frame. Additionally, cancellation policies eventually exist for penalties punishing late cancellations.
 Moreover, apart from the management of the reservations made through the system, it should provide a \textbf{Inventory Management} for the owners of the resources and help them manage their possessions.
-Other features such as \textbf{Reporting and analytics} or the \textbf{Integration with Other Systems}, which allow the generation of reports on booking trends, revenue, and occupancy rates, are advanced functionalities typically not visible to the end--user. Mostly offered as an administrative service offering to extend the basic use of the system, reporting and third--party integration of other systems, such as customer relationship management (CRM), is not part of every software suite. 
+Other features such as \textbf{Reporting and Analytics} or the \textbf{Integration with Other Systems}, which allow the generation of reports on booking trends, revenue, and occupancy rates, are advanced functionalities typically not visible to the end--user. Mostly offered as an administrative service extending the basic use of the system, reporting and third--party integration of other systems, such as customer relationship management (CRM), is not part of every software suite. 
 This also applies to the integration of payment gateways.
 
 \section{Data Exchange}
@@ -227,7 +229,7 @@ In addition to a brief overview of \acrfull{rest} in \ref{ch:Fundamentals:sec:Da
 \label{ch:Fundamentals:sec:Data Exchange:ssec:REST}
 
 Introduced by Roy Fielding as an architectural style \cite{patni_pro_2017} to design distributed systems, \acrfull{rest} provides concepts and a set of constraints that define resources accessed via a common interface by \acrshort{http} methods specified in the standard protocol description.
-Stated as the general set of \acrshort{http} methods used to query a \acrshort{rest} \acrfullpl{api}, the methods \verb|GET|, \verb|POST|, \verb|PUT| and \verb|DELETE| are the most representative examples in the context of web development. 
+Stated as the general set of \acrshort{http} methods used to query a \acrshort{rest} \acrfullpl{api}, the methods \verb|GET|, \verb|POST|, \verb|PUT| and \verb|DELETE| are the most conventional examples in the context of web development. 
 Representing a set of standardized operations, also known as \acrshort{crud} operations, similar to the functionalities utilized in the context of relational and non--relational databases, these methods assume the activation of certain functionalities within the respective targets.
 The verbs used to name the operations carry significant meaning, indicating the associated functionality and the expected outcome of the call.
 Aside from the mere retrieval of data, which is usually performed by the use of \verb|GET|, the creation and update of an entity involves either \verb|POST| or \verb|PUT|.
@@ -244,12 +246,12 @@ As a counterpart to the \acrshort{rest} protocol described in the previous Secti
 The fundamental idea of \acrshort{soap} is to provide data as services, tagged with names consisting of both verbs and nouns. For instance, the service named \textit{getCar} is exclusively for providing information about cars and is not intended for any other objectives.
 In contrast to \acrshort{rest}, this ensures better communication of the purpose for which the method is intended, as well as the necessary data that this particular function relies on to fulfill its purpose. All of this information about the handled objects and parameters is communicated to the client prior to the actual interaction and described as part of a \acrfull{wsdl} document, which is publicly available from the \acrshort{url} of the particular services implementing this protocol.
 This creates a so-called contract between a server and a client, providing security and authorization as well as more direct access to objects available on the server. As a result, these components are much more tightly coupled.
-Therefore, \acrshort{soap}, as outlined in \cite[4]{patni_pro_2017}, is typically recommended for scenarios involving use cases considering transactional operations or when the environment is dependent on this protocol.
+Therefore, \acrshort{soap}, as outlined in \cite[4]{patni_pro_2017}, is typically recommended for scenarios involving use cases considering transactional operations or in case the environment is dependent on this protocol.
 
 \subsection{OData}
 \label{ch:Fundamentals:sec:Data Exchange:ssec:OData}
 
-Another option for implementing web-based services besides utilizing only the \acrshort{rest} architectural style is the \acrshort{odata} protocol, which aims to build on top of the \acrshort{rest} to provide both a higher level of consistency in terms of breaking changes and to increase interoperability between the communication partners \cite{noauthor_documentation_nodate}.
+Another option for implementing web--based services besides utilizing only the \acrshort{rest} architectural style is the \acrshort{odata} protocol, which aims to build on top of the latter to provide both a higher level of consistency in terms of breaking changes and to increase interoperability between the communication partners \cite{noauthor_documentation_nodate}.
 To accomplish these goals, \acrshort{odata} services, similar to services implementing \acrshort{soap}, supply a metadata definition using \acrfull{csdl} as a metadata description language ensuring a machine-readable form of the service functionalities it provides.
 In the case of generic clients with no knowledge of the implemented logic of the services, these documents exchanged as part of a preflight request between server and requestor, give the clients the ability to interact in a formalized way.
 Alongside these outstanding features, the \acrshort{odata} standard offers additional concepts such as \textit{namespaces} or specific \acrshort{url} conventions to cover much more advanced scenarios. 

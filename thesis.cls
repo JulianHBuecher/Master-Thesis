@@ -234,7 +234,7 @@
 \setkeys{Gin}{draft=false}
 
 % % Mathematics package
-% \RequirePackage{amsmath}
+\RequirePackage{amsmath}
 % \let\openbox\relax
 % \RequirePackage{amsthm}
 % \RequirePackage{amssymb}
@@ -291,6 +291,7 @@
 
 % Venn Diagram
 \RequirePackage{tikz}
+\usetikzlibrary{calc,trees,positioning,arrows,fit,shapes,calc}
 % Icons
 \RequirePackage{fontawesome5}
 

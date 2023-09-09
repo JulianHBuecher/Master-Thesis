@@ -19,7 +19,7 @@ To conclude the capabilities listed and further possibilities for feature implem
 \section{Achievement of Objectives}
 \label{ch:Analysis and Validation:sec:Achievement of Objectives}
 
-With the aim of elaborating on a reservation process implemented insight a suitable system for handling the relevant charging infrastructure, this thesis stated several objectives that the system needs to satisfy. 
+With the aim of elaborating on a reservation process implemented insight a suitable system for handling the relevant charging infrastructure, this thesis stated several objectives the system needs to satisfy. 
 Formulated in the \textit{Goals} Section \ref{ch:Requirements Engineering:sec:Goals} within the preliminary \textit{Design} chapter, the fulfillment of these goals is subsequently evaluated.
 Beginning with a brief summary of each goal, the capabilities addressed are evaluated in relation to their originally proposed range of functionality.
 %% --------------------------------------------------------
@@ -71,7 +71,7 @@ From the authors' point of view, this does not allow a direct statement to be ma
 %% --------------------------------------------------------
 Regarding the \textit{Support of relevant standards}, the utilized \acrshort{ocpp} standard, as previously mentioned, served as the base implementation for enabling the communication with the charging infrastructure and the respective \acrshortpl{cs}.
 Besides \acrshort{ocpi}, mainly used for roaming scenarios, and \acrshort{oicp}, developed as a proprietary protocol, the \acrshort{ocpp} standard, as a free and extensible implementation, is assumed to be the most suitable choice for use in systems in the \acrshort{emobility} context.
-Due to the protocol's existing implementation in the underlying solution, the decision to use it in the context of this development could be described as trivial.
+Due to the protocol's existing implementation in the underlying solution, the decision to use it in the context of this development could be described as mandatory.
 Though, it cannot be excluded that the other standards could also be applicable to suit the used scenarios and their requirements, the designed entities abstract from the templates introduced by \acrshort{ocpp}, allowing a switch to another standard without further adaption of the reservation logic itself.
 Referring to the elaborated \texttt{Reservation} entity, a derived set of properties could be used within a more general scenario, in which the mere reservation of \acrshortpl{cs} is not the sole focus. Therefore, it could be assumed that the proposal would be supported in conjunction with other existing standards. 
 Nevertheless, initiating the desired behavior when calling functionalities as part of an existing application or through an interface provided by a \acrshort{csms} requires parameter adjustments.
@@ -150,5 +150,5 @@ To name just a few examples, starting with the most trivial one of a vehicle blo
 From the perspective of some researchers in the literature, the introduction of physical barriers that block these parking spaces until the appropriate driver arrives is essential, as suggested by the authors in \cite{basmadjian_reference_2020}.
 But considering the expenses involved in installing such facilities, the efficiency in terms of cost and maintenance is beyond the scope of many \acrshortpl{cso} and the providers of parking space. \\
 Another inevitable scenario arises when a vehicle commences charging prior to an approaching reservation. Therefore, this study proposes a preventative approach by alerting the user of the forthcoming reservation, but the vacant connector on the \acrshort{cs} could be used without restrictions until the reserved time slot arrives.
-These are just two examples of misbehavior that a system like this cannot stop. Further examples could be added, but the critical point to acknowledge is that the application depends on a user who behaves in a manner that supports the overall concept and does not constrain other users.
+These are just two examples of misbehavior a system like this cannot stop. Further examples could be added, but the critical point to acknowledge is that the application depends on a user who behaves in a manner that supports the overall concept and does not constrain other users.
 Otherwise, additional regulatory entities would be necessary to supplement the system's rules in direct collaboration with the \acrshortpl{evu}.

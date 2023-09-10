@@ -12,15 +12,15 @@
 \label{ch:Analysis and Validation}
 
 Referring to the final design concept and its implementation within the practical part of this work, the proposed reservation system and its capabilities, which are considered necessary for the efficient management of the charging infrastructure, are observed in an evaluative manner and finally reviewed.
-Therefore, the assumptions formulated during conceptualization, as well as the pre-defined goals and their achievement, are considered to give a reasonable assumption of whether the system is capable of handling reservations on \acrshortpl{cs} in an efficient manner.
-Alongside the stated objectives for fulfillment, this chapter discusses open issues that emerged during the different phases and which could not be integrated into the development process due to the limited resources available. However, these characteristics are deemed essential to facilitate situations that would add value to this work.
+Therefore, the assumptions formulated during conceptualization, as well as the pre--defined goals and their achievement, are considered to give a reasonable assumption of whether the system is capable of handling reservations on \acrshortpl{cs} in an efficient manner.
+Alongside the stated objectives for fulfillment, this chapter discusses open issues, that emerged during the different phases and which could not be integrated into the development process, due to the limited resources available. However, these characteristics are deemed essential to facilitate situations, that would add value to this work.
 To conclude the capabilities listed and further possibilities for feature implementations, the limitations of such a system, described in the final part of this chapter, are elaborated as a set of challenges in the context of certain scenarios. 
 
 \section{Achievement of Objectives}
 \label{ch:Analysis and Validation:sec:Achievement of Objectives}
 
 With the aim of elaborating on a reservation process implemented insight a suitable system for handling the relevant charging infrastructure, this thesis stated several objectives the system needs to satisfy. 
-Formulated in the \textit{Goals} Section \ref{ch:Requirements Engineering:sec:Goals} within the preliminary \textit{Design} chapter, the fulfillment of these goals is subsequently evaluated.
+Formulated in Section \ref{ch:Requirements Engineering:sec:Goals}, describing the \textit{Goals} within the preliminary \textit{Design} chapter, the fulfillment of these goals is subsequently evaluated.
 Beginning with a brief summary of each goal, the capabilities addressed are evaluated in relation to their originally proposed range of functionality.
 %% --------------------------------------------------------
 %% Goal 1 - Management Capabilities
@@ -31,124 +31,124 @@ Since not every user in the system has the same privileges based on the role ass
 %% --------------------------------------------------------
 %% Goal 2 - Self-Healing and Autonomous Processes
 %% --------------------------------------------------------
-With access control rules in mind, the concept of \textit{Self-Healing and Autonomous Processes} arising from a set of rules covering the description of a self-regulated behavior that allows the system to handle pre-conceived scenarios without the intervention of a user, is defined as the second objective. 
+With access control rules in mind, the concept of \textit{Self--Healing and Autonomous Processes} arising from a set of rules covering the description of a self--regulated behavior that allows the system to handle pre--conceived scenarios, without the intervention of a user, is defined as the second objective. 
 In addition to mitigating undesired actions of individuals, the transition of managed entities, such as changing their states according to specific constraints, is conceivable.
 Consequently, both the convenience of the system user, who no longer needs to approve and process each step of the entity life cycle and the consistency of the data could be improved.
 %% --------------------------------------------------------
 %% Goal 3 - Support of relevant standards
 %% --------------------------------------------------------
-Beyond the capabilities, which focus on the systems' functionalities and the support of generic functions to enable the user to achieve his goals, the environment and the communication partners that exchange data with the solution need to be addressed.
-Due to the emphasis on the charging infrastructure in the context of \acrshort{emobility} and the recharging of \acrshortpl{ev}, the industry and other players in the field have developed a common basis as a guideline for communication between the various entities involved in the domain.
+Beyond the capabilities, which focus on the systems' functionalities and the support of generic functions to enable the user to achieve his goals, the environment and the communication partners, that exchange data with the solution, need to be addressed.
+Due to the emphasis on the charging infrastructure in the context of \acrshort{emobility} and the recharging of \acrshortpl{ev}, the industry and other players in the field have developed a common basis as a guideline for communication between the various entities, involved in the domain.
 Representing these guiding principles, which include the definition of a basic feature set in combination with the essential steps to achieve successful interaction with the relevant devices, standards such as those mentioned in \ref{ch:Fundamentals:sec:Electric Mobility:ssec:Relevant Standards} need to be considered.
 Covered by the \textit{Support of relevant standards}, the intention is to provide an interoperable solution that is not restricted to a particular type of infrastructure but can manage all devices that implement the generally accepted standards.
 %% --------------------------------------------------------
 %% Goal 4 - Modular Design
 %% --------------------------------------------------------
 After gathering the required functionalities and referencing the relevant standards that the system must consider, the objective of \textit{Modular Design} focuses on addressing the design of the solution in terms of software components and the necessary abstraction from the remaining system landscape.
-Resulting in the ambition to provide as much decoupling as possible, which promotes both resiliency of the overall system in case of failure, and easier carve-out of functionality for individual service deployments. Furthermore, this permits integration within other services or the potential for reuse within other deployment scenarios. \\
+Resulting in the ambition to provide as much decoupling as possible, which promotes both resiliency of the overall system in case of failure, and easier carve--out of functionality for individual service deployments. Furthermore, this permits integration within other services or the potential for reuse within other deployment scenarios. \\
 
-\noindent Considering the above objectives and their relation to the current output, the following conclusions can be drawn with regard to the achievement of the stated targets. It is important to note that the purpose of this Section is not to provide a detailed summary of each functionality and label it as complete or incomplete. 
-Instead, it assesses the level of accomplishment and the overall design intentions achieved from the perspective of the author of this work, with a view to possible application within a real-world scenario similar to the one elaborated in \ref{ch:Requirements Engineering:sec:Scenario}.
+\noindent Considering the above objectives and their relation to the current output, the following conclusions can be drawn with regard to the achievement of the stated targets. It is important to note, that the purpose of this section is not to provide a detailed summary of each functionality and label it as complete or incomplete. 
+Instead, it assesses the level of accomplishment and the overall design intentions, achieved from the perspective of the author of this work, with a view to possible application within a real--world scenario, similar to the one elaborated in \ref{ch:Requirements Engineering:sec:Scenario}.
 %% --------------------------------------------------------
 %% Goal 1 - Management Capabilities
 %% --------------------------------------------------------
 Taking into account the existing functionality within the system and that provided by the current standards, the implementation and its design proposal extend the feature sets in several ways.
 Apart from the ability to create bookings for dedicated connectors and the \acrshortpl{cs} in advance, the functionality is not covered by the solution and is not covered by the standard used.
-Furthermore, the option of recurring bookings over several days is a newly introduced concept and is still not found in the existing literature during the processing time of this work.
-By applying the implementation to the custom scenario and considering its application within a public or semi-public charging infrastructure, the developed capabilities present the chance to reserve vital infrastructure in an efficient manner.
-For example, it enables the creation of longer-term reservations suitable for visitors to a particular site, without the unnecessary hassle of making multiple arrangements for the same user, resulting in more convenient use of the applications. This could be further improved with the help of the self-healing and autonomous background processes described later.
+Furthermore, the option of recurring bookings over several days is a newly introduced concept and is still not found in the existing literature, during the processing time of this work.
+By applying the implementation to the custom scenario and considering its application within a public or semi--public charging infrastructure, the developed capabilities present the chance to reserve vital infrastructure, in an efficient manner.
+For example, it enables the creation of longer--lasting reservations, suitable for visitors to a particular site, without the unnecessary hassle of making multiple arrangements for the same user, resulting in more convenient use of the applications. This could be further improved with the help of the self--healing and autonomous background processes described later.
 Assessing the level of fulfillment of the \textit{Management Capabilities}, this work assumes an almost complete coverage of these system capabilities. 
-Despite the absence of features required for use in smart charging scenarios, which are addressed in the following Section listing the open issues identified during the development process, the system provides a sufficient set of features in terms of management tasks for the most plausible scenarios.
+Despite the absence of features required for use in smart charging scenarios, which are addressed in the following section listing the open issues identified during the development process, the system provides a sufficient set of features in terms of management tasks for the most plausible scenarios.
 %% --------------------------------------------------------
 %% Goal 2 - Self-Healing and Autonomous Processes
 %% --------------------------------------------------------
-Aside from promoting convenience in using the system, the \textit{Self-Healing and Autonomous Processes} cover the most essential states within the underlying life cycle concept introduced by this work.
-Considered the most important ones are the synchronization with the \acrshortpl{cs} due to the upcoming reserved period, the expiration in terms of reaching its end, as well as the handling of the case of a non-appearing driver.
+Aside from promoting convenience in using the system, the \textit{Self--Healing and Autonomous Processes} cover the most essential states within the underlying life cycle concept, introduced by this work.
+Considered the most important ones are the synchronization with the \acrshortpl{cs}, due to the upcoming reserved period, the expiration in terms of reaching its end, as well as the handling of the case of a non--appearing driver.
 However, this list is not considered complete and permits the addition of further scenarios, taking into account the varying charging infrastructures and their respective constraints. 
-From the authors' point of view, this does not allow a direct statement to be made about the degree of completion, as could be done previously. Rather this collection is intended as a guide for future work and will evolve over time.
+From the authors' point of view, this does not allow a direct statement to be made about the degree of completion. As the focus of this collection is to serve as a guide for future work, it should evolve over time to cover more viable scenarios in the future.
 %% --------------------------------------------------------
 %% Goal 3 - Support of relevant standards
 %% --------------------------------------------------------
 Regarding the \textit{Support of relevant standards}, the utilized \acrshort{ocpp} standard, as previously mentioned, served as the base implementation for enabling the communication with the charging infrastructure and the respective \acrshortpl{cs}.
 Besides \acrshort{ocpi}, mainly used for roaming scenarios, and \acrshort{oicp}, developed as a proprietary protocol, the \acrshort{ocpp} standard, as a free and extensible implementation, is assumed to be the most suitable choice for use in systems in the \acrshort{emobility} context.
 Due to the protocol's existing implementation in the underlying solution, the decision to use it in the context of this development could be described as mandatory.
-Though, it cannot be excluded that the other standards could also be applicable to suit the used scenarios and their requirements, the designed entities abstract from the templates introduced by \acrshort{ocpp}, allowing a switch to another standard without further adaption of the reservation logic itself.
-Referring to the elaborated \texttt{Reservation} entity, a derived set of properties could be used within a more general scenario, in which the mere reservation of \acrshortpl{cs} is not the sole focus. Therefore, it could be assumed that the proposal would be supported in conjunction with other existing standards. 
-Nevertheless, initiating the desired behavior when calling functionalities as part of an existing application or through an interface provided by a \acrshort{csms} requires parameter adjustments.
+Though it cannot be excluded, that the other standards could also be applicable to suit the used scenarios and their requirements. Therefore, the designed entities abstract from the templates introduced by \acrshort{ocpp} in a manner that allows a switch to another standard without further adaption of the reservation logic itself.
+Referring to the elaborated \texttt{Reservation} entity, a derived set of properties could be used within a more general scenario, in which the mere reservation of \acrshortpl{cs} is not the sole focus. Thus, it could be assumed that the proposal would be supported in conjunction with other existing standards. 
+Nevertheless, initiating the desired behavior when calling functionalities as part of an existing application or through an interface, provided by a \acrshort{csms}, requires parameter adjustments.
 %% --------------------------------------------------------
 %% Goal 4 - Modular Design
 %% --------------------------------------------------------
-Concluding the assessment of the project's objectives, the \textit{Modular Design} evaluates the architectural metrics, particularly the coherence of the system as well as the interaction of the introduced components with the existing ones located within other logical areas of the application.
-From the very beginning of the conceptualization of the entities, care was taken to keep the dependencies on other objects within the system as limited as possible. For this purpose, only the essential relations, such as the reference to the relevant \acrshortpl{cs} and the \acrshort{rfid} tag of the user who created the booking request, are integrated, and are also mandatory in terms of the underlying \acrshort{ocpp} standard.
-Examining the ability of the system to selectively activate functions, the modular design of the reservation subsystem also allows its complete deactivation by the superior administrator. As previously stated, deactivating this module restricts the system's users to the booking options according to the established standard.
-To guarantee this functionality is enforced, the relevant components implement this logical toggle to prevent unauthorized use by tenants that are not enabled for this operation.
-In terms of dependencies referencing other components that are not directly part of the subsystem, only the connection to the dedicated storage classes for retrieving user and information about the \acrshortpl{cs} is established. This includes the integration of the component responsible for generating and sending notifications to the appropriate client devices.
+Concluding the assessment of the project's objectives, the \textit{Modular Design} evaluates the architectural metrics, particularly the coherence of the system, as well as the interaction of the introduced components with the existing ones, located within other logical areas of the application.
+From the very beginning of the conceptualization of the entities, care was taken to keep the dependencies, on other objects within the system, as limited as possible. For this purpose, only the essential relations, such as the reference to the relevant \acrshortpl{cs} and the \acrshort{rfid} tag of the user who created the booking request, are integrated, and are also mandatory, in terms of the underlying \acrshort{ocpp} standard.
+Examining the ability of the system to selectively activate functions, the modular design of the reservation subsystem also allows its complete deactivation by the superior administrator. As previously stated, deactivating this module restricts the system's users to the booking options, according to the established standard.
+To guarantee this functionality is enforced, the relevant components implement this logical toggle to prevent unauthorized use by tenants, that are not enabled for this operation.
+In terms of dependencies referencing other components, that are not directly part of the subsystem, only the connection to the dedicated storage classes, for retrieving user and information about the \acrshortpl{cs}, is established. This includes the integration of the component responsible for generating and sending notifications to the appropriate client devices.
 Deployments that target smaller service units, commonly referred to as microservices, aim to extract each subsystem to operate independently from others. In this context, only the user and \acrshort{cs} information needs to be retrieved from other service instances. To enable notification capabilities, extra steps must be taken. 
-This led to the conclusion that looking at the logic of the service alone, it maintains only a few connections to external components that could not be precisely described as part of the design, which resulted in a more loosely coupled system. Nevertheless, these dependencies can be easily abstracted and can be considered as a result of the chosen form of extension. \\
+This led to the conclusion that looking at the logic of the service alone, it maintains only a few connections to external components, that could not be precisely described as part of the design, which resulted in a more loosely coupled system. Nevertheless, these dependencies can be easily abstracted and can be considered as a result of the chosen form of extension. \\
 
-\noindent After outlining the objectives and the corresponding degree of completion, the next Section presents features and feature sets in the form of capabilities that are not part of the current state of the extended service. Despite that, they should be mentioned here for future elaboration.
+\noindent After outlining the objectives and the corresponding degree of completion, the next section presents features and feature sets in the form of capabilities, that are not part of the current state of the extended service. Despite that, they should be mentioned here for future elaboration.
 
 \section{Open Issues}
 \label{ch:Analysis and Validation:sec:Open Issues}
 
-Because of the variety of possible ways in which pure reservation systems could be implemented in order to allow their users to book the managed limited resources, not all features and capabilities could be integrated into the final stage of the application.
-The aim of this Section is to give a comprehensive outline of the capabilities that the actual system does not cover in terms of managing the reservations themselves, as well as the use of methodologies that are highly relevant in the context of \acrshort{emobility} and the use of \acrshortpl{ev}.
-It is important to note that this Section does not offer in-depth implementation guidance for incorporating these features, but rather presents them concisely for potential inclusion in future work. \\ \\
+Because of the variety of possible ways in which pure reservation systems could be implemented in order to allow their users to book the managed limited resources, not all features and capabilities, could be integrated into the final stage of the application.
+The aim of this section is to give a comprehensive outline of the capabilities that the actual system does not cover, in terms of managing the reservations themselves, as well as the use of methodologies, that are highly relevant in the context of \acrshort{emobility} and the use of \acrshortpl{ev}.
+It is important to note that this section does not offer in--depth implementation guidance for incorporating these features, but rather presents them concisely for potential inclusion in future work. \\ \\
 %% --------------------------------------------------------
 %% Parent RFID Tag Integration
 %% --------------------------------------------------------
-\noindent In the case of the \acrshort{ocpp} standard, the specification enables the use of a parent \acrshort{id} tag, which represents a subset of \acrshort{rfid} tags covered by the superior entity. Every tag belonging to this group is capable of initiating the charging session on a reserved connector.
-Covered by the underlying \textit{Open e-Mobility} backend \cite{noauthor_github_nodate-2}, only \texttt{SiteArea} entities offer the option the possibility to nest site areas within another and organize them into a ranking omitting the associated \acrshort{rfid} tags.
-Possibly, the tags within the parent areas may also have the ability to charge at the stations within the specific child areas. However, this behavior could not be confirmed in the current study and was not found to be part of the logic governing the initiation of the charging session.
-Resulting in a more detailed examination of the charging process, this capability was not taken into account during the design stage but was introduced as a property within the \texttt{Reservation} for later implementation.
+\noindent In the case of the \acrshort{ocpp} standard, the specification enables the use of a parent \acrshort{id} tag, which represents a subset of \acrshort{rfid} tags, covered by the superior entity. Every tag belonging to this group is capable of initiating the charging session on a reserved connector.
+Covered by the underlying \textit{Open e--Mobility} backend \cite{noauthor_github_nodate-2}, only \texttt{SiteArea} entities offer the possibility to nest site areas within another and organize them into a ranking, omitting the associated \acrshort{rfid} tags.
+Possibly, the tags within the parent areas may also have the ability to charge at the stations within the specific child areas. However, this behavior could not be confirmed in the current study and was not found to be part of the logic, governing the initiation of the charging session.
+Resulting in a more detailed examination of the charging process, this capability was not taken into account during the design stage but was introduced as a property within the \texttt{Reservation}, for later implementation.
 As part of this work, the typical user, who represents the majority of the \acrshortpl{evu}, only considers creating reservations for himself or on behalf of certain individuals. \\ 
 %% --------------------------------------------------------
 %% Reservations on logical connector 0
 %% --------------------------------------------------------
-Along with the ability to declare a parent tag to allow all its children to charge on a reserved connector, the \acrshortpl{cs} facilitate the reservation of an unspecified logical connector through the usage of the dedicated \acrshort{id} \texttt{0} in the booking request.
-This requires the \acrshort{cs} to possess at least one connector accessible for charging within the designated time slot.
-Despite implementing this feature during the extension of the \acrshort{cs} simulator in developing the system prerequisites, the actual frontend applications do not support both the selection and utilization of this non-physical entity on the relevant stations.
-This involves reserving the specific connector or activating it using the \textit{configuration key} \texttt{ReserveConnectorZeroSupported} as defined in the \acrshort{ocpp} standard \cite{noauthor_ocpp_nodate}.
-In order to introduce this capability, the relevant frontend interfaces necessitate further modification to represent this particular type of connector. Failing to do so renders the implementation of the reservation system being of little use in its current state. \\
+Along with the ability to declare a parent tag, to allow all its children to charge on a reserved connector, the \acrshortpl{cs} facilitate the reservation of an unspecified logical connector, through the usage of the dedicated \acrshort{id} \texttt{0} in the booking request.
+This requires the \acrshort{cs} to possess at least one connector, accessible for charging, within the designated time slot.
+Despite implementing this feature during the extension of the \acrshort{cs} simulator in developing the system prerequisites, the actual frontend applications do not support both the selection and utilization of this non--physical entity on the relevant stations.
+This involves reserving the specific connector or activating it, using the \textit{configuration key} \texttt{ReserveConnectorZeroSupported} as defined in the \acrshort{ocpp} standard \cite{noauthor_ocpp_nodate}.
+In order to introduce this capability, the relevant frontend interfaces necessitate further modification to represent this particular type of connector. Failing to do so, renders the implementation of the reservation system being of little use, in its current state. \\
 %% --------------------------------------------------------
 %% Enable Reservations on CS via the UI 
 %% --------------------------------------------------------
-Remaining within the context of particular frontend functionalities, configuring each \acrshortpl{cs} so far is only possible by adjusting the \textit{configuration key} key-value pairs within the \acrshort{ocpp} parameter Section of the \acrshort{cs}.
-For instance, enabling the support of bookings on logical connector zero could be achieved by modifying or adding this value as a free-form string in the browser version of the service offering. 
+Remaining within the context of particular frontend functionalities, configuring each \acrshort{cs} so far is only possible, by adjusting the \textit{configuration key} key--value pairs, within the \acrshort{ocpp} parameter section of the \acrshort{cs}.
+For instance, enabling the support of bookings on logical connector zero could be achieved, by modifying or adding this value as a free--form string in the browser version of the service offering. 
 Apart from a good level of technical knowledge, this requires an understanding of the concept of these keys in combination with the values they support. 
-The same principle applies to adjusting the available features at the station. Through the use of so--called \textit{feature profiles} \cite{noauthor_ocpp_nodate}, functionalities such as reservation support can be fully disabled at the respective station.
-By their simple existence as string values inside an array, they represent the corresponding features enabled on the station, the chance of editing such data structures freehand without typing errors is practically nonexistent.
-As suggested here, and to facilitate easier use, the administrative user should be able to easily adjust these parameters by selecting the desired capability on the dedicated station using a feature toggle or a checkbox in the corresponding part of the \acrshort{gui}. \\
+The same principle applies to adjusting the available features at the station. Through the use of so--called \textit{feature profiles} \cite{noauthor_ocpp_nodate}, functionalities such as reservation support, can be fully disabled at the respective station.
+Representing the corresponding features enabled on the station, their simple existence as string values inside an array demolishes the chance of editing such data structures freehand without typing errors.
+As suggested here, and to facilitate easier use, the administrative user should be able to easily adjust these parameters, by selecting the desired capability on the dedicated station, using a feature toggle or a checkbox in the corresponding part of the \acrshort{gui}. \\
 %% --------------------------------------------------------
 %% Fees and Payment
 %% --------------------------------------------------------
-Regarding the \texttt{Tenant Component} entity introduced in the \textit{Implementation} chapter within sub-subsection \ref{ch:Implementation:sec:Reservation System:ssec:Management Capabilities:sssec:Enable Reservations}, there are additional opportunities to integrate the existing modules into the reservation system proposal. 
-Apart from integrating the \textbf{Car} component to assign cars of the \acrshortpl{evu} to the corresponding reservations, another option is, to utilize the \textbf{Fees and Payment} component.
-For instance, the standard consumer has to pay for the electricity used to charge a vehicle as well as to compensate the company providing the service. Thus, payment options and pricing calculations are crucial for effective accounting by both parties. 
+Regarding the \texttt{Tenant Component} entity, introduced in the \textit{Implementation} chapter within Sub--subsection \ref{ch:Implementation:sec:Reservation System:ssec:Management Capabilities:sssec:Enable Reservations}, there are additional opportunities to integrate the existing modules, into the reservation system proposal. 
+Apart from integrating the \textbf{Car} component to assign cars of the \acrshortpl{evu} to the corresponding reservations, another option is, to utilize the \textbf{Fees~and~Payment} component.
+For instance, the standard consumer has to pay for the electricity used to charge a vehicle, as well as to compensate the company providing the service. Thus, payment options and pricing calculations are crucial for effective accounting by both parties. 
 Considering the actual properties of the booking entity, parameters such as arrival and departure time, combined with the current price available from the power supplier, could be used to estimate the later price of the charging session, allowing the user to know the actual cost of their charging before booking.
 Furthermore, the addition of the present battery capacity and the intended ultimate battery level could enable a more accurate computation. \\
 %% --------------------------------------------------------
 %% Smart Charging Integration
 %% --------------------------------------------------------
 Widening the perspective from pure cost estimation to include current electricity prices and taking into account the resulting load of connected vehicles on the underlying power grid, the concept of \textbf{smart charging} opens up a new area of problem statements. This includes in particular, addressing grid stability as well as the power distribution during peak demand.
-Apart from mitigating power outages, and assisting end users to plan their charging sessions more effectively based on the optimization algorithms utilized in smart charging, there could be significant benefits in incorporating reservations as well.
+Apart from mitigating power outages, and assisting end users to plan their charging sessions more effectively, based on the optimization algorithms utilized in smart charging, there could be significant benefits in incorporating reservations as well.
 By providing inputs such as arrival and departure times in combination with the amount of energy required, these algorithms could work with more reliable values than those previously predicted and should lead to better results.
 As an extension to the \texttt{Reservation} entity, details on the current battery charge of the used car and the aforementioned pricing capabilities could be incorporated as well. 
 This could permit an intelligent charging system to negotiate the best option for charging the user's vehicle, taking into account the available information, as suggested in \cite{orcioni_ev_2020}.
 From the author's perspective, this could open the door to more advanced smart charging strategies, including \acrshort{v2g} scenarios. \\
 
-\noindent Despite the wide range of functionalities available, such systems are also limited in their ability to prevent certain situations or enforce correct functioning. These situations are addressed as part of the final Section of this chapter.
+\noindent Despite the wide range of functionalities available, such systems are also limited in their ability to prevent certain situations or enforce correct functioning. These situations are addressed as part of the final section of this chapter.
 
 \section{Limitations}
 \label{ch:Analysis and Validation:sec:Limitations}
 
-The fact that a software solution is described as part of the non-physical world places certain limitations on the capabilities of such solutions. 
-This is particularly true for reservation systems that aim to connect physical and virtual entities and attempt to ensure specific user behavior with respect to the established rule set.
-By considering the booking of suitable charging sessions in public and semi-public parking facilities equipped with \acrshortpl{cs}, various scenarios may arise where the user may be prevented from charging their vehicle due to the misbehavior of other drivers or system users. 
+The fact that a software solution is described as part of the non--physical world, places certain limitations on the capabilities of such solutions. 
+This is particularly true for reservation systems, that aim to connect physical and virtual entities and attempt to ensure specific user behavior, with respect to the established rule set.
+By considering the booking of suitable charging sessions in public and semi--public parking facilities equipped with \acrshortpl{cs}, various scenarios may arise where the user may be prevented from charging their vehicle, due to the misbehavior of other drivers or system users. 
 Concerning these situations, the system will not always be able to prevent them from happening.
-To name just a few examples, starting with the most trivial one of a vehicle blocking the reserved parking space. Thus, the reservation does not allow the vehicle to be charged at this particular station, the parking space itself could not be blocked for this driver.
-From the perspective of some researchers in the literature, the introduction of physical barriers that block these parking spaces until the appropriate driver arrives is essential, as suggested by the authors in \cite{basmadjian_reference_2020}.
+To name just a few examples, starting with the most trivial one of a vehicle blocking the reserved parking space. Thus, the reservation does not allow the vehicle to be charged at this particular station, the parking space itself can not be blocked for this driver.
+From the perspective of some researchers in the literature, the introduction of physical barriers that block these parking spaces, until the appropriate driver arrives is essential, as suggested by the authors in \cite{basmadjian_reference_2020}.
 But considering the expenses involved in installing such facilities, the efficiency in terms of cost and maintenance is beyond the scope of many \acrshortpl{cso} and the providers of parking space. \\
-Another inevitable scenario arises when a vehicle commences charging prior to an approaching reservation. Therefore, this study proposes a preventative approach by alerting the user of the forthcoming reservation, but the vacant connector on the \acrshort{cs} could be used without restrictions until the reserved time slot arrives.
-These are just two examples of misbehavior a system like this cannot stop. Further examples could be added, but the critical point to acknowledge is that the application depends on a user who behaves in a manner that supports the overall concept and does not constrain other users.
-Otherwise, additional regulatory entities would be necessary to supplement the system's rules in direct collaboration with the \acrshortpl{evu}.
+Another inevitable scenario arises when a vehicle commences charging, prior to an approaching reservation. Therefore, this study proposes a preventative approach, by alerting the user of the forthcoming reservation, but the vacant connector on the \acrshort{cs} could be used without restrictions until the reserved time slot arrives.
+These are just two examples of misbehavior, a system like this cannot stop. Further examples could be added, but the critical point to acknowledge is, that the application depends on a user, who behaves in a manner, that supports the overall concept and does not constrain other users.
+Otherwise, additional regulatory entities would be necessary, to supplement the system's rules in direct collaboration with the \acrshortpl{evu}.

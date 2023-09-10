@@ -179,7 +179,7 @@ However, the required level of data granularity or quality is not specified \cit
 \subsection{Smart Charging}
 \label{ch:Fundamentals:sec:Electric Mobility:ssec:Smart Charging}
 
-The concept of smart charging or intelligent charging is a systematic approach that optimizes the charging process of \acrshortpl{ev} to be more efficient, cost-effective, and environmentally friendly using information and communication technologies. 
+The concept of smart charging or intelligent charging is a systematic approach that optimizes the charging process of \acrshortpl{ev} to be more efficient, cost--effective, and environmentally friendly using information and communication technologies. 
 Therefore, the subsequent calculations consider factors such as electricity demand, grid capacity, availability of renewable energy, and individual user preferences to allow for optimizations in the user's decision--making \cite{deb_smart_2022}.
 One of the primary goals of this methodology is to balance the demand on the underlying grid, affected by charging large numbers of \acrshortpl{ev} simultaneously \cite{daina_electric_2017}. Especially during peak hours increased electricity costs or potential blackouts could occur. 
 In order to mitigate these situations, smart charging takes the current load of the grid into account and adjusts the possible charging rates based on the given constraints to prevent overloading the grid and optimizing the use of available energy \cite{garcia-villalobos_plug-electric_2014}. 
@@ -206,7 +206,7 @@ This also applies to the features and abilities of these systems.
 Started as a centrally managed system with restricted access to call center operators, which administered the available resources for their corresponding airlines or hotel chains, the further development of the world wide web in 1989 led to a transformation away from the \acrshort{crs} to online booking systems, also known as web--based \acrfullpl{ibe}, directly available to the customer via their personal computers at home.
 In general, a reservation system could be defined as a software application or platform that facilitates the process of booking and securing limited services, resources, or accommodations in advance, based on the definition of Xiang et al. \cite[p.~2]{xiang_evolution_2020}. 
 As mentioned previously, besides its original application in the travel or hospitality industry, it is also a common tool for the administration of the transportation or entertainment industry. With the goal of simplifying reservation procedures for customers and minimizing administrative tasks, while increasing user satisfaction.
-Based on the system architecture and the technologies employed, reservation systems could vary depending on the functionalities required. When utilized in a web-based application, such as an online booking system, it is essential to consider different constraints and use cases, compared to a local system within one institution. 
+Based on the system architecture and the technologies employed, reservation systems could vary depending on the functionalities required. When utilized in a web--based application, such as an online booking system, it is essential to consider different constraints and use cases, compared to a local system within one institution. 
 To abstract from the requirements necessary for particular deployment scenarios, the following section outlines a set of fundamental characteristics and functionalities that a reservation system should typically encompass. While the chosen list of features may not include all the use cases required for a specific system, it should furnish a brief overview for general purposes.
 For reference and guidance in the case of the functionality of the reservation system, the existing research and literature on hotel reservation systems such as \cite{delizo_online_2013,bemile_online_nodate} as well as the common functionalities found in current booking systems are used.
 \textbf{Booking and Scheduling} could be described as the main purpose of a reservation system. By using this feature users can view available dates, times, or slots and make reservations for specific services, activities, or resources. The system ensures that conflicting bookings do not occur.
@@ -222,7 +222,7 @@ This also applies to the integration of payment gateways.
 \section{Data Exchange}
 \label{ch:Fundamentals:sec:Data Exchange}
 
-After the presentation of the various services, their corresponding communication channels, and the information provided within Section \ref{ch:Fundamentals:sec:Electric Mobility:ssec:Relevant Standards}, the subsequent Section deals in more detail with the technical concepts that underlie both the protocols and the application.
+After the presentation of the various services, their corresponding communication channels, and the information provided within Section \ref{ch:Fundamentals:sec:Electric Mobility:ssec:Relevant Standards}, the subsequent section deals in more detail with the technical concepts that underlie both the protocols and the application.
 In addition to a brief overview of \acrfull{rest} in \ref{ch:Fundamentals:sec:Data Exchange:ssec:REST}, a quick summary of the technologies \acrfull{soap} in \ref{ch:Fundamentals:sec:Data Exchange:ssec:SOAP}, \acrfull{odata} in \ref{ch:Fundamentals:sec:Data Exchange:ssec:OData} and WebSockets in \ref{ch:Fundamentals:sec:Data Exchange:ssec:WebSocket} follows. 
 
 \subsection{REST}
@@ -245,17 +245,17 @@ In addition to these core components, \acrshort{rest} provides numerous options 
 As a counterpart to the \acrshort{rest} protocol described in the previous Section \ref{ch:Fundamentals:sec:Data Exchange:ssec:REST}, \acrshort{soap} was created by Dave Winer and others in collaboration with Microsoft \cite{patni_pro_2017} to addresses the demands of enterprise software.
 The fundamental idea of \acrshort{soap} is to provide data as services, tagged with names consisting of both verbs and nouns. For instance, the service named \textit{getCar} is exclusively for providing information about cars and is not intended for any other objectives.
 In contrast to \acrshort{rest}, this ensures better communication of the purpose for which the method is intended, as well as the necessary data that this particular function relies on to fulfill its purpose. All of this information about the handled objects and parameters is communicated to the client prior to the actual interaction and described as part of a \acrfull{wsdl} document, which is publicly available from the \acrshort{url} of the particular services implementing this protocol.
-This creates a so-called contract between a server and a client, providing security and authorization as well as more direct access to objects available on the server. As a result, these components are much more tightly coupled.
+This creates a so--called contract between a server and a client, providing security and authorization as well as more direct access to objects available on the server. As a result, these components are much more tightly coupled.
 Therefore, \acrshort{soap}, as outlined in \cite[4]{patni_pro_2017}, is typically recommended for scenarios involving use cases considering transactional operations or in case the environment is dependent on this protocol.
 
 \subsection{OData}
 \label{ch:Fundamentals:sec:Data Exchange:ssec:OData}
 
 Another option for implementing web--based services besides utilizing only the \acrshort{rest} architectural style is the \acrshort{odata} protocol, which aims to build on top of the latter to provide both a higher level of consistency in terms of breaking changes and to increase interoperability between the communication partners \cite{noauthor_documentation_nodate}.
-To accomplish these goals, \acrshort{odata} services, similar to services implementing \acrshort{soap}, supply a metadata definition using \acrfull{csdl} as a metadata description language ensuring a machine-readable form of the service functionalities it provides.
+To accomplish these goals, \acrshort{odata} services, similar to services implementing \acrshort{soap}, supply a metadata definition using \acrfull{csdl} as a metadata description language ensuring a machine--readable form of the service functionalities it provides.
 In the case of generic clients with no knowledge of the implemented logic of the services, these documents exchanged as part of a preflight request between server and requestor, give the clients the ability to interact in a formalized way.
 Alongside these outstanding features, the \acrshort{odata} standard offers additional concepts such as \textit{namespaces} or specific \acrshort{url} conventions to cover much more advanced scenarios. 
-Nevertheless, these aspects are beyond the scope of this informative Section and are not covered in this brief introduction.
+Nevertheless, these aspects are beyond the scope of this informative section and are not covered in this brief introduction.
 
 \subsection{WebSocket}
 \label{ch:Fundamentals:sec:Data Exchange:ssec:WebSocket}
@@ -265,5 +265,5 @@ Resulting in numerous obstacles for the server and its client, including the qua
 Trying to solve these problems, the WebSocket protocol suggests using only one \acrshort{tcp} connection for traffic in both directions.
 In order to create this information channel, Fette and Melnikov's proposal allows taking advantage of existing infrastructure, which lets the users replace existing technologies using \acrshort{http} as the transport layer within their applications.
 To initiate the data exchange process, this communication approach relies on establishing trust through exchanging preliminary handshakes and utilizing the origin--based security model, which is commonly implemented in current browser applications.
-Once the trust between server and client is established, the protocol allows the applications to communicate utilizing basic message framing layered over \acrshort{tcp} stack. This grants web-based services the ability to construct efficient information exchange in two directions, without the need to open multiple \acrshort{http} connections.
+Once the trust between server and client is established, the protocol allows the applications to communicate utilizing basic message framing layered over \acrshort{tcp} stack. This grants web--based services the ability to construct efficient information exchange in two directions, without the need to open multiple \acrshort{http} connections.
 Apart from the possibility of using the WebSocket protocol over unencrypted \acrshort{http} channels, it can be utilized in encrypted traffic via \acrfull{https} on port 443 as well.

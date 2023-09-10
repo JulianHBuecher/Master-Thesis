@@ -11,8 +11,8 @@
 \chapter{Design}
 \label{ch:Design}
 
-This chapter presents a design that takes into account the processes, cross-checked with existing approaches for booking systems in the context of \acrshort{emobility}, as discussed in Chapter \ref{ch:Literature Review}. 
-Building upon the definitions of requirements and use cases outlined in Chapter \ref{ch:Requirements Engineering}, the following Sections deal with the conceptualization of the required entities, such as the arrangement, as well as the functionality for sufficient management capabilities of the underlying charging infrastructure.
+This chapter presents a design that takes into account the processes, cross--checked with existing approaches for booking systems in the context of \acrshort{emobility}, as discussed in Chapter~\ref{ch:Literature Review}. 
+Building upon the definitions of requirements and use cases outlined in Chapter~\ref{ch:Requirements Engineering}, the following Sections deal with the conceptualization of the required entities, such as the arrangement, as well as the functionality for sufficient management capabilities of the underlying charging infrastructure.
 Furthermore, the mockups created during the theoretical part of this work are associated with the corresponding capabilities that the system has to satisfy. These interfaces, representing the flow of user interaction, are combined with the related processes implemented in the underlying system.
 
 \section{Reservation}
@@ -94,7 +94,7 @@ Stated as a constraint by the \acrshort{ocpp} standard, it is intended that an i
 
 According to the findings of Flocea et al. \cite{flocea_electric_2022}, the reservation process progresses through several stages before it is completed. These stages can be depicted as a status, which indicates where the booking is currently located in the process and provides an overview of the options available to the relevant user or the system itself to interact with the arrangement.
 Thus, the study mentioned above introduced four distinct states, distinguishing between \textit{New}, \textit{Done}, \textit{In progress}, and \textit{Cancelled}.
-Considering these pre-existing states, this thesis proposes an extension that allows a more granular treatment of this kind of entity during its life cycle. Besides breaking down the particular steps within the life of a booking, these additional states allow further functionality in terms of mitigating undesired behavior and enforcing software-based rules in terms of the design parameter \textit{Enforceability} mentioned later.
+Considering these pre--existing states, this thesis proposes an extension that allows a more granular treatment of this kind of entity during its life cycle. Besides breaking down the particular steps within the life of a booking, these additional states allow further functionality in terms of mitigating undesired behavior and enforcing software--based rules in terms of the design parameter \textit{Enforceability} mentioned later.
 
 \begingroup
 \setlength{\tabcolsep}{10pt} % Default value: 6pt
@@ -133,11 +133,11 @@ To characterize these particular situations, the state diagram below, shown in F
 \subsection{Reservation Types}
 \label{ch:Design:sec:Reservation:ssec:Reservation Types}
 
-As outlined by Basmadjian and colleagues, a booking system can accommodate various types of bookings. In addition to the immediate blocking of resources through the \textit{Ad-Hoc} reservation mechanism, the \textit{Planned} ones allow for advance booking, opening up a wider range of possibilities for incorporating this functionality into the management of charging infrastructure \cite{basmadjian_interoperable_2019,basmadjian_reference_2020}.
+As outlined by Basmadjian and colleagues, a booking system can accommodate various types of bookings. In addition to the immediate blocking of resources through the \textit{Ad--Hoc} reservation mechanism, the \textit{Planned} ones allow for advance booking, opening up a wider range of possibilities for incorporating this functionality into the management of charging infrastructure \cite{basmadjian_reference_2020,basmadjian_interoperable_2019}.
 For this purpose, the authors distinguish between the established types based on their \textit{enforceability} and propose uncertain and guaranteed reservations, which can be combined to form four possible variations.
 The \textit{uncertain} reservations cannot guarantee that the reserved \acrshort{cs} and its corresponding parking spot will not be occupied by another vehicle upon arrival, whereas the corresponding \textit{guaranteed} type ensures this possibility.
 Enabling this reliability requires the implementation of additional functionalities, such as the ability to control the physical infrastructure itself.
-In this design process, considering no direct access to physical infrastructure services as blockers for parking and similar technologies, the resulting system tries to provide a hybrid type combining the best from the world of \textit{uncertain} and \textit{guaranteed} reservations using only software-based solutions to provide the desired level of \textit{enforceability}.
+In this design process, considering no direct access to physical infrastructure services as blockers for parking and similar technologies, the resulting system tries to provide a hybrid type combining the best from the world of \textit{uncertain} and \textit{guaranteed} reservations using only software--based solutions to provide the desired level of \textit{enforceability}.
 Building a connection to the types found in the existing literature, the Table \ref{tab:reservation-types} then maps the types used in this design and the subsequent implementation to the existing ones.
 
 \begingroup
@@ -145,10 +145,10 @@ Building a connection to the types found in the existing literature, the Table \
 \renewcommand{\arraystretch}{1.5} % Default value: 1
 \begin{table}[h]
     \centering
-    \caption{Pre-defined reservation types and their mapping to the types used in this work.}
+    \caption{Pre--defined reservation types and their mapping to the types used in this work.}
     \begin{tabular}{c|c|m{6.5cm}}
-        Reservation Type & Equivalent in \cite{basmadjian_interoperable_2019,basmadjian_reference_2020} & Description \\ \hline
-        Reserve Now & Ad-Hoc & Reserving the \acrshort{cs} and its corresponding connector immediately until a specified expiration date is reached. During this time, no other user can use the same connector for charging purposes. \\
+        Reservation Type & Equivalent in \cite{basmadjian_reference_2020,basmadjian_interoperable_2019} & Description \\ \hline
+        Reserve Now & Ad--Hoc & Reserving the \acrshort{cs} and its corresponding connector immediately until a specified expiration date is reached. During this time, no other user can use the same connector for charging purposes. \\
         Planned Reservation & Planned & Reserves the \acrshort{cs} and the corresponding connector in advance, enabling recurring bookings by selecting a date range. The connector and the \acrshort{cs} will stay available until the specified timeslot starts.
     \end{tabular}
     \label{tab:reservation-types}
@@ -167,9 +167,9 @@ To empower the user to create and manage their arrangements, a reservation syste
 \subsection{Design Criteria}
 \label{ch:Design:sec:Reservation System:ssec:Design Criteria}
 
-Establishing a functional system approach for managing charging infrastructure entails the consideration of several design parameters, as outlined by Basmadjian et al.\cite{basmadjian_reference_2020}. Apart from \textit{Enforceability}, \textit{Planning}, \textit{Fees}, aspects such as \textit{Data Availability}, \textit{Roaming} and \textit{Scheduling} are important design parameters a system design has to address.
+Establishing a functional system approach for managing charging infrastructure entails the consideration of several design parameters, as outlined by Basmadjian et al. \cite{basmadjian_reference_2020}. Apart from \textit{Enforceability}, \textit{Planning}, \textit{Fees}, aspects such as \textit{Data Availability}, \textit{Roaming} and \textit{Scheduling} are important design parameters a system design has to address.
 Concerning the given options and possibilities present in this design approach, the author of this work opts for the inclusion of \textit{Enforceability} alongside \textit{Planning}, \textit{Data Availability} and \textit{Scheduling}. 
-Furthermore, the \acrshort{fcfs} approach has been selected as the most appropriate method for mapping real-world charging session bookings.\\
+Furthermore, the \acrshort{fcfs} approach has been selected as the most appropriate method for mapping real--world charging session bookings.\\
 \noindent In accordance with the terminology employed by \cite{basmadjian_reference_2020}, the system can be defined as follows:
 
 \begin{eqnarray*}
@@ -188,13 +188,13 @@ Considering these capabilities, the following management capabilities cover at l
 \subsubsection{Create Reservation}
 \label{ch:Design:sec:Reservation System:ssec:Management Capabilities:sssec:Create Reservation}
 
-In order to enable all of the subsequent procedures, reservation creation is a mandatory function, which can be considered the initial process. The user fills in his information through the chosen application, followed by system-side validation that leads to further processing in subsequent steps or immediate termination of the process.
+In order to enable all of the subsequent procedures, reservation creation is a mandatory function, which can be considered the initial process. The user fills in his information through the chosen application, followed by system--side validation that leads to further processing in subsequent steps or immediate termination of the process.
 Afterward, the system checks for any existing bookings with the same identifier to avoid duplicates and ensure consistency with respect to the underlying database schema. If one with the same identifier exists, the process tests for the same user according to their \acrshort{rfid} tag and updates the record according to matching tags or rejects it to prevent privilege escalation.
 Next, the system checks for other arrangements in the defined time range and ensures that there are no collisions, also known as overlaps, between individual bookings according to their dates and time slots.
 Any collisions detected, as well as the escalation of privileges during the update process of an existing reservation, result in a predetermined end.
 If no conflict is detected, the respective type is checked and, in the case of a \textit{ReserveNow} type, the encapsulated \textit{ReserveNow} operation defined in the \acrshort{ocpp} standard \cite{noauthor_ocpp_nodate} is triggered. This operation prompts the system to send a request to the relevant \acrshort{cs} to immediately lock the connector. 
 Otherwise, when dealing with a \textit{Planned Reservation}, the selected time range will be checked, and if the start time is approaching, similar to the case of a \textit{ReserveNow} methodology, the appropriate \acrshort{cs} is contacted.
-Finally, the entity is saved and a notification, described in more detail in subsection \ref{ch:Design:sec:Reservation System:ssec:Notification Capabilities}, is sent to the user to inform him or her about the successful creation.
+Finally, the entity is saved and a notification, described in more detail in Subsection \ref{ch:Design:sec:Reservation System:ssec:Notification Capabilities}, is sent to the user to inform him or her about the successful creation.
 
 \begin{figure}[h]
     \centering
@@ -329,7 +329,7 @@ Therefore, no additional design approach for the application interfaces is requi
 Considering the reservation system as an independent part of the whole system, the user should have the possibility to activate or deactivate the respective functionality according to his needs.
 To incorporate this functionality, it is presented as a toggle to control the operation of the system with all its procedures. Similar to the approach presented in \cite{orcioni_ev_2020}, which describes the reservation module as a dedicated service. According to this proposal, it is possible to deactivate it as a module integrated as a subsystem.
 This allows such functionality to be implemented alongside the processes described in existing standards, such as \acrshort{ocpp} or \acrshort{ocpi}, and does not interfere with their implementations.
-Like the \textit{Delete Reservation} function, no user interface mockups are provided due to the simple nature of the function. In the subsequent implementation, this toggle should be considered within a central management interface that configures the functionalities of the different tenants. 
+Like the \textit{Delete~Reservation} function, no user interface mockups are provided due to the simple nature of the function. In the subsequent implementation, this toggle should be considered within a central management interface that configures the functionalities of the different tenants. 
 
 \newpage
 
@@ -343,9 +343,9 @@ For this purpose, the scheduling, expiry, and release procedures are created to 
 \subsubsection{Schedule Reservation}
 \label{ch:Design:sec:Reservation System:ssec:Scheduling Capabilities:sssec:Schedule Reservation}
 
-By utilizing the scheduling process, the system identifies present and forthcoming reservations from the database according to a pre-defined threshold. 
+By utilizing the scheduling process, the system identifies present and forthcoming reservations from the database according to a pre--defined threshold. 
 If there are no upcoming reservations in the near future, the scheduler process is terminated, otherwise, the \acrshortpl{cs} and connectors defined in each arrangement are reserved.
-Similar to the create and update functions described within the management capabilities subsection \ref{ch:Design:sec:Reservation System:ssec:Management Capabilities}, the \acrshort{ocpp} \textit{ReserveNow} operation \cite{noauthor_ocpp_nodate} is implemented to provide standards-compliant communication between the system and the \acrshort{cs}.
+Similar to the create and update functions described within the management capabilities subsection \ref{ch:Design:sec:Reservation System:ssec:Management Capabilities}, \\ the \acrshort{ocpp}~\textit{ReserveNow} operation \cite{noauthor_ocpp_nodate} is implemented to provide standards--compliant communication between the system and the \acrshort{cs}.
 If connectors are in an occupied state, the \textit{Stop Transaction} operation is performed, resulting in an immediate termination of the current charging session and returning the \acrshort{cs} to an available state.
 Allowing the system to carry out the upcoming booking on the released connector, resulting in the \acrshort{cs} accepting the \textit{ReserveNow} request.
 Consequently, the status is updated to \textit{In Progress} and saved once again.
@@ -373,10 +373,10 @@ The process ends immediately upon discovering such reservations. Otherwise, the 
     \label{fig:expire-reservation-flowchart}
 \end{figure}
 
-\noindent In cooperation with the \textit{Free Reserved Connector} procedure described in the sub-subsection \ref{ch:Design:sec:Reservation System:ssec:Scheduling Capabilities:sssec:Free Reserved Connector}, the \textit{Expire Reservation} procedure handles the transition from the active state to a final state that invalidates the reservation.
+\noindent In cooperation with the \textit{Free Reserved Connector} procedure described in the sub--subsection \ref{ch:Design:sec:Reservation System:ssec:Scheduling Capabilities:sssec:Free Reserved Connector}, the \textit{Expire Reservation} procedure handles the transition from the active state to a final state that invalidates the reservation.
 Using the \textit{Expired} status deals with not correctly updated reservations according to the \textit{Done}, \textit{Cancelled} or \textit{Unmet} states. 
 Mostly caused by information or connection loss between the management instance and the \acrshort{cs}, such outtakes eventually occur.
-This approach ensures that concurrent active reservations are minimized and provides a sort of self-healing process to clean up the growing data store.
+This approach ensures that concurrent active reservations are minimized and provides a self--healing process similar to self--healing processes provided by operating systems, to clean up the growing data store.
 
 \subsubsection{Free Reserved Connector}
 \label{ch:Design:sec:Reservation System:ssec:Scheduling Capabilities:sssec:Free Reserved Connector}
@@ -401,7 +401,7 @@ Otherwise, the process ends immediately. The same rule applies if the \acrshort{
 
 Besides the management and automation techniques presented above, the exchange of information with the user encompasses one aspect of the predetermined design parameters.
 Concerning the methods in \cite{zarkeshev_charging_2018}, the system should interact with the user in a certain way to inform him or her about upcoming reservations or schedule changes, which the user should consider for further planning activities.
-For this reason, this system design outlines several scenarios that are considered by the author to be relevant for the solution to inform the user according to the changes made to the reservations. 
+For this reason, this system design outlines several scenarios, that the author considers to be relevant, for the solution to inform the user according to the changes made to the reservations. 
 This also satisfies the aspects of the \textit{Data Availability} design parameter in a more general sense. Within the scope of the aforementioned work, this parameter is limited solely to data regarding the status of charging stations and connectors. However, additional expansions could be made to include data on reservation statuses.
 For a clearer insight into the constraints associated with each notification type, a brief explanation of the concerning scenarios is succeeding. 
 
@@ -411,16 +411,16 @@ For a clearer insight into the constraints associated with each notification typ
 Besides the users' ability to manually configure their reservations, the bulk of the work is performed by background tasks that run parallel to the main processes.
 For standard users, it is neither feasible nor beneficial to regularly monitor the status of their reservations on their own. Thus, it is necessary to send notifications containing information about changes in the status of an arrangement throughout its life cycle.
 Due to its supportive role within the system context, this type of functionality could be integrated into one of the previously designed processes. 
-Considering an intended integration, the next parts of the design processes could be proposed as suitable extension points using the notification capabilities within \textit{Schedule Reservation}, \textit{Expire Reservation}, and \textit{Free Reserved Connector}.
+Considering an intended integration, the next parts of the design processes could be proposed as suitable extension points, using the notification capabilities within \textit{Schedule Reservation}, \textit{Expire Reservation}, and \textit{Free Reserved Connector}.
 
 \subsubsection{Reservation Upcoming}
 \label{ch:Design:sec:Reservation System:ssec:Notification Capabilities:sssec:Reservation Upcoming}
 
-To address the emergence of reservations, two distinct types of notifications can be extracted from the more generic one. One is the notification of the user to whom the reservation belongs and the other is the notification of the user who intends to charge at a \acrshort{cs} if a booking comes up in the near future. 
+To address the emergence of reservations, two distinct types of notifications can be extracted from the more generic one. One is the notification of the user to whom the reservation belongs and the other is the notification of the user who intends to charge at a \acrshort{cs}, if a booking comes up in the near future. 
 Both scenarios are represented by the notification type of a \textit{Reservation Upcoming}.
 
 \begin{description}
-    \item[Upcoming Reservation Notification] According to the process of scheduling reservations, users must receive a notification if their booking is due to start in the near future. 
+    \item[Upcoming Reservation Notification] According to the process of scheduling reservations, users must receive a notification, if their booking is due to start in the near future. 
     This type of notification should provide the user with the relevant metadata about the reserved charging session and its commencement, ensuring they are informed about the upcoming reservation.
     \item[Upcoming Reservation Warning] Message, that the \acrshort{cs} the driver is currently using, has an arrangement in the pipeline, which conflicts with the estimated duration of the charging session. This should persuade the driver to consider relocating his car. 
     Otherwise, the charging session is stopped when the particular reserved timeslot starts and the \acrshort{ev} is no longer charged, making it pointless to occupy this station.
@@ -433,25 +433,25 @@ Both scenarios are represented by the notification type of a \textit{Reservation
 
 Considering the \textit{Upcoming Reservation Warning} mentioned previously, only the user occupying the reserved \acrshort{cs} is notified that it is potentially blocking a reserved port. To complement this scenario, the user of the upcoming arrangement belongs to requires notification as well.
 To guarantee that the user is informed of the occurrence of unintended behavior, the \textit{Charging Station Blocked} notification fulfills the objective of the desired information flow. In this way, if the \acrshort{cs} is still blocked and the other \acrshort{evu} does not remove the car from the parking lot accordingly, the notified user is able to switch to another available \acrshort{cs} in that area.
-Despite stopping the charging session in accordance with the \textit{Schedule Reservation} process, the car could still end up blocking the car bay for the arriving user, resulting in a negative user experience. Therefore, the system is intended to provide such mitigation techniques to inform the user in advance and allow him or her to adjust the reservation.
+Despite stopping the charging session in accordance with the \textit{Schedule Reservation} process, the vehicle could still end up blocking the parking place for the arriving user, resulting in a negative user experience. Therefore, the system is intended to provide such mitigation techniques to inform the user in advance and allow him or her to adjust the reservation.
 Considering the integration of this particular notification, the \textit{Schedule Reservation} as a part of the designed processes seems appropriate.
 
 \subsubsection{Reservation Cancelled}
 \label{ch:Design:sec:Reservation System:ssec:Notification Capabilities:sssec:Reservation Cancelled}
 
 When considering the \textit{Reservation Status Changed} notification introduced earlier, this notification type seems to be a duplicate of a still--existing function.
-However, there should be a specific notification in the system design to inform the user when a reserved charging session is being cancelled. The system's implementation and internal administrative structure do not allow only the user who created the arrangement to cancel it. 
-If an administrator performs this operation, the user should also be notified that their reservation is about to be cancelled. 
-That is why this notification introduces an extension to the changing status notification, in order to deliver this information.
+However, there should be a specific notification in the system design to inform the user, when a reserved charging session is being cancelled. The system's implementation and internal administrative structure do not only allow the user, who created the arrangement, to cancel it. 
+If an administrator performs this operation, the user should also be notified, that their reservation is about to be cancelled. 
+Consequently, this notification introduces an extension to the changing status notification, in order to deliver this information.
 Based on the intended use, the \textit{Cancel Reservation} function permits an appropriate integration of this notification.
 
 \subsubsection{Reservation Unmet}
 \label{ch:Design:sec:Reservation System:ssec:Notification Capabilities:sssec:Reservation Unmet}
 
-Based on the same idea as the \textit{Reservation Cancelled} message, this kind of notification enables the system to inform the user about unwanted behavior.
+Adapted from the same idea as the \textit{Reservation Cancelled} message, this kind of notification enables the system to inform the user about unwanted behavior.
 When a user fails to arrive within the designated time frame for their reservation, the \textit{Free Reserved Connector} process usually takes care of these reservations. 
 However, given the damaging effects of such a behaviour, like blocking a charging session that could be used by another user, and the associated loss of profit, when combined with the charges for the reservation.
-To reduce the occurrence of such actions, the system should send a message advising the user that their current booking is no longer viable according to this process. Furthermore, it should be accompanied by a warning to remind the user to cancel a reserved session if he or she no longer demands it, to cultivate more altruistic behavior.
+To reduce the occurrence of such actions, the system should send a message advising the user that their current booking is no longer viable according to this process. Furthermore, it should be accompanied by a warning, to remind the user to cancel a reserved session, if he or she no longer demands it, to cultivate more altruistic behavior.
 As previously mentioned, the \textit{Free Reserved Connector} enables the proper use of this notification type. \\ \\
 \noindent The integration possibilities and application domains addressed in this chapter are derived from the current state of the standards used in this thesis and are based on the considerations and design principles available at this stage of the design work. 
 As these functionalities and features are evolving, their use could be extended to other areas and related systems.

@@ -1,6 +1,6 @@
 FILE = thesis_julian_buecher
 IGNORE_ERRORS_FLAG = -interaction=nonstopmode -halt-on-error
-LATEX_MK_FLAGS = -pdf -bibtex $(IGNORE_ERRORS_FLAG)
+LATEX_MK_FLAGS = -pdf -bibtex $(IGNORE_ERRORS_FLAG) -jobname=master_thesis
 
 all:
 	pdflatex $(IGNORE_ERRORS_FLAG) $(FILE)

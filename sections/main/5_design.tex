@@ -181,9 +181,11 @@ Furthermore, the \acrshort{fcfs} approach has been selected as the most appropri
 \subsection{Management Capabilities}
 \label{ch:Design:sec:Reservation System:ssec:Management Capabilities}
 
-When managing various entities, the most commonly utilized functionalities involve creating, updating, or deleting related information. Alongside these processes, the acronym CRUD (create, read, update, delete) is often referenced. In reservation systems, the context permits an additional operation known as cancellation, which invalidates the selected booking.
+When managing various entities, the most commonly utilized functionalities involve creating, updating, or deleting related information. Alongside these processes, the acronym \acrshort{crud} is often referenced. In reservation systems, the context permits an additional operation known as cancellation, which invalidates the selected booking.
 As outlined in Chapter \ref{ch:Requirements Engineering}, the relevant use cases for the previously mentioned functions are already identified. In addition to these general features, the subsection also explains the use case for enabling them on demand.
-Considering these capabilities, the following management capabilities cover at least parts of the design choices such as \textit{Enforceability}, \textit{Planning}, \textit{Data Availability} and \textit{Scheduling}, alongside the scheduling capabilities described in subsection \ref{ch:Design:sec:Reservation System:ssec:Scheduling Capabilities}.
+Considering these capabilities, the following management capabilities cover at least parts of the design choices such as \textit{Enforceability}, \textit{Planning}, \textit{Data Availability} and \textit{Scheduling}, alongside the scheduling capabilities described in Subsection \ref{ch:Design:sec:Reservation System:ssec:Scheduling Capabilities}.
+
+\newpage
 
 \subsubsection{Create Reservation}
 \label{ch:Design:sec:Reservation System:ssec:Management Capabilities:sssec:Create Reservation}
@@ -222,8 +224,6 @@ Finally, the entity is saved and a notification, described in more detail in Sub
     \caption{Mockups for the user interface of the mobile and web application relating to the creation of reservations.}
     \label{fig:mockups-create-reservation}
 \end{figure}
-
-\newpage
 
 \subsubsection{Update Reservation}
 \label{ch:Design:sec:Reservation System:ssec:Management Capabilities:sssec:Update Reservation}
@@ -269,7 +269,7 @@ This also contains another notification that the user will receive upon successf
 \label{ch:Design:sec:Reservation System:ssec:Management Capabilities:sssec:Cancel Reservation}
 
 In addition to making a reservation, the user needs the option to cancel it in the case of changes due to unforeseen or unexpected circumstances.
-To accomplish this task, the cancellation operation encapsulates the predefined \textit{Cancel Reservation} feature in \acrshort{ocpp} version 1.6 \cite{noauthor_ocpp_nodate}. As well as cancelling the active booking on the \acrshort{cs}, it also allows cancelling bookings in advance, taking into account the proposed life cycle as described in subsection \ref{ch:Design:sec:Reservation:ssec:Reservation Status}.
+To accomplish this task, the cancellation operation encapsulates the predefined \textit{Cancel Reservation} feature in \acrshort{ocpp} version 1.6 \cite{noauthor_ocpp_nodate}. As well as cancelling the active booking on the \acrshort{cs}, it also allows cancelling bookings in advance, taking into account the proposed life cycle as described in Subsection \ref{ch:Design:sec:Reservation:ssec:Reservation Status}.
 Initially, the designed process checks for an existing record with the same identifier in the database. If such an entity does not exist, the execution ends. This practice avoids the processing of unnecessary information and prevents communication with the corresponding customer service.
 If the arrangement exists, the status is validated to cancel only bookings according to the predefined state transitions in Figure \ref{fig:reservation-states}. Furthermore, the current status of the entity is determined, which results in a \textit{Cancel Reservation} request contacting the appropriate \acrshort{cs} if the booking is in progress.
 After the status is set to \textit{Cancelled}, the record is saved once more, and a user notification containing the status transition, is sent to the user.
@@ -336,7 +336,7 @@ Like the \textit{Delete~Reservation} function, no user interface mockups are pro
 \subsection{Scheduling Capabilities}
 \label{ch:Design:sec:Reservation System:ssec:Scheduling Capabilities}
 
-To address the scheduling capabilities discussed in subsection \ref{ch:Design:sec:Reservation System:ssec:Design Criteria}, the subsequent procedures have been developed to manage reservations independently.
+To address the scheduling capabilities discussed in Subsection \ref{ch:Design:sec:Reservation System:ssec:Design Criteria}, the subsequent procedures have been developed to manage reservations independently.
 This enables the system to maintain a consistent state and autonomously manage the associated charging infrastructure.
 For this purpose, the scheduling, expiry, and release procedures are created to handle the reservations according to their current state.
 
@@ -345,7 +345,7 @@ For this purpose, the scheduling, expiry, and release procedures are created to 
 
 By utilizing the scheduling process, the system identifies present and forthcoming reservations from the database according to a pre--defined threshold. 
 If there are no upcoming reservations in the near future, the scheduler process is terminated, otherwise, the \acrshortpl{cs} and connectors defined in each arrangement are reserved.
-Similar to the create and update functions described within the management capabilities subsection \ref{ch:Design:sec:Reservation System:ssec:Management Capabilities}, \\ the \acrshort{ocpp}~\textit{ReserveNow} operation \cite{noauthor_ocpp_nodate} is implemented to provide standards--compliant communication between the system and the \acrshort{cs}.
+Similar to the create and update functions described within the management capabilities Subsection \ref{ch:Design:sec:Reservation System:ssec:Management Capabilities}, \\ the \acrshort{ocpp}~\textit{ReserveNow} operation \cite{noauthor_ocpp_nodate} is implemented to provide standards--compliant communication between the system and the \acrshort{cs}.
 If connectors are in an occupied state, the \textit{Stop Transaction} operation is performed, resulting in an immediate termination of the current charging session and returning the \acrshort{cs} to an available state.
 Allowing the system to carry out the upcoming booking on the released connector, resulting in the \acrshort{cs} accepting the \textit{ReserveNow} request.
 Consequently, the status is updated to \textit{In Progress} and saved once again.
@@ -373,7 +373,7 @@ The process ends immediately upon discovering such reservations. Otherwise, the 
     \label{fig:expire-reservation-flowchart}
 \end{figure}
 
-\noindent In cooperation with the \textit{Free Reserved Connector} procedure described in the sub--subsection \ref{ch:Design:sec:Reservation System:ssec:Scheduling Capabilities:sssec:Free Reserved Connector}, the \textit{Expire Reservation} procedure handles the transition from the active state to a final state that invalidates the reservation.
+\noindent In cooperation with the \textit{Free Reserved Connector} procedure described in the Sub--subsection~\ref{ch:Design:sec:Reservation System:ssec:Scheduling Capabilities:sssec:Free Reserved Connector}, the \textit{Expire Reservation} procedure handles the transition from the active state to a final state that invalidates the reservation.
 Using the \textit{Expired} status deals with not correctly updated reservations according to the \textit{Done}, \textit{Cancelled} or \textit{Unmet} states. 
 Mostly caused by information or connection loss between the management instance and the \acrshort{cs}, such outtakes eventually occur.
 This approach ensures that concurrent active reservations are minimized and provides a self--healing process similar to self--healing processes provided by operating systems, to clean up the growing data store.

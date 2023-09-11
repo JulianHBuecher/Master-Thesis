@@ -435,6 +435,8 @@ The recommended sequence for executing the subsequent jobs to ensure correct ope
     \item[]{\makebox[5.5cm][l]{\textbf{Free Reserved Connectors:}} \texttt{*/1 * * * *} \quad \textit{'Executed on a minute basis.'}}
 \end{description}
 
+\newpage
+
 \subsubsection{Schedule Reservation}
 \label{ch:Implementation:sec:Reservation System:ssec:Scheduling Capabilities:sssec:Schedule Reservation}
 
@@ -503,12 +505,14 @@ This may serve as a reference point for future implementations and as a possibil
 Implied by the listing of involved packages in subsubsection \ref{ch:Implementation:sec:Reservation System:ssec:Architectural Views:sssec:Packages}, particularly by viewing the \texttt{notification} package, the system can send notifications in various forms.
 Alongside using the \acrshort{smtp} protocol \cite{klensin_simple_2008} primarily targeting adopters of the browser app with assumed easier access to their mail clients, for the mobile apps the service utilizes Google's Firebase \cite{noauthor_firebase_nodate} \acrshort{paas} and \acrshort{iaas} offer to publish information via push notifications.
 During the development phase as part of the extension for the mobile component of the project, this work has identified missing functionalities related to background notifications, when the application is closed or not opened. To address this specific feature gap, adjustments to the appropriate logic and the \texttt{notifee/react-native} package from Notifee \cite{noauthor_notifee_nodate} are added.
-Seizing the suggestions presented in the \textbf{Scheduling Capabilities} subsection of the design chapter \ref{ch:Design:sec:Reservation System:ssec:Scheduling Capabilities}, the notification types such as \texttt{ReservationStatusChanged}, \texttt{ReservationUpcoming}, \texttt{ReservationCreated}, \texttt{ReservationCancelled} and \texttt{ReservationUnmet} are utilized in the current tasks to convey crucial information about the processed entities to the end users and facilitate the information flow.
+Seizing the suggestions represented by \textbf{Scheduling Capabilities} in Subsection \ref{ch:Design:sec:Reservation System:ssec:Scheduling Capabilities} of the design chapter, the notification types such as \texttt{ReservationStatusChanged}, \texttt{ReservationUpcoming}, \texttt{ReservationCreated}, \texttt{ReservationCancelled} and \texttt{ReservationUnmet} are utilized in the current tasks to convey crucial information about the processed entities to the end users and facilitate the information flow.
 This should ensure that the \acrshort{evu} can make informed decisions based on up--to--date information provided by the system.
 In the case of the \texttt{ChargingStationBlocked} notification, no suitable location could be identified. An integration within the \textbf{Schedule Reservation} process would lead to a simultaneous notification of the user blocking the \acrshort{cs}, as well as the user of the reservation. 
 Possibly resulting in the parallel switching of drivers to a new station and the situation that this notification was intended to prevent. \\
 \noindent In terms of the support for multiple languages both the notifications and the labels of the \acrshort{gui} elements, which normally adapt to the language set in the user's profile, are only translated into English and German.
 Other language options, including Spanish, French, and Italian, are not part of this approach and further work needs to be done to allow these languages to be used properly.
+
+\newpage
 
 \subsection{Additional Capabilities}
 \label{ch:Implementation:sec:Reservation System:ssec:Additional Capabilities}
@@ -580,6 +584,8 @@ If other \acrshortpl{evu} create reservations during this process, that would af
 \end{table}
 \endgroup
 
+\newpage
+
 \subsubsection{Reservation Retrieval}
 \label{ch:Implementation:sec:Reservation System:ssec:Additional Capabilities:sssec:Reservation Retrieval}
 
@@ -603,8 +609,6 @@ Resulting in the interfaces listed in Table \ref{tab:read-reservations-rest} and
 \label{tab:read-reservations-rest}
 \end{table}
 \endgroup
-
-\newpage
 
 \subsection{Role Concept}
 \label{ch:Implementation:sec:Reservation System:ssec:Role Concept}
@@ -636,6 +640,8 @@ Concerning the use cases from Chapter \ref{ch:Requirements Engineering} and thei
 \end{table}
 \endgroup
 
+\newpage
+
 \noindent Afterwards, the assignment decisions in the context of the \textit{Delete Reservation} and \textit{Enable Reservations} actions are revisited, for a better understanding. The choice to only allow the \textit{Admin} user to perform the \textit{Delete Reservation} action is not solely based on the use case design.
 This work assumes, that disruptive actions, such as entity deletion, should only be carried out when excluding system users and removing their information, which can be classified as an administrative task and solely limited to system administrators.
 Concerning basic users, it is more likely that they use the cancel operation to properly revoke their reservations than to delete them completely.
@@ -653,8 +659,6 @@ To alleviate these uncertainties, a software solution should always inform the u
 Due to the nature of distributed systems, the client and the corresponding server are decoupled, and the only way the server could keep the client informed of the above scenarios is to use the \acrshort{http} status codes as part of each request to exchange information.
 Apart from failures within the system itself in the form of outages or targeted attacks, the charging infrastructure and the associated \acrshortpl{cs}, should also be considered as an extra source of errors. 
 To effectively identify and manage exceptions in both the backend and frontend applications, this study translated each potential exception into a status code for meaningful reservation error handling.
-
-\newpage
 
 \noindent The list below only reflects the current state of implementation, concerning the aforementioned range of capabilities, as well as the current state of the \acrshort{ocpp} standard, which is not meant to be complete. Potentially, additional scenarios and relevant exception--handling mechanisms need to be incorporated in the future.
 

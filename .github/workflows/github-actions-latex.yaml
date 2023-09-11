@@ -9,9 +9,11 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
+          pre_compile: 'biber thesis_julian_buecher && makeglossaries thesis_julian_buecher'
           root_file: thesis_julian_buecher.tex
-      - name: Upload PDF file
-        uses: actions/upload-artifact@v3
+          texlive_version: 2022
+      - name: Release
+        uses: softprops/action-gh-release@v3
         with:
-          name: PDF
-          path: master_thesis.pdf
+          generate_release_notes: true
+          files: master_thesis.pdf

@@ -113,7 +113,7 @@
 
 %% variables for title page
 \newcommand{\thetitle}{}
-\newcommand{\theinstitute}{}
+% \newcommand{\theinstitute}{}
 \newcommand{\thethesistype}{}
 \newcommand{\thereviewerone}{}
 \newcommand{\thereviewertwo}{}
@@ -127,7 +127,7 @@
   \renewcommand{\thetitle}{#1}}
 \newcommand{\thesistype}[1]{\subtitle{\vskip2em #1 \iflanguage{english}{of}{von}}%
   \renewcommand{\thethesistype}{#1}}
-\newcommand{\myinstitute}[1]{\renewcommand{\theinstitute}{#1}}
+% \newcommand{\myinstitute}[1]{\renewcommand{\theinstitute}{#1}}
 \newcommand{\reviewerone}[1]{\renewcommand{\thereviewerone}{#1}}
 \newcommand{\reviewertwo}[1]{\renewcommand{\thereviewertwo}{#1}}
 \newcommand{\advisorone}[1]{\renewcommand{\theadvisorone}{#1}}
@@ -145,8 +145,8 @@
 \RaggedRight
 \large
 \iflanguage{english}{at the Faculty of Computer Science and Business Information Systems}%
-{an der Fakult\"at f\"ur Informatik und Wirtschaftsinformatik}\\
-\theinstitute\\[2em]
+{an der Fakult\"at f\"ur Informatik und Wirtschaftsinformatik}\\[2em]
+% \theinstitute\\[2em]
 \begin{tabular}{ll}
   \iflanguage{english}{Reviewer}{Erstgutachter}: & \thereviewerone\\
   %skip w/o second reviewer

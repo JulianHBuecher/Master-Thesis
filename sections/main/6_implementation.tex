@@ -53,7 +53,7 @@ Thus, these interfaces, along with the \texttt{CreatedUpdatedProps}, could be ca
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{resources/images/main/6_implementation/Reservation.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/6_implementation/Reservation.png}
     \caption{Class diagram for the elaborated entity and its associated classes.}
     \label{fig:reservation-class-diagram}
 \end{figure}
@@ -86,7 +86,7 @@ By enhancing the capabilities of the standard \acrshort{rest} protocol through p
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{resources/images/main/6_implementation/DeploymentView.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/6_implementation/DeploymentView.png}
     \caption{Overview of the various functional components within the existing project.}
     \label{fig:module-view}
 \end{figure}
@@ -108,7 +108,7 @@ However, all of these artifacts and their associated changes are addressed in th
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{resources/images/main/6_implementation/PackageDiagram.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/6_implementation/PackageDiagram.png}
     \caption{Overview of the extended packages within the targeted section of the backend project.}
     \label{fig:package-view}
 \end{figure}
@@ -127,7 +127,7 @@ Considering only the information required from other application domains, the po
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{resources/images/main/6_implementation/ReservationComponents.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/6_implementation/ReservationComponents.png}
     \caption{Overview of the individual components inside the extended web service.}
     \label{fig:component-view}
 \end{figure}
@@ -160,7 +160,7 @@ Finally, a confirmation notification of the successfully created arrangement is 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{resources/images/main/6_implementation/processes/ReservationCreate.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/6_implementation/processes/ReservationCreate.png}
     \caption{Component interaction for fulfilling the process flow of creating a reservation in reference to the proposed design.}
     \label{fig:create-reservation-seqflow}
 \end{figure}
@@ -227,7 +227,7 @@ In order to handle alterations to the \acrshort{cs} or connector, the updating p
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{resources/images/main/6_implementation/processes/ReservationUpdate.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/6_implementation/processes/ReservationUpdate.png}
     \caption{Component interaction for updating a reservation considering the proposed design draft.}
     \label{fig:update-reservation-seqflow}
 \end{figure}
@@ -288,7 +288,7 @@ After updating the status to \texttt{Cancelled}, in the case of a cancelled rese
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{resources/images/main/6_implementation/processes/ReservationCancel.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/6_implementation/processes/ReservationCancel.png}
     \caption{The engagement of the different components during the cancellation of a reservation as proposed in the design.}
     \label{fig:cancel-reservation-seqflow}
 \end{figure}
@@ -350,7 +350,7 @@ After resolving the dependencies of the booking with the infrastructure, the \te
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{resources/images/main/6_implementation/processes/ReservationDelete.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/6_implementation/processes/ReservationDelete.png}
     \caption{Component interaction when deleting a reservation record considering the design drafts.}
     \label{fig:delete-reservation-seqflow}
 \end{figure}
@@ -411,7 +411,7 @@ The example configuration within the administration area of the web frontend for
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.3]{resources/images/main/6_implementation/screens/enable_reservations/Reservation_Module.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/6_implementation/screens/enable_reservations/Reservation_Module.png}
     \caption{Implementation of the user interface for enabling the reservation module.}
     \label{fig:enable-reservation-impl}
 \end{figure}
@@ -450,7 +450,7 @@ Besides saving the updated record, its \acrshort{id} is assigned to the associat
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{resources/images/main/6_implementation/processes/scheduler/SynchronizeReservation.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/6_implementation/processes/scheduler/SynchronizeReservation.png}
     \caption{Interaction between relevant components to synchronize the reservations with the associated \acrshortpl{cs} taking into account the underlying process design.}
     \label{fig:schedule-reservation-seqflow}
 \end{figure}
@@ -469,7 +469,7 @@ Considering this case, it is utilized to invalidate expired bookings, change the
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.5]{resources/images/main/6_implementation/processes/scheduler/UpdateExpiredReservations.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/6_implementation/processes/scheduler/UpdateExpiredReservations.png}
     \caption{Sequential flow of the components interacting with each other, to invalidate expired bookings using the considered process templates.}
     \label{fig:expire-reservation-seqflow}
 \end{figure}
@@ -490,7 +490,7 @@ After setting all identified entries meeting these criteria to the \texttt{UNMET
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.5]{resources/images/main/6_implementation/processes/scheduler/CancelUnmetReservation.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/6_implementation/processes/scheduler/CancelUnmetReservation.png}
     \caption{Required component interactions for removing unmet appointments on the respective \acrshortpl{cs} in order to implement the underlying design proposals.}
     \label{fig:free-connector-seqflow}
 \end{figure}

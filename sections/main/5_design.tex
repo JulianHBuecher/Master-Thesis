@@ -77,12 +77,12 @@ To fully understand the new relationships between entities in the system and the
 \label{ch:Design:sec:Reservation:ssec:Entity Relationships}
 
 For the purpose of arranging the properties and entities within the reservation module and the rest of the system, it is necessary to examine the relationships that the specific entities, such as the \acrshort{cs} or a \acrshort{rfid} tag, have with an arrangement and the quantity in which they can be used.
-For presenting this type of mapping concerning the relationships, they are depicted as an entity relationship diagram to show the respective connections and to illustrate them in the Figure \ref{fig:entity-relationship-diagram}.
+For presenting this type of mapping concerning the relationships, they are depicted as an entity relationship diagram to show the respective connections and to illustrate them in Figure \ref{fig:entity-relationship-diagram}.
 Stated as a constraint by the \acrshort{ocpp} standard, it is intended that an individual can only reserve a particular \acrshort{cs} and connector during a given time. Additionally, either an individual user, identified by their associated \acrshort{rfid} tag or a group of profiles linked to a parental \acrshort{rfid} tag, that represents this subset, may use the reserved charging slot. The chosen vehicle must also adhere to these restrictions.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{resources/images/main/5_design/Entities.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/5_design/Entities.png}
     \caption{Entities and their relationships with the corresponding quantities.}
     \label{fig:entity-relationship-diagram}
 \end{figure}
@@ -121,7 +121,7 @@ To characterize these particular situations, the state diagram below, shown in F
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{resources/images/main/5_design/ReservationStatusStates.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/5_design/ReservationStatusStates.png}
     \caption{State diagram with the corresponding state transitions for the possible reservation states within the implementation.}
     \label{fig:reservation-states}
 \end{figure}
@@ -200,7 +200,7 @@ Finally, the entity is saved and a notification, described in more detail in Sub
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{resources/images/main/5_design/processes/ReservationCreate.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/5_design/processes/ReservationCreate.png}
     \caption{Process flow with all necessary steps to create a reservation.}
     \label{fig:create-reservation-flowchart}
 \end{figure}
@@ -238,7 +238,7 @@ This also contains another notification that the user will receive upon successf
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{resources/images/main/5_design/processes/ReservationUpdate.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/5_design/processes/ReservationUpdate.png}
     \caption{Process flow with all relevant steps to update a reservation.}
     \label{fig:update-reservation-flowchart}
 \end{figure}
@@ -276,7 +276,7 @@ After the status is set to \textit{Cancelled}, the record is saved once more, an
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{resources/images/main/5_design/processes/ReservationCancel.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/5_design/processes/ReservationCancel.png}
     \caption{Process flow with all according steps to cancel a reservation.}
     \label{fig:cancel-reservation-flowchart}
 \end{figure}
@@ -313,7 +313,7 @@ Otherwise, the booking is queried and the status is checked. If the status is \t
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{resources/images/main/5_design/processes/ReservationDelete.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/5_design/processes/ReservationDelete.png}
     \caption{Process flow with all according steps to delete a reservation.}
     \label{fig:delete-reservation-flowchart}
 \end{figure}
@@ -352,7 +352,7 @@ Consequently, the status is updated to \textit{In Progress} and saved once again
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{resources/images/main/5_design/processes/scheduler/SynchronizeReservation.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/5_design/processes/scheduler/SynchronizeReservation.png}
     \caption{Process for scheduling upcoming reservation on a specified \acrshortpl{cs}.}
     \label{fig:schedule-reservation-flowchart}
 \end{figure}
@@ -368,7 +368,7 @@ The process ends immediately upon discovering such reservations. Otherwise, the 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{resources/images/main/5_design/processes/scheduler/UpdateExpiredReservations.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/5_design/processes/scheduler/UpdateExpiredReservations.png}
     \caption{Process flow for reservations reaching their expiration date.}
     \label{fig:expire-reservation-flowchart}
 \end{figure}
@@ -389,7 +389,7 @@ Otherwise, the process ends immediately. The same rule applies if the \acrshort{
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.4]{resources/images/main/5_design/processes/scheduler/CancelUnmetReservation.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{resources/images/main/5_design/processes/scheduler/CancelUnmetReservation.png}
     \caption{Process flow for releasing connectors with unfulfilled reservations.}
     \label{fig:free-connector-flowchart}
 \end{figure}

@@ -52,7 +52,7 @@ Relevant for the description of the single actors, this scenario includes the si
 As mentioned before, each of these campuses has its own parking lots equipped with a limited amount of \acrshortpl{cs} for students and the staff working at this site. Corresponding to the accessibility level declared in \ref{tab:cs-accessibility-levels}, the parking possibilities include public and semi--public charging opportunities.
 Public parking lots and the corresponding \acrshortpl{cs} are available for students and staff members as well. In the case of semi--public parking lots, the access is only limited to visitors or staff exclusively. \\
 Concerning the possibilities to configure \acrshortpl{cs}, all public stations are enabled for reservations. To prevent unnecessary complexity, this scenario does not include \acrshortpl{cs} without support for the reservation feature.
-For administration and management of these facilities and the restricted charging resources, a software solution called \textit{Open e--Mobility} \cite{noauthor_github_nodate,noauthor_github_nodate-1,noauthor_github_nodate-3} is used, which includes a mobile application for the \acrshortpl{evu} and a web--based application for browser access, mostly used by administrative departments of the \acrshort{hka}. 
+For administration and management of these facilities and the restricted charging resources, a software solution called \textit{Open e--Mobility} \cite{noauthor_github_nodate,noauthor_github_nodate-1,noauthor_github_nodate-3} is used, which includes a mobile application for the \acrshortpl{evu} and a web--based application for browser access, mostly used by administrative departments of the \acrshort{hka}.
 On behalf of these applications, the users have the possibility, according to their roles in the system listed in Table \ref{tab:system-role-collection}, to start or stop current charging sessions remotely or check for occupied \acrshortpl{cs} on the available sites and site areas.
 Using privileged access via an administrative account, the user is able to deactivate or block connectors of specific \acrshortpl{cs}, to make them inaccessible until reactivation or a rebooting process.
 By now, the administrator or the common user does not have the opportunity to reserve an available \acrshort{cs} connector in advance. Rather for themselves or on behalf of a specific user. This includes reservations for visitors arriving later or during times with high loads as well.
@@ -63,7 +63,7 @@ As an implication of this missing feature, a \acrfull{fcfs} mentality among the 
 \section{Stakeholders}
 \label{ch:Requirements Engineering:sec:Stakeholders}
 
-According to the scenario elaborated in Section \ref{ch:Requirements Engineering:sec:Scenario} above, the following groups of stakeholders could be identified. 
+According to the scenario elaborated in Section \ref{ch:Requirements Engineering:sec:Scenario} above, the following groups of stakeholders could be identified.
 Considering the subsequently defined staff, it is possible to further differentiate into two subclusters for additional clarification.
 The description below provides an overview of the daily challenges members of these classes of people have to face in terms of the established implications defined by the scenario and their main objectives. \\
 
@@ -75,7 +75,7 @@ Therefore, they mostly rely on the mobile application offered by the institution
 
 \noindent \textbf{Staff} As the primary workforce of the \acrshort{hka}, the staff describes a group of people working at the institution, including roles like lecturers, cleaners, or librarians for example.
 Based on their office location, they are typically assigned to one specific or several campus sites. Implicating the dedicated usage of the \acrshortpl{cs} for charging their \acrshort{ev}, available at their current working place.
-In contrast to students, they have permission to access the \acrshortpl{cs} on the semi--public parking lots as well as the ones located in the public parking spaces. 
+In contrast to students, they have permission to access the \acrshortpl{cs} on the semi--public parking lots as well as the ones located in the public parking spaces.
 Due to the new home office regulations, staff members have the choice to work from home several days a week, which may relax the situation in regard to the high demand for charging infrastructure.
 However, on office days staff members prefer to know the occupation rate of the \acrshortpl{cs} in the public or semi--public spaces and reserve a spot for a guaranteed charging possibility for their \acrshort{ev}.
 Referring to the fact, that they spent most part of their daily working hours on the computer rather than their mobile, staff members utilize the web application as a primary way of managing their charging sessions.
@@ -88,9 +88,9 @@ The mobile application, the majority of the users rely on, is only used in certa
     For work--related trips between the single sites, the maintenance team makes use of a \acrshort{fev} with a dedicated \acrshort{cs} exclusively accessible by this vehicle and the respective staff.
     To monitor the connected charging infrastructure and identify outtakes due to technical errors, the caretakers interact with the system using the administration dashboard, via a personal workstation in their office. In cases where a computer is not accessible, they utilize the mobile application to check the status of the charge points.
     Besides the functionality as a supervisory system for the infrastructure, the caretakers need access to the reservations made on the \acrshortpl{cs} to resolve conflicts related to system outtakes or to manage the corresponding users.
-    \item[Administration] Representing the administrative counterpart to the maintenance personnel, the group of secretaries working at the administration office manages internal data relating to staff and students belonging to the \acrshort{hka}, internal workflows, or communication with other organizations. 
+    \item[Administration] Representing the administrative counterpart to the maintenance personnel, the group of secretaries working at the administration office manages internal data relating to staff and students belonging to the \acrshort{hka}, internal workflows, or communication with other organizations.
     This includes paperwork in relation to certain approvals for new students, maintaining the stored records, and processing incoming requests. Among other things, they are responsible for organizing events on and around the campus sites, planning upcoming visitations from external facilities, and coordinating the utilization and maintenance tasks for the charging infrastructure.
-    As a supervisory unit for the \textbf{Maintenance Personal}, they are scheduling maintenance and delegating tasks to the caretakers in case of extraordinary servicing.  
+    As a supervisory unit for the \textbf{Maintenance Personal}, they are scheduling maintenance and delegating tasks to the caretakers in case of extraordinary servicing.
     Therefore, staff members attending these positions need access to the \acrshort{csms} similar to the scope of the maintenance staff. In contrast to the caretakers, they are not leaving their office for interaction with the \acrshortpl{cs}, therefore they do not rely on the functionalities the mobile application has to offer.
 \end{description}
 
@@ -98,34 +98,34 @@ The mobile application, the majority of the users rely on, is only used in certa
 \label{ch:Requirements Engineering:sec:Personas}
 
 Appropriate to the defined stakeholders in the previous Section \ref{ch:Requirements Engineering:sec:Stakeholders}, each stakeholder requires a representation as a persona in regards to a dedicated user account in front of the system.
-This allows a mapping between the accounts and the existing system roles, which enables easier separation between the use cases extracted later on and the assignment to the different stakeholders. 
-Hereinafter, personas prescribing individuals inside the scenario including their dedicated demands in respect of the challenges their particular stakeholder group has to face. 
+This allows a mapping between the accounts and the existing system roles, which enables easier separation between the use cases extracted later on and the assignment to the different stakeholders.
+Hereinafter, personas prescribing individuals inside the scenario including their dedicated demands in respect of the challenges their particular stakeholder group has to face.
 
 \newpage
 
 \begin{description}
-    \item[Lisa Knaus] is a \textbf{Student} at the \acrshort{hka} and is studying computer science in the third semester. In respect of her current living situation, located in a village with limited access to public transportation, she primarily relies on driving by car as her main transportation means. 
-    Fostered through financial benefits promoted by the different car manufacturers for young drivers with interest in acquiring an \acrshort{ev}, she sold her old car with \acrshort{ice} and switched to a \acrfull{fev}. 
-    Under normal circumstances the health of the internal battery allows her to drive with a full charge from her hometown to the main campus site and back without a need to recharge. Occasionally she forgot to recharge at home and needed a charging possibility for her vehicle during the lecture time. Depending on the day and the utilization of the charging infrastructure, this is certainly a challenging task and she needs to arrive very early to get a free charging spot. 
-    \item[Holger Starke] is an employee working as a member of the \textbf{Staff} at \acrshort{hka}. 
-    Within the in--house server administration team, his daily tasks cover the maintenance of the server landscape, applying new versions of internal applications, and the creation of backups, securing the records of the internal user databases. 
-    Thanks to the subsidies for electric vehicles from the state and his employer, he has bought a \acrshort{fev} and is using it as his main means of transport. 
-    As compensation for the still missing charging possibilities at his apartment near the institution, he drives a short distance with his car every day, to use the existing charging infrastructure at the \acrshort{hka}, to recharge the batteries during working hours. 
-    Therefore, he has to use the available \acrshortpl{cs} at the different campus locations without any guarantee to recharge. 
-    With the increasing amount of students and coworkers arriving with \acrshortpl{ev} over time, the search for a free \acrshort{cs} becomes more and more demanding. 
-    Especially scheduled service work later in the day, located at other campuses, emerge to a running the gauntlet for parking lots with \acrshortpl{cs} equipped. 
-    \item[Dieter Krause] is engaged in the role of a caretaker as part of the \textbf{Maintenance Personal} at \acrshort{hka}. During his previous position, he acted as a carrier for the daily book orders for the students at the university library on the main campus site. 
-    For the reduction of \acrshort{co2} the \acrshort{hka} bought a \acrshort{fev} for bridging the short distances between the various libraries within the city. 
-    This confronted him with the according up- and downside of driving an \acrshort{ev} in a very early stage. 
-    Missing charging opportunities and insufficient battery life were only two obstacles he had to bother with, every day. 
-    This led him to the conclusion to switch positions and he took over the responsibility for the charging infrastructure maintenance and management on the campus sites to improve the situation for all involved parties. 
-    Alongside the continuously increasing number of \acrshortpl{cs}, he has fostered the establishment of dedicated charging possibilities for the members of the \textbf{Staff} and introduced an exclusive \acrshort{cs} for the \acrshortpl{ev} of the \textbf{Maintenance Personal}. 
-    Even on days with a high emergence of student vehicles on the public parking lots, he and his colleagues could recharge the batteries of their \acrshortpl{fev}. 
+    \item[Lisa Knaus] is a \textbf{Student} at the \acrshort{hka} and is studying computer science in the third semester. In respect of her current living situation, located in a village with limited access to public transportation, she primarily relies on driving by car as her main transportation means.
+    Fostered through financial benefits promoted by the different car manufacturers for young drivers with interest in acquiring an \acrshort{ev}, she sold her old car with \acrshort{ice} and switched to a \acrfull{fev}.
+    Under normal circumstances the health of the internal battery allows her to drive with a full charge from her hometown to the main campus site and back without a need to recharge. Occasionally she forgot to recharge at home and needed a charging possibility for her vehicle during the lecture time. Depending on the day and the utilization of the charging infrastructure, this is certainly a challenging task and she needs to arrive very early to get a free charging spot.
+    \item[Holger Starke] is an employee working as a member of the \textbf{Staff} at \acrshort{hka}.
+    Within the in--house server administration team, his daily tasks cover the maintenance of the server landscape, applying new versions of internal applications, and the creation of backups, securing the records of the internal user databases.
+    Thanks to the subsidies for electric vehicles from the state and his employer, he has bought a \acrshort{fev} and is using it as his main means of transport.
+    As compensation for the still missing charging possibilities at his apartment near the institution, he drives a short distance with his car every day, to use the existing charging infrastructure at the \acrshort{hka}, to recharge the batteries during working hours.
+    Therefore, he has to use the available \acrshortpl{cs} at the different campus locations without any guarantee to recharge.
+    With the increasing amount of students and coworkers arriving with \acrshortpl{ev} over time, the search for a free \acrshort{cs} becomes more and more demanding.
+    Especially scheduled service work later in the day, located at other campuses, emerge to a running the gauntlet for parking lots with \acrshortpl{cs} equipped.
+    \item[Dieter Krause] is engaged in the role of a caretaker as part of the \textbf{Maintenance Personal} at \acrshort{hka}. During his previous position, he acted as a carrier for the daily book orders for the students at the university library on the main campus site.
+    For the reduction of \acrshort{co2} the \acrshort{hka} bought a \acrshort{fev} for bridging the short distances between the various libraries within the city.
+    This confronted him with the according up- and downside of driving an \acrshort{ev} in a very early stage.
+    Missing charging opportunities and insufficient battery life were only two obstacles he had to bother with, every day.
+    This led him to the conclusion to switch positions and he took over the responsibility for the charging infrastructure maintenance and management on the campus sites to improve the situation for all involved parties.
+    Alongside the continuously increasing number of \acrshortpl{cs}, he has fostered the establishment of dedicated charging possibilities for the members of the \textbf{Staff} and introduced an exclusive \acrshort{cs} for the \acrshortpl{ev} of the \textbf{Maintenance Personal}.
+    Even on days with a high emergence of student vehicles on the public parking lots, he and his colleagues could recharge the batteries of their \acrshortpl{fev}.
     \newpage
-    \item[Nadine Funke] acts as a secretary in the \textbf{Administration} office at \acrshort{hka}. Formerly she worked at the public administration office in Karlsruhe, in the area of public parking spaces, where she had her first experience with the problems concerning the management of the charging infrastructure on public parking lots. 
-    For this reason, she does not drive an \acrshort{ev} herself and uses public transportation instead. In contrast to her previous position at the public administration office, the tasks regarding the management of the \acrshortpl{cs} are, thanks to the introduced system, much more convenient and do not require a lot of manual work. 
-    By accessing the \acrshort{csms} dashboard, she could filter for the wanted \acrshort{cs} and have all the information in one place. 
-    However, blocking \acrshortpl{cs} for upcoming visitors is, despite the new system, still a huge overhead for the secretaries at the \acrshort{hka}. 
+    \item[Nadine Funke] acts as a secretary in the \textbf{Administration} office at \acrshort{hka}. Formerly she worked at the public administration office in Karlsruhe, in the area of public parking spaces, where she had her first experience with the problems concerning the management of the charging infrastructure on public parking lots.
+    For this reason, she does not drive an \acrshort{ev} herself and uses public transportation instead. In contrast to her previous position at the public administration office, the tasks regarding the management of the \acrshortpl{cs} are, thanks to the introduced system, much more convenient and do not require a lot of manual work.
+    By accessing the \acrshort{csms} dashboard, she could filter for the wanted \acrshort{cs} and have all the information in one place.
+    However, blocking \acrshortpl{cs} for upcoming visitors is, despite the new system, still a huge overhead for the secretaries at the \acrshort{hka}.
     Up to now, she has had to select the specific \acrshort{cs} and the corresponding connector to block it, and she has to unblock it again when the guest has arrived.
 \end{description}
 
@@ -167,12 +167,12 @@ For a better understanding of these privileges and their purpose inside the syst
       \node (d) at (0,3) {Demo};
       \node (a) at (0,2) {Admin};
       \node[align=center] (s) at (0,1) {Super Admin};
-      
+
       \node (student) at (4,4) {Student};
       \node (staff) at (4,3) {Staff};
       \node[align=center] (mp) at (4,2) {Maintenance\\Personal};
       \node (admin) at (4,1) {Admin};
-      
+
       \foreach \i/\j in {a/mp,a/admin,b/student,b/staff}
         \draw [->, shorten >=2pt] (\i) -- (\j);
       \node[fit=(a) (b) (s) (d), group,label={[label distance=5mm]above left:{\textbf{Roles}}}] {};
@@ -185,24 +185,24 @@ For a better understanding of these privileges and their purpose inside the syst
 \section{Goals}
 \label{ch:Requirements Engineering:sec:Goals}
 
-Based on the scenario and the corresponding stakeholders, the relevant goals for the resulting implementation are prescribed. As part of this work, a goal is handled as a requirement, the final product has to fulfill. 
+Based on the scenario and the corresponding stakeholders, the relevant goals for the resulting implementation are prescribed. As part of this work, a goal is handled as a requirement, the final product has to fulfill.
 Taking into account the different wishes in terms of the situations in which the respective stakeholders interact with the system, the following objectives could be defined. \\
 
-\noindent \textbf{Goal 1 - Management Capabilities} As a major concern of this work the designed system, should serve as a central point for management purposes of the registered \acrshortpl{cs}. This should provide a basic set of functionalities covering specific administration tasks tailored for a certain group of users. 
+\noindent \textbf{Goal 1 - Management Capabilities} As a major concern of this work the designed system, should serve as a central point for management purposes of the registered \acrshortpl{cs}. This should provide a basic set of functionalities covering specific administration tasks tailored for a certain group of users.
 Besides role mapping according to a subset of functions, the system should detect unintended usage and prohibit breach of privileges.
 Furthermore, the involved users will be provided with all relevant information by the system and know their current position within the different phases of the processes at each time. \\
 
-\noindent \textbf{Goal 2 - Self--Healing and Autonomous Processes} In case of invalid user input or violation of predefined constraints inside the processes, the system should provide mechanisms for self--healing and autonomous error handling. 
+\noindent \textbf{Goal 2 - Self--Healing and Autonomous Processes} In case of invalid user input or violation of predefined constraints inside the processes, the system should provide mechanisms for self--healing and autonomous error handling.
 In addition to increased consistency of data within the underlying database, the ease of use of the system should be a positive side effect. \\
 
 \newpage
 
-\noindent \textbf{Goal 3 - Support of relevant standards} Considering the implementation of relevant communication protocols and the interoperability between different systems of \acrshortpl{cs}, \acrshortpl{ev} and \acrshortpl{csms}, the system should support well--established standards for communication and data exchange in the context of \acrshort{emobility}. 
-Alongside the standards like \acrshort{ocpp} or \acrshort{ocpi}, described in the subsection \ref{ch:Fundamentals:sec:Electric Mobility:ssec:Relevant Standards}, other alternatives exist in the further evolving industry with different targets in mind. 
+\noindent \textbf{Goal 3 - Support of relevant standards} Considering the implementation of relevant communication protocols and the interoperability between different systems of \acrshortpl{cs}, \acrshortpl{ev} and \acrshortpl{csms}, the system should support well--established standards for communication and data exchange in the context of \acrshort{emobility}.
+Alongside the standards like \acrshort{ocpp} or \acrshort{ocpi}, described in the Subsection \ref{ch:Fundamentals:sec:Electric Mobility:ssec:Relevant Standards}, other alternatives exist in the further evolving industry with different targets in mind.
 Considering the already implemented standard inside the underlying product, the \nameref{ch:Fundamentals:sec:Electric Mobility:ssec:Relevant Standards:sssec:OCPP} should be the protocol for the communication between \acrshort{cs} and \acrshort{csms}. \\
 
-\noindent \textbf{Goal 4 - Modular Design} In addition to the previously mentioned goals that focus on the implemented functionality, the architectural design of the software itself should also be considered. 
-As part of a system that follows both a monolithic and a microservice--based approach, multiple services interact simultaneously alongside each other. The implementation and software architecture of this work aim to avoid compromising existing functionality through poor design choices or neglected separation of concerns. 
+\noindent \textbf{Goal 4 - Modular Design} In addition to the previously mentioned goals that focus on the implemented functionality, the architectural design of the software itself should also be considered.
+As part of a system that follows both a monolithic and a microservice--based approach, multiple services interact simultaneously alongside each other. The implementation and software architecture of this work aim to avoid compromising existing functionality through poor design choices or neglected separation of concerns.
 Preferably, the new functionality should be encapsulated as part of a module, which separates the system based on its responsibilities according to the definition in \cite{clements_documenting_2011}. This should ensure easier extensibility of existing features and allow convenient maintainability.
 
 \newpage
@@ -210,12 +210,12 @@ Preferably, the new functionality should be encapsulated as part of a module, wh
 \section{Use Cases}
 \label{ch:Requirements Engineering:sec:Use Cases}
 
-The use cases illustrated in the use case diagram in \ref{fig:use-cases} were elaborated based on the goal definitions in the previous Section \ref{ch:Requirements Engineering:sec:Goals} and the stakeholder requirements from Section \ref{ch:Requirements Engineering:sec:Stakeholders}.
-Typically, software development processes such as \acrshort{rup} \cite{kruchten_rational_1999} differ between the groups of stakeholders who have an interest in the resulting product and the actors who are actually interacting with the real system. 
+The use cases illustrated in the use case diagram in Figure \ref{fig:use-cases} were elaborated based on the goal definitions in the previous Section~\ref{ch:Requirements Engineering:sec:Goals} and the stakeholder requirements from Section \ref{ch:Requirements Engineering:sec:Stakeholders}.
+Typically, software development processes such as \acrshort{rup} \cite{kruchten_rational_1999} differ between the groups of stakeholders who have an interest in the resulting product and the actors who are actually interacting with the real system.
 As part of this scenario, the stakeholders actually represent the actors used for defining the use case in regard to interacting with the system.
 The main use case, as highlighted by \textbf{goal 1}, involves managing and administering reservations within the reservation system. This encompasses creating, modifying, viewing, and deleting existing reservations made either by the users themselves or on their behalf by the administrator.
 Corresponding to \textbf{goal 2}, the \textit{Scheduler} entity facilitates the required self--healing procedures. This necessitates the system to communicate with itself and employ background processes to manage forthcoming, current, and expiring reservations.
-Apart from the primary focus on non--functional requirements related to \textbf{goals 3} and \textbf{4}, an additional functional requirement with reference to the selective activation and deactivation of the reservation module could be identified.
+Apart from the primary focus on non--functional requirements related to \textbf{goals~3}~and~\textbf{4}, an additional functional requirement with reference to the selective activation and deactivation of the reservation module could be identified.
 The privileges for maintenance and configuration of the particular organizations, represented as tenants inside the system, are part of the \verb|SUPER_ADMIN| role.
 Usually, an external service provider outside the customer organizations is responsible for determining the scope of operation, for the service offerings provided to its customers. This role is referred to as \verb|SUPER_ADMIN|. As there is no direct interaction with the system in terms of the reservation process, there is no dedicated actor assigned to this role within the above scenario.
 For comprehensively addressing all the aspects mentioned in the set goals, it is necessary to include this role with its corresponding functionality when defining the required features.

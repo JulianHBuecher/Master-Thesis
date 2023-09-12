@@ -12,13 +12,13 @@
 \chapter{Approach}
 \label{ch:Approach}
 
-This chapter describes the order and duration for processing the identified tasks, in accordance with the design specifications outlined in the previous Chapter \ref{ch:Requirements Engineering}. 
+This chapter describes the order and duration for processing the identified tasks, in accordance with the design specifications outlined in the previous Chapter \ref{ch:Requirements Engineering}.
 For this purpose, this work is divided into two parts, which will later serve to classify the aforementioned challenges.
-The first part is theoretical, including the paper's preparation and research to understand the problem. 
+The first part is theoretical, including the paper's preparation and research to understand the problem.
 The second part afterward is practical, encompassing the tasks needed to implement the system. \\
-\noindent In order to aid planning, timestamps are estimated for each task or logical unit of tasks to provide reference points during the processing of corresponding dedicated work packages. 
+\noindent In order to aid planning, timestamps are estimated for each task or logical unit of tasks to provide reference points during the processing of corresponding dedicated work packages.
 A logical unit, as used here, refers to a coherent cluster of individual tasks that share content or functionality and can be worked on simultaneously. Working on one task without the others would be less significant.
-The standard duration for processing a task or unit is set at two weeks (10 days) typically, to ensure sufficient time for completion. The duration may differ in certain cases and is determined based on the relevance and volume of related challenges. 
+The standard duration for processing a task or unit is set at two weeks (10 days) typically, to ensure sufficient time for completion. The duration may differ in certain cases and is determined based on the relevance and volume of related challenges.
 After describing the two conceptual parts alongside their respective tasks and processing times, this chapter concludes with a comparison of the planned procedure to the actual one.
 
 \section{Theoretical Part}
@@ -26,7 +26,7 @@ After describing the two conceptual parts alongside their respective tasks and p
 
 With regard to the delimitation of the problem space and the synthesis of the central problem, the main aspect of the theoretical part of this work consists of a comprehensive literature review.
 This involves analyzing existing work on reservation processes used for managing \acrshortpl{cs} and allocating charging infrastructure to a specific \acrshort{evu} within a limited time frame, using various methods.
-With regards to the default processing time mentioned earlier, the duration for compilation as well as analysing articles and field projects related to this area is set to one month. 
+With regards to the default processing time mentioned earlier, the duration for compilation as well as analysing articles and field projects related to this area is set to one month.
 The expected result should be used as the groundwork for the subsequent practical part, which is summarised in Chapter \ref{ch:Literature Review}.
 As well as examining the current state of reservation systems, this review process defines a boundary for the necessary fundamentals of contextualization, resulting in Chapter \ref{ch:Fundamentals}.
 Therefore, systematic requirements engineering, taking into account the facts gathered during the research phase and the collection of baselines, using a customised scenario to select relevant use cases, results in Chapter \ref{ch:Requirements Engineering}.
@@ -71,9 +71,9 @@ Now, the extended \acrshort{cs} simulator was then used as a reservable charging
 Particularly, to validate the implementation of reservations compliant with version 1.6 of the \acrshort{ocpp} protocol, considering both pre--existing functionalities in the backend application and the adaptations according to this work.
 This included not only the backend development but also the implementations within the frontend application during iterations three and four.
 Due to the partially existing features mentioned above, the third iteration takes less time than expected, resulting in an earlier commencement of the relevant functions within the web frontend.
-In light of the time savings achieved in the preceding iterations, the fifth iteration for implementing the custom reservation function began prematurely as well. 
+In light of the time savings achieved in the preceding iterations, the fifth iteration for implementing the custom reservation function began prematurely as well.
 To account for the unexpected scope of required operations alongside an end--to--end development approach, the author decided to merge the fifth and sixth iterations, resulting in an extended fifth iteration and a total of six iterations instead of the originally planned seven iterations.
-Because of the previous schedule adjustments, the final iteration also started earlier and was completed later than intended. 
+Because of the previous schedule adjustments, the final iteration also started earlier and was completed later than intended.
 Primarily referring to the incidence of bugs and further requirements to manage reservations internally.
 The resulting schedule, including the iterations, their specific duration, and the corresponding tasks, can be found in Table \ref{tab:development-iterations} below.
 
@@ -102,23 +102,23 @@ The decision to include these tasks is primarily based on the simplification of 
 Therefore, this section mentions these tasks in addition to a brief explanation of the challenge. A detailed description is omitted from both the subsequent \textit{Design} chapter \ref{ch:Design} and the \textit{Implementation} chapter \ref{ch:Implementation} according to no direct relation to the primary problem that this work covers.
 
 \begin{description}
-    \item[Task 1 -- MongoDB Manifests] As the public repository offers no other deployment options, the only available one was containerization and operation using the Docker Compose orchestration tool \cite{noauthor_overview_2023}. 
-    To offer a more scalable and robust solution, the industry standard for deploying containerized applications, therefore, recommends employing \acrfull{k8s} \cite{noauthor_produktionsreife_nodate} as a sophisticated orchestrator. This led to this first task. 
-    Nevertheless, the manifest files essential for creating a \textit{StatefulSets} \cite{noauthor_statefulsets_nodate} deployment, a standard way for deploying database applications inside \acrshort{k8s}, were still not yet included in the current project. 
+    \item[Task 1 -- MongoDB Manifests] As the public repository offers no other deployment options, the only available one was containerization and operation using the Docker Compose orchestration tool \cite{noauthor_overview_2023}.
+    To offer a more scalable and robust solution, the industry standard for deploying containerized applications, therefore, recommends employing \acrfull{k8s} \cite{noauthor_produktionsreife_nodate} as a sophisticated orchestrator. This led to this first task.
+    Nevertheless, the manifest files essential for creating a \textit{StatefulSets} \cite{noauthor_statefulsets_nodate} deployment, a standard way for deploying database applications inside \acrshort{k8s}, were still not yet included in the current project.
     Hence, the MongoDB \cite{noauthor_mongodb_nodate} database's custom setup, including test data and users, already existing as part of the local setup, was employed as a blueprint for creating the necessary manifests required for the deployment.
-    \item[Task 2 -- MongoDB Helm Chart] To further reduce the effort required to deploy the database application to the orchestration instances, the Helm \cite{noauthor_helm_nodate} toolbox and its charts for encapsulating \acrshort{k8s} manifests are integrated.  
-    From the manifest files created in \textbf{task 1}, the corresponding Helm charts for the deployment are created, providing parameterization of a namespace and all required resources, such as \textit{PersistentVolumes} \cite{noauthor_persistent_nodate}, \textit{ConfigMaps} \cite{noauthor_configmaps_nodate} or \textit{Namespaces} \cite{noauthor_namespaces_nodate}. 
-    \item[Task 3 -- \acrshort{k8s} Deployment] For the integration of the remaining applications of the solution, additional Helm charts could be organized for the backend and the frontend application. 
+    \item[Task 2 -- MongoDB Helm Chart] To further reduce the effort required to deploy the database application to the orchestration instances, the Helm \cite{noauthor_helm_nodate} toolbox and its charts for encapsulating \acrshort{k8s} manifests are integrated.
+    From the manifest files created in \textbf{task~1}, the corresponding Helm charts for the deployment are created, providing parameterization of a namespace and all required resources, such as \textit{PersistentVolumes}~\cite{noauthor_persistent_nodate}, \textit{ConfigMaps} \cite{noauthor_configmaps_nodate} or \textit{Namespaces} \cite{noauthor_namespaces_nodate}.
+    \item[Task 3 -- \acrshort{k8s} Deployment] For the integration of the remaining applications of the solution, additional Helm charts could be organized for the backend and the frontend application.
     Regarding the limited resources provided by the used orchestration service, the new charts required further modifications to integrate with the MongoDB chart and the deployment restrictions of the project. This involves a shift from the predefined microservice--based deployment strategy to a monolithic approach resulting in reduced resource allocation.
-    \item[Task 4 - Ingress Deployment \& Public Availability] In order to access the applications within the cluster, it is necessary to use an \textit{Ingress} \cite{noauthor_ingress_nodate} acting as a reverse proxy. 
+    \item[Task 4 - Ingress Deployment \& Public Availability] In order to access the applications within the cluster, it is necessary to use an \textit{Ingress} \cite{noauthor_ingress_nodate} acting as a reverse proxy.
     Therefore, this ingress must be located within the \textit{Namespace} the application lives in.
-    Alongside the charts for the backend and frontend mentioned in \textbf{task 3}, the collection includes a configuration for deploying an NGINX ingress controller \cite{noauthor_nginx_nodate} using the predefined ingress class. 
+    Alongside the charts for the backend and frontend mentioned in \textbf{task 3}, the collection includes a configuration for deploying an NGINX ingress controller \cite{noauthor_nginx_nodate} using the predefined ingress class.
     In combination with a public \acrshort{dn} and the corresponding \acrshort{ip} address, the final stage of the deployment consisted of configuring the ingress deployment and registering it at a \acrshort{dn} service.
 \end{description}
 
 \newpage
 
-\noindent As a result, the \acrshort{k8s} setup shown in Figure \ref{fig:k8s-setup}, considers a deployment scenario that includes all the required components within a custom namespace, referred to in this project as \verb|ev|. 
+\noindent As a result, the \acrshort{k8s} setup shown in Figure \ref{fig:k8s-setup}, considers a deployment scenario that includes all the required components within a custom namespace, referred to in this project as \verb|ev|.
 Alongside the particular applications, the namespace includes an NGINX ingress controller with a publicly accessible \acrshort{dn}, and a MongoDB database with built--in reinitialization of custom test data and users.
 In terms of application distribution, only one node is used with multiple pods within the respective cluster.
 

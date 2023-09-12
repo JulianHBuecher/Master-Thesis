@@ -182,8 +182,8 @@ Furthermore, the \acrshort{fcfs} approach has been selected as the most appropri
 \label{ch:Design:sec:Reservation System:ssec:Management Capabilities}
 
 When managing various entities, the most commonly utilized functionalities involve creating, updating, or deleting related information. Alongside these processes, the acronym \acrshort{crud} is often referenced. In reservation systems, the context permits an additional operation known as cancellation, which invalidates the selected booking.
-As outlined in Chapter \ref{ch:Requirements Engineering}, the relevant use cases for the previously mentioned functions are already identified. In addition to these general features, the subsection also explains the use case for enabling them on demand.
-Considering these capabilities, the following management capabilities cover at least parts of the design choices such as \textit{Enforceability}, \textit{Planning}, \textit{Data Availability} and \textit{Scheduling}, alongside the scheduling capabilities described in Subsection \ref{ch:Design:sec:Reservation System:ssec:Scheduling Capabilities}.
+As outlined in Chapter~\ref{ch:Requirements Engineering}, the relevant use cases for the previously mentioned functions are already identified. In addition to these general features, the subsection also explains the use case for enabling them on demand.
+Considering these capabilities, the following management capabilities cover at least parts of the design choices such as \textit{Enforceability}, \textit{Planning}, \textit{Data Availability} and \textit{Scheduling}, alongside the scheduling capabilities described in Subsection~\ref{ch:Design:sec:Reservation System:ssec:Scheduling Capabilities}.
 
 \newpage
 
@@ -371,7 +371,7 @@ The process ends immediately upon discovering such reservations. Otherwise, the 
     \label{fig:expire-reservation-flowchart}
 \end{figure}
 
-\noindent In cooperation with the \textit{Free Reserved Connector} procedure described in the Sub--subsection~\ref{ch:Design:sec:Reservation System:ssec:Scheduling Capabilities:sssec:Free Reserved Connector}, the \textit{Expire Reservation} procedure handles the transition from the active state to a final state that invalidates the reservation.
+\noindent In cooperation with the \textit{Free Reserved Connector} procedure described in the \\Sub--subsection~\ref{ch:Design:sec:Reservation System:ssec:Scheduling Capabilities:sssec:Free Reserved Connector}, the \textit{Expire Reservation} procedure handles the transition from the active state to a final state that invalidates the reservation.
 Using the \textit{Expired} status deals with not correctly updated reservations according to the \textit{Done}, \textit{Cancelled} or \textit{Unmet} states.
 Mostly caused by information or connection loss between the management instance and the \acrshort{cs}, such outtakes eventually occur.
 This approach ensures that concurrent active reservations are minimized and provides a self--healing process similar to self--healing processes provided by operating systems, to clean up the growing data store.

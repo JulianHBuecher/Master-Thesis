@@ -20,7 +20,7 @@ Lastly, the Section \ref{ch:Fundamentals:sec:Data Exchange} lists important comm
 \section{Electric Mobility}
 \label{ch:Fundamentals:sec:Electric Mobility}
 
-The term \acrshort{emobility} generally refers to the use of \acrfull{ev} and other electric--powered transportation options as an alternative to conventional vehicles that are powered by an \acrfull{ice}. 
+The term \acrshort{emobility} generally refers to the use of \acrfull{ev} and other electric--powered transportation options as an alternative to conventional vehicles that are powered by an \acrfull{ice}.
 As a crucial element of the worldwide initiative to counter climate change and achieve sustainable transport solutions, it aims to reduce greenhouse gas emissions, lower dependence on fossil fuels and mitigate the environmental impact of transportation \cite{kathiresh_e-mobility_2022}.
 To achieve this objective, \acrshort{emobility} depends on the expansion of \acrshortpl{ev} as a common means of transport and a denser cluster of \acrshortpl{cs}.
 Apart from the focus on vehicles primarily addressing personal transportation, this term could also be applied in the context of freight transport, which demands much higher capacities in terms of the power required by such vehicles.
@@ -29,7 +29,7 @@ Within this research and the following chapters, only \acrshortpl{bev} used for 
 \subsection{Electric Vehicles}
 \label{ch:Fundamentals:sec:Electric Mobility:Electric Vehicles}
 
-As already mentioned in Section \ref{ch:Fundamentals:sec:Electric Mobility}, \acrshortpl{ev} are a fundamental cornerstone of \acrshort{emobility}. Primarily, an \acrshort{ev} refers to a car that is powered by only one or more electric engines drawing energy from onboard batteries or similar energy sources. 
+As already mentioned in Section \ref{ch:Fundamentals:sec:Electric Mobility}, \acrshortpl{ev} are a fundamental cornerstone of \acrshort{emobility}. Primarily, an \acrshort{ev} refers to a car that is powered by only one or more electric engines drawing energy from onboard batteries or similar energy sources.
 Besides \acrfullpl{bev}, which are purely powered by electricity, further invariants like \acrfullpl{phev} or \acrfullpl{hev} exist. In comparison to the aforementioned \acrshortpl{bev}, \acrshortpl{phev} combine the power of an electric motor with the reliance offered by an internal combustion engine.
 This allows the driver to cover shorter distances solely relying on the internal battery, and use the petrol engine during longer trips or when charging is unavailable. Moreover, \acrshortpl{phev} have the capability of recharging the battery while on the move.
 Therefore, brake resistance is employed to convert the power generated into electricity, feeding it directly back into the battery.
@@ -48,7 +48,7 @@ Therefore, brake resistance is employed to convert the power generated into elec
 To facilitate the growing number of \acrshortpl{ev}, a crucial aspect is the establishment of a broad charging infrastructure comprising multiple \acrshortpl{cs}. As highlighted in \cite{gnann_fast_2018}, the requirements for charging infrastructure are highly variable, depending on the battery capacity and charging rate, which is predicted to increase in the future.
 In order to satisfy the various power requirements and to cover the wide range of vehicles and used batteries, a heterogeneous range of \acrshortpl{cs} exists.
 From stations providing so--called slow charging with a power supply up to 22 kW, more advanced technologies allow fast charging \acrshortpl{cs} for power requirements above this certain range. \\
-\noindent For a better understanding of the different scenarios in which a \acrshort{cs} could be used for charging, this work divides the infrastructure and the corresponding stations into three different groups. 
+\noindent For a better understanding of the different scenarios in which a \acrshort{cs} could be used for charging, this work divides the infrastructure and the corresponding stations into three different groups.
 These groups, classified according to accessibility level for the \acrshortpl{evu}, are presented in Table \ref{tab:cs-accessibility-levels} alongside their user restrictions, the associated locations, and most commonly used charger levels:
 
 \begingroup
@@ -61,7 +61,7 @@ These groups, classified according to accessibility level for the \acrshortpl{ev
     Accessibility & Restrictions & Location & Charging Level \\ \hline
     Public & No & fleets, highway, distribution centers & 3 \\
     Semi--Public & Yes & workplace, hotels & 2 \\
-    Private & Yes & private households & 1 
+    Private & Yes & private households & 1
     \end{tabular}
 \label{tab:cs-accessibility-levels}
 \end{table}
@@ -69,7 +69,7 @@ These groups, classified according to accessibility level for the \acrshortpl{ev
 
 \newpage
 
-\noindent Alongside the separation according to the accessibility level, a differentiation based on classes of \acrfullpl{cs} is possible. For a detailed illustration of the dependencies and relationships between the different classes, see Figure~\ref{fig:charging-station-classification} below. 
+\noindent Alongside the separation according to the accessibility level, a differentiation based on classes of \acrfullpl{cs} is possible. For a detailed illustration of the dependencies and relationships between the different classes, see Figure~\ref{fig:charging-station-classification} below.
 
 \begin{figure}[h]
 \centering
@@ -79,13 +79,13 @@ These groups, classified according to accessibility level for the \acrshortpl{ev
 \end{figure}
 
 \noindent To provide a more detailed view on the infrastructure and the hardware used for charging, also referred to as \acrfull{evse}, all components and systems necessary to supply electric power from the grid to the battery of an \acrfull{ev} are explained afterwards.
-Beginning with the \textbf{\acrfull{cs}} itself, as physical power unit the \acrshort{ev} is connected to. As mentioned above, \acrshortpl{cs} can vary in size and complexity, ranging from small wall--mounted units designed for home use to more extensive public \acrshortpl{cs} found in parking lots, shopping centers or along highways. 
-To establish a connection between grid, \acrshort{cs} and car, a \textbf{Connector or Charging Cable} is needed. It contains plugs on both ends, which are connecting to the vehicle's charging port and to the \acrshortpl{cs} outlet. 
+Beginning with the \textbf{\acrfull{cs}} itself, as physical power unit the \acrshort{ev} is connected to. As mentioned above, \acrshortpl{cs} can vary in size and complexity, ranging from small wall--mounted units designed for home use to more extensive public \acrshortpl{cs} found in parking lots, shopping centers or along highways.
+To establish a connection between grid, \acrshort{cs} and car, a \textbf{Connector or Charging Cable} is needed. It contains plugs on both ends, which are connecting to the vehicle's charging port and to the \acrshortpl{cs} outlet.
 As an integral part of the \acrshort{evse}, the \textbf{\acrshort{pms}} regulates the flow of electricity from the grid to the vehicle's battery. It ensures safe and efficient charging, managing the power level based on the vehicle's battery capacity and the grid's capacity.
 Allowing the communication between the \acrshort{ev}, the \acrfull{cs}, and the grid, a \textbf{\acrshort{cms}} is used as a backend. It allows data exchange regarding charging status, electricity prices, user authentication, and other relevant information.
 In the case of public \acrshortpl{cs}, a payment and authentication system is usually integrated into the \acrshort{evse}. This system verifies the user's identity, authorizes the charging session, and processes payment for the electricity consumed.
 On top of the described components, various safety features are integrated to protect users, the vehicle, and the surrounding environment. Including features such as ground fault protection, over--current protection, temperature monitoring, and emergency shut--off capabilities~\cite{littlefuse_designing_2020}.
-\noindent To meet the wide range of existing \acrshortpl{ev} and their individual power requirements, different categories of chargers have been established based on the power level provided. This work lists the most notable categories, along with their specifications and typical usage, in Table~\ref{tab:ev-charging-levels}. 
+\noindent To meet the wide range of existing \acrshortpl{ev} and their individual power requirements, different categories of chargers have been established based on the power level provided. This work lists the most notable categories, along with their specifications and typical usage, in Table~\ref{tab:ev-charging-levels}.
 
 \begingroup
 \setlength{\tabcolsep}{10pt} % Default value: 6pt
@@ -98,7 +98,7 @@ On top of the described components, various safety features are integrated to pr
          1 & 1.44 kW -- 1.9 kW & Typically the slowest charging option and suitable for overnight charging at home \\
          2 & 3.1 kW -- 19.2 kW & Provides faster charging compared to Level 1 and is commonly used for home charging setups and public charging stations \\
          3 & 20 kW -- 350 kW & Fast charging operates at a higher voltage, directly charging the vehicle's battery with direct current power. Commonly used in public fast--charging stations.\\
-         \acrshort{xfc} & >350 kW & Ultra--fast charging provides fastest charging option. Commonly used in commercial settings. 
+         \acrshort{xfc} & >350 kW & Ultra--fast charging provides fastest charging option. Commonly used in commercial settings.
     \end{tabular}
     \label{tab:ev-charging-levels}
 \end{table}
@@ -110,7 +110,7 @@ On top of the described components, various safety features are integrated to pr
 \label{ch:Fundamentals:sec:Electric Mobility:ssec:Battery Technology}
 
 For storing the required energy, \acrshortpl{ev} rely on their built--in batteries. As key components inside an \acrshort{ev}, they have to handle high energy capacity and high power, within limited weight and space to affordable prices.
-Therefore, most manufacturers use Lithium--ion batteries in their cars nowadays. 
+Therefore, most manufacturers use Lithium--ion batteries in their cars nowadays.
 Alternatives such as \textit{Lead Acid} and \textit{Nickel--based} batteries usually have lower durability compared to lithium--based batteries due to their shorter lifespan and subsequent inadequate performance in extreme weather or higher discharge rates \cite{acharige_review_2023}.
 Generally, the advances in this technology leading to an increase in the range of the \acrshortpl{ev} and a reduction in the charging time, combined with cost effectiveness, are an essential part of the transition from cars using \acrshort{ice} to purely \acrshort{ev}.
 
@@ -126,15 +126,15 @@ In addition to the previously mentioned \acrshort{ocpp}, further standards relev
 
 The \acrfull{ocpp} outlines an open industry--standard communication protocol, used especially in charging infrastructure for \acrshortpl{ev}. Proposed by the ElaadNL foundation as an open protocol to support the communication between \acrshort{cs} and the related backend services, the ownership was transferred to \acrshort{oca} in 2014 \cite{garofalaki_electric_2022}.
 In general, the \acrshort{ocpp} is designed to provide interoperability and seamless integration between different \acrshort{cs} vendors and network operators, ensuring that \acrshort{ev} drivers can charge their vehicles at any compatible \acrshort{cs}.
-Therefore, it is maintained by the \acrfull{oca}, a consortium of \acrshort{ev} charging infrastructure stakeholders, as an open protocol and not proprietary to any specific manufacturer or organization. 
+Therefore, it is maintained by the \acrfull{oca}, a consortium of \acrshort{ev} charging infrastructure stakeholders, as an open protocol and not proprietary to any specific manufacturer or organization.
 In this way, it is ensured that the \acrshort{ocpp} remains a collaborative and evolving standard \cite{noauthor_ocpp_nodate}. \\
-From an architectural point of view, the protocol could be described in the form of a client/server architecture. The \acrshort{evse} in this model acts as the client, while the \acrshort{csms} serves as the server. 
+From an architectural point of view, the protocol could be described in the form of a client/server architecture. The \acrshort{evse} in this model acts as the client, while the \acrshort{csms} serves as the server.
 The server responds to the client's requests and manages the charging processes accordingly. This request--response model, where the client sends requests to the server, and the server responds with the appropriate information or action enables real--time communication between the \acrfull{cs} and the connected \acrfull{cms}.
 As an interface for communication, two different types of protocols are used. On the one side, the WebSocket protocol, described in \ref{ch:Fundamentals:sec:Data Exchange:ssec:WebSocket}, for bidirectional communication, providing a persistent connection between the \acrshort{evse} and the \acrshort{cms} allowing a faster and more efficient data exchange. On the other side, \acrfull{soap}, as described in \ref{ch:Fundamentals:sec:Data Exchange:ssec:SOAP}, is suitable for the implementation of one--way communication between the respective entities.
-To differentiate between particular feature sets, the \acrshort{ocpp} is versioned. 
+To differentiate between particular feature sets, the \acrshort{ocpp} is versioned.
 The versions are presented as floating point numbers, which increase with major or minor releases within the nomenclature, such as \acrshort{ocpp} 1.6 and \acrshort{ocpp} 2.0. Representing the latest versions of the protocol, which are widely used in current implementations. \\ \\
 \noindent For the communication between \acrshort{cs}, \acrshort{csms} and the \acrshort{evu}, the \acrshort{ocpp} protocol relies on so called operations. Each of these operations describes a set of instructions, which are necessary to fulfill and successfully complete the underlying process.
-According to the required operations used in the context of this work, a subset of operations are selected, which are elucidated in the following list. 
+According to the required operations used in the context of this work, a subset of operations are selected, which are elucidated in the following list.
 The wording and the explanations are based on the standard documentation for the \acrshort{ocpp} version 1.6 \cite{noauthor_ocpp_nodate}:
 
 \begin{description}
@@ -149,13 +149,13 @@ The wording and the explanations are based on the standard documentation for the
 \subsubsection{Open Charge Point Interface}
 \label{ch:Fundamentals:sec:Electric Mobility:ssec:Relevant Standards:sssec:OCPI}
 
-\acrfull{ocpi} is a standardized, open protocol facilitating communication and supporting interoperability between different charging network operators, which provides \acrshort{ev} drivers with access to charging infrastructure from multiple providers. This is achieved by utilizing a harmonized approach. 
-Alongside \acrshort{ocpi}, other proposals regarding the development of cross--border \acrshort{ev} travel, also known as \textit{e--roaming}, exist. 
-The most prominent ones are \acrfull{oicp}, \acrfull{ochp} and \acrfull{emip} \cite{ferwerda_advancing_2018}. 
-In contrast to the \acrshort{ocpi}, they are all developed by proprietary institutions and integrated inside their offerings providing dedicated roaming platforms. 
+\acrfull{ocpi} is a standardized, open protocol facilitating communication and supporting interoperability between different charging network operators, which provides \acrshort{ev} drivers with access to charging infrastructure from multiple providers. This is achieved by utilizing a harmonized approach.
+Alongside \acrshort{ocpi}, other proposals regarding the development of cross--border \acrshort{ev} travel, also known as \textit{e--roaming}, exist.
+The most prominent ones are \acrfull{oicp}, \acrfull{ochp} and \acrfull{emip} \cite{ferwerda_advancing_2018}.
+In contrast to the \acrshort{ocpi}, they are all developed by proprietary institutions and integrated inside their offerings providing dedicated roaming platforms.
 Thus, no way is provided to allow compatibility, making the \acrshort{ocpi} standard more suitable in the case of openness and interoperability. \\
-\noindent In case of available features, \acrshort{ocpi} provides defined endpoints, used for communication between \acrshort{cs}, \acrshortpl{cms}, \acrshortpl{emsp} and \acrshortpl{cpo}. These endpoints include functionalities such as location discovery, charge point data, authorization, charging sessions, and error handling. 
-For integrating \acrshort{ocpi} into existing software systems it is heavily based on the paradigm of \acrfull{rest}. This allows communication via standard HTTP methods utilizing \acrfull{json} as a data format for transmitting information. 
+\noindent In case of available features, \acrshort{ocpi} provides defined endpoints, used for communication between \acrshort{cs}, \acrshortpl{cms}, \acrshortpl{emsp} and \acrshortpl{cpo}. These endpoints include functionalities such as location discovery, charge point data, authorization, charging sessions, and error handling.
+For integrating \acrshort{ocpi} into existing software systems it is heavily based on the paradigm of \acrfull{rest}. This allows communication via standard HTTP methods utilizing \acrfull{json} as a data format for transmitting information.
 
 \noindent The listing below provides a short overview of available features and functionalities provided by \acrshort{ocpi} \cite{noauthor_open_2021}:
 
@@ -173,28 +173,28 @@ For integrating \acrshort{ocpi} into existing software systems it is heavily bas
 
 To meet the demands of \acrshortpl{evu} and address the problems of lack of standardization in charging infrastructure interoperability and information exchange between grid \acrshort{evse}, \acrshort{ev} and \acrshort{evu}, Daimler and RWE started a collaboration in September 2009 to enable Smart Charge Communication.
 Until its initial release as the standard for Plug--n--Charge connections in June 2014, further progress towards the standardization of charging infrastructure communication was carried out \cite{heinrich_iso_2017}.
-Nowadays, this standard consists of multiple parts. From the analysis of the underlying use cases to a description of requirements for the communication over the different \acrshort{osi} layers, it describes \acrshort{poi}--data, the \acrshort{cs} availability, payment, communication standards as well as the \textit{Plug \& Charge} or \textit{e--Roaming} approach \cite{brosi_methode_2019}. 
+Nowadays, this standard consists of multiple parts. From the analysis of the underlying use cases to a description of requirements for the communication over the different \acrshort{osi} layers, it describes \acrshort{poi}--data, the \acrshort{cs} availability, payment, communication standards as well as the \textit{Plug \& Charge} or \textit{e--Roaming} approach~\cite{brosi_methode_2019}.
 However, the required level of data granularity or quality is not specified \cite{linnemann_elektromobilitat_2020}. Considering these gaps that still exist in the \acrshort{iso} 15118, it is far from being complete and requires further development and adaptation.
 
 \subsection{Smart Charging}
 \label{ch:Fundamentals:sec:Electric Mobility:ssec:Smart Charging}
 
-The concept of smart charging or intelligent charging is a systematic approach that optimizes the charging process of \acrshortpl{ev} to be more efficient, cost--effective, and environmentally friendly using information and communication technologies. 
+The concept of smart charging or intelligent charging is a systematic approach that optimizes the charging process of \acrshortpl{ev} to be more efficient, cost--effective, and environmentally friendly using information and communication technologies.
 Therefore, the subsequent calculations consider factors such as electricity demand, grid capacity, availability of renewable energy, and individual user preferences to allow for optimizations in the user's decision--making \cite{deb_smart_2022}.
-One of the primary goals of this methodology is to balance the demand on the underlying grid, affected by charging large numbers of \acrshortpl{ev} simultaneously \cite{daina_electric_2017}. Especially during peak hours increased electricity costs or potential blackouts could occur. 
-In order to mitigate these situations, smart charging takes the current load of the grid into account and adjusts the possible charging rates based on the given constraints to prevent overloading the grid and optimizing the use of available energy \cite{garcia-villalobos_plug-electric_2014}. 
+One of the primary goals of this methodology is to balance the demand on the underlying grid, affected by charging large numbers of \acrshortpl{ev} simultaneously~\cite{daina_electric_2017}. Especially during peak hours increased electricity costs or potential blackouts could occur.
+In order to mitigate these situations, smart charging takes the current load of the grid into account and adjusts the possible charging rates based on the given constraints to prevent overloading the grid and optimizing the use of available energy \cite{garcia-villalobos_plug-electric_2014}.
 Compared to the unidirectional charging method originally known as \acrfull{v1g}, the approach of \acrfull{v2g} enables smart charging systems to charge bidirectionally between the \acrshortpl{ev} battery and the grid \cite[199]{kathiresh_e-mobility_2022}. Allowing \acrshortpl{ev} with sufficient battery capacity to return energy to the grid during times of high demand and turning them into mobile energy storage units to enhance grid stability and resiliency.
 To offer all these functions, smart charging relies on data connectivity and communication between the single \acrshortpl{cs}, the \acrshortpl{ev}, and the underlying grid, which makes it vulnerable to malign third--party entities as well. On the other side, these factors can contribute to better grid management overall, giving grid operators insight into electricity demand patterns and enabling them to plan grid upgrades accordingly.
 
 \subsection{Smart Grid}
 \label{ch:Fundamentals:sec:Electric Mobility:ssec:Smart Grid}
 
-More generally, the terminology of a \acrfull{sg} describes the characteristics of an intelligent system that deals with high energy consumption in order to increase energy reliability and the corresponding costs \cite{sharma_smart_2020,moreno_escobar_comprehensive_2021}.
+More generally, the terminology of a \acrfull{sg} describes the characteristics of an intelligent system that deals with high energy consumption in order to increase energy reliability and the corresponding costs \cite{moreno_escobar_comprehensive_2021,sharma_smart_2020}.
 It consists of multiple parts, like a sufficient infrastructure, applications, and several technologies to manage the energy flow inside the grid.
 This includes, for example, monitoring and measuring solutions as important cornerstones, allowing the grid to support an efficient generation and distribution of power. Supplemented by the behavior of the users connected to the \acrshort{sg}, which is a component of the continuously operating optimization procedures.
 Based on \cite{moreno_escobar_comprehensive_2021}, researchers have identified 94 potential optimization algorithms thus far, primarily implemented in central orchestration systems and observing the \acrshort{sg} to manage these kinds of distributed networks.
-As a result, the smart grid is capable of dynamically and intelligently controlling the flow of power based on predetermined objectives to meet the needs of all nodes in the network. 
-Considering the delivery of electricity, compared to existing grids that deliver power in one direction only, smart grids enable bi--directional power delivery.  
+As a result, the smart grid is capable of dynamically and intelligently controlling the flow of power based on predetermined objectives to meet the needs of all nodes in the network.
+Considering the delivery of electricity, compared to existing grids that deliver power in one direction only, smart grids enable bi--directional power delivery.
 Therefore, the smart grid utilizes \acrshort{der}, such as \acrshortpl{ev} or renewable energy sources, located at consumer homes, to absorb surplus power when not in use.
 This approach is very similar to the \acrshort{v2g} functionality of smart charging described in \ref{ch:Fundamentals:sec:Electric Mobility:ssec:Smart Charging} and could be combined with it.
 
@@ -204,11 +204,11 @@ This approach is very similar to the \acrshort{v2g} functionality of smart charg
 Originally, current reservation systems were developed as \acrfull{crs} to facilitate collaboration between airlines and technology companies \cite{xiang_evolution_2020}. The original objective of the system to be a tool to book resources without the need for paper or other management systems has obviously evolved over time.
 This also applies to the features and abilities of these systems.
 Started as a centrally managed system with restricted access to call center operators, which administered the available resources for their corresponding airlines or hotel chains, the further development of the world wide web in 1989 led to a transformation away from the \acrshort{crs} to online booking systems, also known as web--based \acrfullpl{ibe}, directly available to the customer via their personal computers at home.
-In general, a reservation system could be defined as a software application or platform that facilitates the process of booking and securing limited services, resources, or accommodations in advance, based on the definition of Xiang et al. \cite[p.~2]{xiang_evolution_2020}. 
+In general, a reservation system could be defined as a software application or platform that facilitates the process of booking and securing limited services, resources, or accommodations in advance, based on the definition of Xiang et al. \cite[p.~2]{xiang_evolution_2020}.
 As mentioned previously, besides its original application in the travel or hospitality industry, it is also a common tool for the administration of the transportation or entertainment industry. With the goal of simplifying reservation procedures for customers and minimizing administrative tasks, while increasing user satisfaction.
-Based on the system architecture and the technologies employed, reservation systems could vary depending on the functionalities required. When utilized in a web--based application, such as an online booking system, it is essential to consider different constraints and use cases, compared to a local system within one institution. 
+Based on the system architecture and the technologies employed, reservation systems could vary depending on the functionalities required. When utilized in a web--based application, such as an online booking system, it is essential to consider different constraints and use cases, compared to a local system within one institution.
 To abstract from the requirements necessary for particular deployment scenarios, the following section outlines a set of fundamental characteristics and functionalities that a reservation system should typically encompass. While the chosen list of features may not include all the use cases required for a specific system, it should furnish a brief overview for general purposes.
-For reference and guidance in the case of the functionality of the reservation system, the existing research and literature on hotel reservation systems such as \cite{delizo_online_2013,bemile_online_nodate} as well as the common functionalities found in current booking systems are used.
+For reference and guidance in the case of the functionality of the reservation system, the existing research and literature on hotel reservation systems such as \cite{bemile_online_nodate,delizo_online_2013} as well as the common functionalities found in current booking systems are used.
 \textbf{Booking and Scheduling} could be described as the main purpose of a reservation system. By using this feature users can view available dates, times, or slots and make reservations for specific services, activities, or resources. The system ensures that conflicting bookings do not occur.
 To provide an overview, which represents the availability of the aforementioned resources, the system requires \textbf{Real--Time Availability}. Therefore, users can see immediately if the desired service or resource is available for the chosen date and time.
 For the purpose of personalizing the user experience, retaining reservation history, and enabling loyalty rewards, the common reservation application provides a \textbf{User Registration and Authentication} feature to allow the user to create an account or log into restricted areas of the system to book a reservation.
@@ -216,27 +216,27 @@ Additionally, managing and monitoring bookings, the option to securely pay for a
 To acknowledge successful reservations or notify users of any changes to their bookings, a \textbf{Confirmation and Notifications} should be embedded in the application. This feature not only acts as a confirmation of the booking, but also evidence of the completed transaction and may contain information such as booking \acrshort{id}, date, time, and location.
 Regarding the need for modification or cancellation of the reservation, the system should provide \textbf{Cancellation and Modification} features, enabling the user to cancel or modify their reservations within a specified time frame. Additionally, cancellation policies eventually exist for penalties punishing late cancellations.
 Moreover, apart from the management of the reservations made through the system, it should provide a \textbf{Inventory Management} for the owners of the resources and help them manage their possessions.
-Other features such as \textbf{Reporting and Analytics} or the \textbf{Integration with Other Systems}, which allow the generation of reports on booking trends, revenue, and occupancy rates, are advanced functionalities typically not visible to the end--user. Mostly offered as an administrative service extending the basic use of the system, reporting and third--party integration of other systems, such as customer relationship management (CRM), is not part of every software suite. 
+Other features such as \textbf{Reporting and Analytics} or the \textbf{Integration with Other Systems}, which allow the generation of reports on booking trends, revenue, and occupancy rates, are advanced functionalities typically not visible to the end--user. Mostly offered as an administrative service extending the basic use of the system, reporting and third--party integration of other systems, such as customer relationship management (CRM), is not part of every software suite.
 This also applies to the integration of payment gateways.
 
 \section{Data Exchange}
 \label{ch:Fundamentals:sec:Data Exchange}
 
 After the presentation of the various services, their corresponding communication channels, and the information provided within Section \ref{ch:Fundamentals:sec:Electric Mobility:ssec:Relevant Standards}, the subsequent section deals in more detail with the technical concepts that underlie both the protocols and the application.
-In addition to a brief overview of \acrfull{rest} in \ref{ch:Fundamentals:sec:Data Exchange:ssec:REST}, a quick summary of the technologies \acrfull{soap} in \ref{ch:Fundamentals:sec:Data Exchange:ssec:SOAP}, \acrfull{odata} in \ref{ch:Fundamentals:sec:Data Exchange:ssec:OData} and WebSockets in \ref{ch:Fundamentals:sec:Data Exchange:ssec:WebSocket} follows. 
+In addition to a brief overview of \acrfull{rest} in \ref{ch:Fundamentals:sec:Data Exchange:ssec:REST}, a quick summary of the technologies \acrfull{soap} in \ref{ch:Fundamentals:sec:Data Exchange:ssec:SOAP}, \acrfull{odata} in \ref{ch:Fundamentals:sec:Data Exchange:ssec:OData} and WebSockets in \ref{ch:Fundamentals:sec:Data Exchange:ssec:WebSocket} follows.
 
 \subsection{REST}
 \label{ch:Fundamentals:sec:Data Exchange:ssec:REST}
 
 Introduced by Roy Fielding as an architectural style \cite{patni_pro_2017} to design distributed systems, \acrfull{rest} provides concepts and a set of constraints that define resources accessed via a common interface by \acrshort{http} methods specified in the standard protocol description.
-Stated as the general set of \acrshort{http} methods used to query a \acrshort{rest} \acrfullpl{api}, the methods \verb|GET|, \verb|POST|, \verb|PUT| and \verb|DELETE| are the most conventional examples in the context of web development. 
+Stated as the general set of \acrshort{http} methods used to query a \acrshort{rest} \acrfullpl{api}, the methods \verb|GET|, \verb|POST|, \verb|PUT| and \verb|DELETE| are the most conventional examples in the context of web development.
 Representing a set of standardized operations, also known as \acrshort{crud} operations, similar to the functionalities utilized in the context of relational and non--relational databases, these methods assume the activation of certain functionalities within the respective targets.
 The verbs used to name the operations carry significant meaning, indicating the associated functionality and the expected outcome of the call.
 Aside from the mere retrieval of data, which is usually performed by the use of \verb|GET|, the creation and update of an entity involves either \verb|POST| or \verb|PUT|.
 Intentionally, while awaiting a specific result from performing a read operation, creation methods may or may not return the resulting object. Both possibilities align with the standard and result in subtly different behaviors due to varying design decisions, such as prioritizing reducing network bandwidth versus usability.
-To determine the appropriate targets for the client, \acrshort{rest} defines the concept resources, which allows a resource identifier to be mapped in the form of a \acrshort{uri} or a \acrshort{urn}. Following this pattern, a legitimate resource representing a car is presumably indicated by the  \verb|http://rest.service.com/cars|. 
+To determine the appropriate targets for the client, \acrshort{rest} defines the concept resources, which allows a resource identifier to be mapped in the form of a \acrshort{uri} or a \acrshort{urn}. Following this pattern, a legitimate resource representing a car is presumably indicated by the  \verb|http://rest.service.com/cars|.
 Sending a \acrshort{http} request with the \verb|GET| method to this resource should result in a list of cars provided by the service. As a valid format for representing data, both \acrshort{json} and \acrshort{html} documents are permissible. Even images could be utilized.
-Further data elements defined by \acrshort{rest} are resource metadata, representation metadata, and control data, which are only mentioned here for completeness. 
+Further data elements defined by \acrshort{rest} are resource metadata, representation metadata, and control data, which are only mentioned here for completeness.
 In addition to these core components, \acrshort{rest} provides numerous options for application and system design. However, they are not relevant to this research and are therefore not described in detail here.
 
 \subsection{SOAP}
@@ -254,7 +254,7 @@ Therefore, \acrshort{soap}, as outlined in \cite[4]{patni_pro_2017}, is typicall
 Another option for implementing web--based services besides utilizing only the \acrshort{rest} architectural style is the \acrshort{odata} protocol, which aims to build on top of the latter to provide both a higher level of consistency in terms of breaking changes and to increase interoperability between the communication partners \cite{noauthor_documentation_nodate}.
 To accomplish these goals, \acrshort{odata} services, similar to services implementing \acrshort{soap}, supply a metadata definition using \acrfull{csdl} as a metadata description language ensuring a machine--readable form of the service functionalities it provides.
 In the case of generic clients with no knowledge of the implemented logic of the services, these documents exchanged as part of a preflight request between server and requestor, give the clients the ability to interact in a formalized way.
-Alongside these outstanding features, the \acrshort{odata} standard offers additional concepts such as \textit{namespaces} or specific \acrshort{url} conventions to cover much more advanced scenarios. 
+Alongside these outstanding features, the \acrshort{odata} standard offers additional concepts such as \textit{namespaces} or specific \acrshort{url} conventions to cover much more advanced scenarios.
 Nevertheless, these aspects are beyond the scope of this informative section and are not covered in this brief introduction.
 
 \subsection{WebSocket}
